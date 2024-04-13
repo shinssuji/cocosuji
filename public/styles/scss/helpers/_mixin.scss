@@ -1,4 +1,57 @@
+@use 'variables' as *;
+@use 'function' as *;
+
+// inline block
+@mixin inline-block($align: top) {
+  display: inline-block;
+  vertical-align: $align;
+}
+
 // title
-@mixin main-head {
-  
+@mixin heading-main($margin-bottom:120, $align: center) {
+  margin-bottom: #{$margin-bottom}px;
+  font-size: rem(54);
+  font-weight: $font-semibold;
+  text-align: $align;
+}
+
+// background
+@mixin bg($filename, $format: "svg", $repeat: no-repeat, $pos: 50% 50%, $size: 100%) {
+  background-repeat: $repeat;
+  background-position: $pos;
+  background-image: url("../../images/#{$filename}.#{$format}");
+  background-size: $size;
+}
+
+// size
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// flex
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-dir($value) {
+  flex-direction: $value;
+}
+
+@mixin flex-align($value) {
+  align-items: $value;
+}
+
+@mixin flex-justify($value) {
+  justify-content: $value;
+}
+
+@mixin flex-layout($align: center, $justify: flex-start) {
+  @include flex;
+  @include flex-align(#{$align});
+  @include flex-justify(#{$justify});
+}
+
+@mixin flexitem($number: 1) {
+  flex: $number;
 }

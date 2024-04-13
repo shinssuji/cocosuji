@@ -1,0 +1,151 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+}
+
+html, body {
+  height: 100%;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+$color: red;
+
+color: rgba($color, 0.5); //scss 컬러 내장함수
+*/
+* {
+  font-family: "Poppins", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #363636;
+}
+
+/* main */
+.main {
+  white-space: pre-line;
+}
+.main > section {
+  padding: 15rem 0;
+}
+
+.heading-main {
+  margin-bottom: 120px;
+  font-size: 5.4rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.skill-wrap {
+  display: flex;
+  padding: 0 20rem;
+}
+.skill-wrap .ico-uidev {
+  display: inline-block;
+  vertical-align: top;
+  width: 5.4rem;
+  height: 5.8rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("../../images/icon_uidev.svg");
+  background-size: 100%;
+}
+.skill-wrap .ico-cowork {
+  display: inline-block;
+  vertical-align: top;
+  width: 5.4rem;
+  height: 5.8rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("../../images/icon_cowork.svg");
+  background-size: 100%;
+}
+.skill-wrap .ico-markup {
+  display: inline-block;
+  vertical-align: top;
+  width: 5.4rem;
+  height: 5.8rem;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url("../../images/icon_markup.svg");
+  background-size: 100%;
+}
+.skill-wrap li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 3rem 2rem 6rem;
+}
+.skill-wrap li .tit {
+  margin: 4.4rem 0 3.8rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3rem;
+}
+.skill-wrap li .para {
+  font-size: 2.2rem;
+  line-height: 4.4rem;
+  letter-spacing: -0.04rem;
+  color: #8f8f8f;
+}
+
+.works .box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.works .box:nth-of-type(even) .img {
+  order: 2;
+}
+.works .item {
+  flex: 1;
+}

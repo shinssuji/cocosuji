@@ -1,0 +1,69 @@
+@use './base' as *;
+@use './components' as *;
+@use './helpers' as *;
+
+
+/* main */
+.main {
+  white-space: pre-line;
+  > section {
+    padding: rem(150) 0;
+  }
+}
+
+.heading-main {
+  @include heading-main;
+}
+
+.skill-wrap {
+  @include flex;
+
+  padding: 0 rem(200);
+
+  // skill icon type
+  $skillgroup: (uidev, cowork, markup);
+  @each $item in $skillgroup {
+    .ico-#{$item} {
+      @include inline-block;
+      @include size(rem(54), rem(58));
+      @include bg(icon_#{$item});
+    }
+  }
+
+  li {
+    @include flexitem;
+    @include flex;
+    @include flex-dir(column);
+
+    padding: rem(40) rem(30) rem(20) rem(60);
+
+    .tit {
+      margin: rem(44) 0 rem(38);
+      font-size: rem(30);
+      font-weight: $font-semibold;
+      line-height: rem(30);
+    }
+    .para {
+      font-size: rem(22);
+      line-height: rem(44);
+      letter-spacing: rem(-0.4);
+      color: $black-500;
+    }
+  }
+}
+
+.works {
+  .box {
+    @include flex-layout;
+
+    &:nth-of-type(even) {
+      .img {
+        order: 2;
+      }
+    }
+  }
+  
+  .item {
+    @include flexitem;
+  }
+}
