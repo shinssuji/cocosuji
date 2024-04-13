@@ -1,7 +1,15 @@
 const pageRouter = {
   path: "/",
   name: "layout",
-  component: () => import("@/layout/basicLayout.vue"),
+  redirect: "/main",
+  component: () => import("@/layout/Default.vue"),
+  children: [
+    {
+      path: "/main",
+      name: "main",
+      component: () => import("@/views/Main.vue"),
+    },
+  ],
 };
 
-export default pageRouter;``
+export default pageRouter;
