@@ -7,14 +7,130 @@ $color: red;
 color: rgba($color, 0.5); //scss 컬러 내장함수
 */
 * {
-  font-family: "Poppins", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-family: $en-font, $kr-font, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  // @include mobile {
+  //   font-size: rem(4);
+  // }
 }
 
 body {
   font-size: rem(16);
-  color: $black-800;
+  color: $black-main;
 }
+
+::selection {
+  background-color: $red-main;
+  color: $white-main;
+  transition: 0.1s ease;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  &-thumb {
+    width: 4px;
+    height: 30%;
+    background: #f4f4f4 !important;
+    border: 4px solid #ccc;
+    border-radius: 10px;
+    
+    &:hover {
+      background: #f4f4f4 !important;
+    }
+  }
+
+  &-track {
+    background: rgb(0 0 0 / 0%);
+  }
+}
+
+
+// common layout
+#wrap {
+  height: vh(100);
+  min-height: vh(100);
+  overflow-y: auto;
+
+  * {
+    cursor: none;
+  }
+}
+
+.blind {
+  @include blind;
+}
+
+
+// button
+.btn {
+  @include inline-block;
+
+  border-width: 1px;
+  border-style: solid;
+  font-weight: $font-medium;
+
+  &-ico {
+    @include inline-block;
+
+    border-color: transparent;
+  }
+
+  &-round {
+    @include radius(30px);
+  }
+
+  &-black {
+    border-color: $black-main;
+    color: $black-main;
+  }
+}
+
+
+
+
+
+
+
+
+
+// transition ani.
+.routing-fade {
+  &-enter,
+  &-leave,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    transition: opacity 1s;
+    transition-delay: 0.15s;
+  }
+}
+
+.routing-fadeup {
+  &-enter,
+  &-leave,
+  &-leave-to {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  &-enter-active {
+    transition: opacity 1s, transform 0.7s;
+    transition-delay: 0.15s;
+  }
+}
+
+
+
+
+
+
+
+

@@ -1,12 +1,44 @@
-// colors
-$black-900: #161616;
-$black-800: #363636; // main black
-$black-500: #8f8f8f;
+@use 'function' as *;
+@use 'breakpoint' as *;
 
-$red-400: #f63543; //main red
+// colors
+$white-main: #fff;
+
+$black-main: #363636; // main black
+$black-sub01: #000;
+$black-sub02: #161616;
+
+$gray-sub01: #888;
+$gary-sub02: #8f8f8f;
+$gray-sub03: #666;
+$gray-sub04: #999;
+
+$light-gray-sub01: #f2f3f5;
+
+$red-main: #f63543; //main red
+
+// font family
+$kr-font: "Pretendard Variable", Pretendard;
+$en-font: "Poppins";
 
 // font weight
+$font-light: 300;
 $font-regular: 400;
 $font-medium: 500;
 $font-semibold: 600;
 $font-bold: 700;
+$font-extrabold: 800;
+
+// custom size
+// $inner-padding: rem(100);
+$header-height: rem(96);
+
+
+/* */
+body {
+    --inner-padding: #{rem(100)};
+
+    @include mobile {
+        --inner-padding: #{rem(40)};
+    }
+}

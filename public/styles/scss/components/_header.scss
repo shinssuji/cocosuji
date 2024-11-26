@@ -1,0 +1,57 @@
+@use '../helpers' as *;
+
+header {
+  @include inner;
+  @include flex-layout($justify: space-between);
+  @include size(100%, #{$header-height});
+
+  position: fixed;
+  z-index: 10;
+  padding-top: rem(32);
+  padding-bottom: rem(32);
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+
+  transition: transform 0.4s cubic-bezier(.645,.045,.355,1);
+
+  // dark type
+  &.dark {
+    .logo {
+      background-image: icon(logo, 'ffffff');
+    }
+
+    .btn-menu {
+      background-image: icon(menu, 'ffffff');
+    }
+  }
+
+  // scroll animation
+  &.scr-down {
+    transform: translateY(calc(#{$header-height} * -1));
+  }
+  
+  &.scr-up {
+    transform: translateY(rem(0));
+    transition-delay: 0.2s;
+  }
+}
+
+.logo {
+  // @include size(rem(27), rem(32));
+  @include bg($filename: function) {
+    background-image: icon(logo, '000000');
+  }
+
+  cursor: pointer;
+}
+
+.btn-menu {
+  @include pseudo-ele(before) {
+    @include size(rem(34), rem(32));
+  };
+
+  @include bg($filename: function) {
+    background-image: icon(menu, '000000');
+  }
+}

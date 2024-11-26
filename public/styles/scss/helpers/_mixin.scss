@@ -1,57 +1,196 @@
 @use 'variables' as *;
 @use 'function' as *;
 
+// text hidden 
+@mixin blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
 // inline block
-@mixin inline-block($align: top) {
+@mixin inline-block($align: top) { // align
   display: inline-block;
   vertical-align: $align;
 }
 
+// radius
+@mixin radius($radius) { // $radius
+  border-radius: $radius;
+}
+
+// position center
+@mixin pos-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // title
-@mixin heading-main($margin-bottom:120, $align: center) {
-  margin-bottom: #{$margin-bottom}px;
-  font-size: rem(54);
+@mixin heading-main($align: center) {
+  // margin-bottom: rem(#{$margin-bottom});
+  margin-bottom: clamp(rem(40), 6.25vw, rem(120));
+  font-size: clamp(rem(26), 2.81vw, rem(56));
   font-weight: $font-semibold;
   text-align: $align;
 }
 
-// background
-@mixin bg($filename, $format: "svg", $repeat: no-repeat, $pos: 50% 50%, $size: 100%) {
+@mixin heading-work {
+  font-size: rem(54);
+  font-weight: $font-extrabold;
+  // line-height: rem(80);
+  line-height: 1.4814;
+}
+
+@mixin heading-worksub {
+  font-size: rem(22);
+  color: $gray-sub01;
+}
+
+// inner
+@mixin inner {
+  // padding-left: var(--inner-padding);
+  // padding-right: var(--inner-padding);
+
+  padding-left: clamp(rem(20), 5.21vw, rem(100));
+  padding-right: clamp(rem(20), 5.21vw, rem(100));
+  // padding-right: clamp(1.25rem, 1.077rem + 0.769vw, 2rem);
+  // padding-left: math.clamp(20px, 5.21vw, 100px);
+}
+
+// full layout
+@mixin fullHeight {
+  height: vh(100);
+}
+
+// background image
+@mixin bg-image($img, $path: "../../images/", $format: "svg") { // image name, image url, image format
+  background-image: url("#{$path}#{$img}.#{$format}")
+}
+
+// background set
+@mixin bg($filename, $format: "svg", $repeat: no-repeat, $pos: 50% 50%, $size: 100%) { // image name, image format, background repeat, background position, background size
   background-repeat: $repeat;
   background-position: $pos;
-  background-image: url("../../images/#{$filename}.#{$format}");
   background-size: $size;
+  
+  @if ($filename != 'function') { // icon function case
+    background-image: url("../../images/#{$filename}.#{$format}");
+  } @else {
+    @content;
+  }
 }
 
 // size
-@mixin size($width, $height) {
-  width: $width;
-  height: $height;
+@mixin size($w, $h: false) { // width, height
+  @if ($h == false) {
+    width: $w;
+    height: $w;
+  } @else {
+    width: $w;
+    height: $h;
+  }
+}
+
+@mixin pseudo-ele($element, $align: top) { // selector, align
+  &::#{$element} {
+    @include inline-block($align);
+    content: "";
+
+    @content;
+  }
 }
 
 // flex
 @mixin flex {
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
 }
 
+@mixin flex-wrap($value) {
+  @if ($value == wrap) {
+    -webkit-box-lines: multiple;
+  } @else if ($value == nowrap) {
+    -webkit-box-lines: single;
+  }
+  flex-wrap: $value;
+}
+
 @mixin flex-dir($value) {
+  @if ($value == row) {
+    -webkit-box-orient: horizontal;
+  } @else if($value == column) {
+    -webkit-box-orient: vertical;
+  }
   flex-direction: $value;
 }
 
 @mixin flex-align($value) {
+  @if ($value == flex-start) {
+    -webkit-box-align: start;
+  } @else if ($value == flex-end) {
+    -webkit-box-align: end;
+  }
   align-items: $value;
 }
 
 @mixin flex-justify($value) {
+  @if ($value == flex-start) {
+    -webkit-box-pack: start;
+  } @else if ($value == flex-end) {
+    -webkit-box-pack: end;
+  } @else if ($value == space-between) {
+    -webkit-box-pack: justify;
+  } @else {
+    -webkit-box-pack: $value;
+  }
   justify-content: $value;
 }
 
 @mixin flex-layout($align: center, $justify: flex-start) {
   @include flex;
-  @include flex-align(#{$align});
-  @include flex-justify(#{$justify});
+  @include flex-align($align);
+  
+  @if ($justify != flex-start) {
+    @include flex-justify($justify);
+  }
 }
 
 @mixin flexitem($number: 1) {
+  -webkit-box-flex: $number;
   flex: $number;
+}
+
+// supports not
+@mixin supports-not($name, $value) {
+  @supports not (#{$name}: #{$value}) {
+    @content;
+  }
+}
+
+// 최상위 부모에 클래스 추가
+@mixin most-outer-selector($new-class) {
+  $current-selector: &;
+  $new-selector: [];
+
+  @each $item in $current-selector {
+    $first-item: nth($item, 1);
+
+    $appended-item: $first-item + $new-class;
+
+    $new-item: set-nth($item, 1, $appended-item);
+    $new-selector: append($new-item, $new-selector);
+  }
+
+  @at-root #{$new-selector} {
+    @content;
+  }
 }

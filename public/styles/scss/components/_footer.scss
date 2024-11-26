@@ -1,1 +1,25 @@
+@use '../helpers' as *;
 
+footer {
+  @include inner;
+
+  padding-top: rem(70);
+  padding-bottom: rem(70);
+  background-color: $black-sub02;
+  color: $white-main;
+  text-align: right;
+
+  p {
+    font-family: $kr-font, sans-serif;
+    font-size: rem(48);
+    font-weight: $font-semibold;
+    line-height: 1.3;
+    
+    &.copyright {
+      margin-top: rem(18);
+      font-size: rem(18);
+      font-weight: $font-regular;
+      color: $gray-sub01;
+    }
+  }
+}

@@ -3,5 +3,5 @@ export default {
     if (this.$router.currentRoute.path !== target) {
      this.$router.push(target);
     }
- },
+  },
 };

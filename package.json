@@ -5,40 +5,55 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --ext .js,.vue src",
+    "fix": "eslint --fix --ext .js,.vue src"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "jquery": "^2.2.4",
     "sass": "^1.75.0",
     "sass-loader": "^10.5.2",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
     "@babel/eslint-parser": "^7.12.16",
+    "@babel/preset-env": "^7.24.4",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "^5.0.8",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "prettier": "^3.2.5",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
-    "root": true,
     "env": {
+      "browser": true,
       "node": true
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
+    "extends": "eslint:recommended",
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "ecmaVersion": 2018
     },
     "rules": {
-      "vue/multi-word-component-names": "off"
+      "no-console": "off",
+      "indent": [
+        "error",
+        2
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
     }
   },
   "browserslist": [
