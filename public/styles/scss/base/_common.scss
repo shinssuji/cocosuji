@@ -13,15 +13,24 @@ color: rgba($color, 0.5); //scss 컬러 내장함수
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+   
+  @include desktop {
+    font-size: 55%;
+  }
 
-  // @include mobile {
-  //   font-size: rem(4);
+  // @include tablet {
+  //   font-size: 62.5%;
   // }
 }
 
 body {
+  opacity: 0.1;
   font-size: rem(16);
   color: $black-main;
+
+  @include tablet {
+    font-size: rem(14);
+  }
 }
 
 ::selection {
@@ -59,6 +68,14 @@ body {
 
   * {
     cursor: none;
+  }
+
+  @include tablet {
+    &::-webkit-scrollbar {
+      display: noen;
+    }
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
   }
 }
 

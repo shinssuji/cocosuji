@@ -1,8 +1,15 @@
+$desktop: 1400;
 $laptop: 1200;
 $tablet: 1024;
 $mobile: 767;
 $mobile-xs: 577;
 
+// desktop
+@mixin desktop {
+  @media screen and (max-width:#{$desktop}px) {
+    @content;
+  }
+}
 
 // laptop
 @mixin laptop {

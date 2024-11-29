@@ -29,16 +29,61 @@ $font-semibold: 600;
 $font-bold: 700;
 $font-extrabold: 800;
 
-// custom size
-// $inner-padding: rem(100);
-$header-height: rem(96);
+// font size
+$font-size-12: rem(12);
+$font-size-14: rem(14);
+$font-size-15: rem(15);
+$font-size-16: rem(16);
+$font-size-18: rem(18);
+$font-size-20: rem(20);
+$font-size-22: rem(22);
+$font-size-24: rem(24);
+$font-size-30: rem(30);
+$font-size-34: rem(34);
+$font-size-40: rem(40);
+$font-size-48: rem(48);
+$font-size-54: rem(54);
+
+// layout
 
 
-/* */
+/* font */
 body {
-    --inner-padding: #{rem(100)};
+    --font-size-12: #{$font-size-12};
+    --font-size-14: #{$font-size-14};
+    --font-size-15: #{$font-size-15};
+    --font-size-16: #{$font-size-16};
+    --font-size-18: #{$font-size-18};
+    --font-size-20: #{$font-size-20};
+    --font-size-22: #{$font-size-22};
+    --font-size-24: #{$font-size-24};
+    --font-size-30: #{$font-size-30};
+    --font-size-34: #{$font-size-34};
+    --font-size-40: #{$font-size-40};
+    --font-size-48: #{$font-size-48};
+    --font-size-54: #{$font-size-54};
 
     @include mobile {
-        --inner-padding: #{rem(40)};
+        --font-size-18: #{$font-size-16};
+    }
+}
+/* layout */
+body {
+    --header-height: #{rem(96)};
+    --inner-padding: #{rem(100)};
+    --main-inner-top-padding: #{rem(150)};
+    --main-inner-bottom-padding: var(--main-inner-top-padding);
+    --floating-position-right: #{rem(50)};
+    --floating-position-bottom: #{rem(100)};
+
+    @include laptop {
+        --inner-padding: #{rem(50)};
+        --main-inner-top-padding: #{rem(100)};
+        --floating-position-right: #{rem(30)};
+        --floating-position-bottom: #{rem(80)};
+    }
+    @include mobile {
+        --header-height: #{rem(48)};
+        --inner-padding: #{rem(23)};
     }
 }

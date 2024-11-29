@@ -15,7 +15,7 @@
 }
 
 // inline block
-@mixin inline-block($align: top) { // align
+@mixin inline-block($align: top) { // $align
   display: inline-block;
   vertical-align: $align;
 }
@@ -35,34 +35,27 @@
 
 // title
 @mixin heading-main($align: center) {
-  // margin-bottom: rem(#{$margin-bottom});
-  margin-bottom: clamp(rem(40), 6.25vw, rem(120));
-  font-size: clamp(rem(26), 2.81vw, rem(56));
+  margin-bottom: clamp(40px, 8.571vw, rem(120));
+  font-size: clamp(26px, 4vw, rem(56));
   font-weight: $font-semibold;
   text-align: $align;
 }
 
 @mixin heading-work {
-  font-size: rem(54);
+  font-size: clamp(28px, 3.857vw, rem(54));
   font-weight: $font-extrabold;
-  // line-height: rem(80);
   line-height: 1.4814;
 }
 
 @mixin heading-worksub {
-  font-size: rem(22);
+  font-size: clamp(15px, 1.571vw, rem(22));
   color: $gray-sub01;
 }
 
 // inner
 @mixin inner {
-  // padding-left: var(--inner-padding);
-  // padding-right: var(--inner-padding);
-
-  padding-left: clamp(rem(20), 5.21vw, rem(100));
-  padding-right: clamp(rem(20), 5.21vw, rem(100));
-  // padding-right: clamp(1.25rem, 1.077rem + 0.769vw, 2rem);
-  // padding-left: math.clamp(20px, 5.21vw, 100px);
+  padding-left: var(--inner-padding);
+  padding-right: var(--inner-padding);
 }
 
 // full layout

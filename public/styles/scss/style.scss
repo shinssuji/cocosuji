@@ -7,7 +7,7 @@
 
 /* ----------------------- COMMON */
 .btn-top {
-  @include size(rem(66));
+  @include size(min(13.889vw, rem(66)));
   @include radius(50%);
   @include bg($filename: 'icon_gotop');
   
@@ -16,7 +16,7 @@
 
 .floating-btns {
   position: fixed;
-  right: rem(50);
+  right: var(--floating-position-right);
 
   opacity: 0;
   visibility: hidden;
@@ -25,21 +25,21 @@
     opacity: 1;
     visibility: visible;
 
-    bottom: rem(-100);
+    bottom: calc(var(--floating-position-bottom) * -1);
 
     transition: opacity .4s linear,bottom .5s cubic-bezier(.545,.045,.355,1);
 
     &.hide {
-      bottom: rem(-100);
+      bottom: calc(var(--floating-position-bottom) * -1);
     }
   }
 
   &.scr-up {
-    bottom: rem(100);
+    bottom: var(--floating-position-bottom);
   }
 
   &.scr-down {
-    bottom: rem(-100);
+    bottom: calc(var(--floating-position-bottom) * -1);
   }
 }
 
@@ -48,7 +48,11 @@
   white-space: pre-line;
 
   > section {
-    padding: rem(150) 0;
+    padding: var(--main-inner-top-padding) 0;
+
+    @include tablet {
+      padding: 12vh 0;
+    }
   }
 }
 
@@ -71,40 +75,69 @@
     font-weight: $font-regular;
     color: $black-sub01;
     white-space: nowrap;
-    // left: 50%;
-    // transform: translateX(-50%);
+
+    @include laptop {
+      font-size: rem(150)
+    }
+    @include tablet {
+      font-size: min(22.222vw, rem(150));
+    }
     
     &.text-left {
-      left: rem(-22);
+      left: rem(-44);
       top: rem(74);
+
+      // top: 50%;
+      // margin-top: rem(-410);
+
+      @include tablet {
+        // margin-top: vh(-35);
+      }
     }
 
     &.text-right {
-      right: rem(-22);
+      right: rem(-55);
       bottom: rem(74);
+      
+      // top: 50%;
+      // margin-top: rem(115);
+
+      @include tablet {
+        // margin-top: vh(17);
+      }
     }
   }
-  
-  .circle {
-    // opacity: 0.1;
-    
-    @include pos-center;
-    @include size(rem(240));
-    @include radius(50%);
 
+
+  .circle {
+    @include pos-center;
+    
     display: block;
-    background-color: $black-sub01;
+
+    &::before {
+      @include size(rem(340));
+      @include bg('img_circle_text');
+
+      content: "";
+      display: block;
+      animation: circle 20s linear infinite;
+
+      @include tablet {
+        @include size(min(55.556vw, rem(330)));
+      }
+    }
 
     em {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin-left: rem(-165);
-      margin-top: rem(-165);
-      @include size(rem(330));
-      @include bg('img_circle_text');
-    
-      animation: circle 20s linear infinite;
+      @include pos-center;
+      @include size(rem(240));
+      @include radius(50%);
+      
+      display: block;
+      background-color: $black-sub01;
+
+      @include tablet {
+        @include size(min(41.667vw, rem(240)));
+      }
     }
   }
 
@@ -117,26 +150,34 @@
     }
     
   }
-
-  .outline {
-    width: rem(300);
-    height: rem(300);
-  }
 }
 
 /* main skills */
 .skill-wrap {
   @include flex;
 
-  padding: 0 rem(200);
+  // padding: 0 min(55.556vw, rem(200));
+  width: min(90vw, 1514px);
+  margin: 0 auto;
+
+  @include tablet {
+    @include flex-dir(column);
+    
+    padding: 0;
+  }
 
   // skill icon type
   $skillgroup: (uidev, cowork, markup);
   @each $item in $skillgroup {
     .ico-#{$item} {
       @include inline-block;
-      @include size(rem(54), rem(58));
+      // @include size(rem(54), rem(58));
+      @include size(min(11.111vw, rem(54)), min(11.936vw, rem(58)));
       @include bg(icon_#{$item});
+
+      // @include tablet {
+      //   @include size(min(11.111vw, rem(54)), min(11.936vw, rem(58)));
+      // }
     }
   }
 
@@ -147,33 +188,53 @@
 
     padding: rem(40) rem(30) rem(20) rem(60);
 
+    @include tablet {
+      padding: rem(30) rem(25);
+    }
+
     .tit {
       margin: rem(44) 0 rem(38);
-      font-size: rem(30);
+      font-size: clamp(23px, 2.143vw, var(--font-size-30));
       font-weight: $font-semibold;
       line-height: rem(30);
+
+      @include tablet {
+        margin: rem(34) 0 rem(20);
+        // font-size: clamp(23px, 6.389vw, var(--font-size-30));
+      }
     }
 
     .para {
-      font-size: rem(22);
-      line-height: rem(44);
+      // font-size: var(--font-size-22);
+      font-size: clamp(14px, 1.571vw, var(--font-size-22));
+      line-height: 2;
       letter-spacing: rem(-0.4);
-      color: $gary-sub02;
+      // color: $gary-sub02;
     }
   }
 }
 
 /* works */
 .works {
+  @include tablet {
+    padding: 0;
+  }
+
   .box {
     @include flex-layout;
 
-    padding: rem(110) 0;
-
-    &:nth-of-type(even) {
-      .img {
-        order: 2;
+    @include tabletMin {
+      padding: rem(110) 0;
+      
+      &:nth-of-type(even) {
+        .img {
+          order: 2;
+        }
       }
+    }
+
+    @include tablet {
+      @include flex-dir(column);
     }
   }
   
@@ -183,7 +244,12 @@
   }
   
   .text {
-    padding-left: rem(200);
+    padding-left: min(6.667vw, rem(200));
+
+    @include tablet {
+      width:100%;
+      padding: 12vw var(--inner-padding) 22vw;
+    }
     
     h3 {
       @include heading-work;
@@ -194,13 +260,21 @@
 
       display: block;
       margin-bottom: rem(32);
+
+      @include tablet {
+        margin-bottom: 4vw;
+      }
     }
     
     .tags {
       margin: rem(44) 0 rem(60);
+
+      @include tablet {
+        margin: 3vw 0 10vw;
+      }
       
       .tag {
-        font-size: rem(20);
+        font-size: clamp(13px, 1.429vw, var(--font-size-20));
         color: $gray-sub01;
 
         &:not(:last-child) {
@@ -213,7 +287,7 @@
       @include radius(50px);
 
       padding: rem(17) rem(50);
-      font-size: rem(18);
+      font-size: var(--font-size-18);
     }
   }
 }
@@ -222,28 +296,33 @@
 /* ----------------------- SUB */
 .sub {
   @include flex;
-
-  // height: 100vh;
+  
   background-color: $black-sub01;
+
+  @include tablet {
+    @include flex-dir(column);
+  }
 
   &::selection {
     background-color: transparent;
   }
   
-  nav {
-    @include flex;
-    @include flex-dir(column);
-    @include flex-align(flex-start);
-    @include flex-justify(center);
-    @include size(rem(500), vh(100));
+  nav { // sub-nav
+    @include tabletMin {
+      @include flex;
+      @include flex-dir(column);
+      @include flex-align(flex-start);
+      @include flex-justify(center);
+      @include size(rem(500), vh(100));
 
-    position: sticky;
-    top: 0;
-    padding-left: rem(200);
+      position: sticky;
+      top: 0;
+      padding-left: rem(200);
+    }
     
     button {
       margin: rem(12) 0;
-      font-size: rem(20);
+      font-size: var(--font-size-20);
       color: $gray-sub04;
 
       &.active {
@@ -302,7 +381,7 @@
       .kr {
         opacity: 1;
         left: rem(40);
-        font-size: rem(40);
+        font-size: var(--font-size-40);;
         font-weight: $font-semibold;
         color: $white-main;
         letter-spacing: rem(5);
@@ -397,7 +476,7 @@
   }
 
   h1 {
-    font-size: rem(76);
+    font-size: var(--font-size-76);;
     font-weight: $font-bold;
     line-height: 1.2;
     white-space: pre-line;
@@ -405,7 +484,7 @@
 
   p {
     margin-top: rem(40);
-    font-size: rem(34);
+    font-size: var(--font-size-34);
     font-weight: $font-bold;
   }
 }
@@ -422,7 +501,7 @@
   .btn-view {
     margin-top: rem(50);
     padding: rem(14) rem(45);
-    font-size: rem(15);
+    font-size: var(--font-size-15);
     font-weight: $font-medium;
   }
 }
@@ -439,7 +518,7 @@
   }
 
   .copyright {
-    font-size: 12px;
+    font-size: var(--font-size-12);
     font-weight: $font-light;
   }
 }
@@ -449,13 +528,13 @@
   &-tit {
     display: block;
     margin-bottom: rem(40);
-    font-size: rem(48);
+    font-size: var(--font-size-48);
     font-weight: $font-bold;
     line-height: 1.1875;
   }
 
   &-txt {
-    font-size: rem(20);
+    font-size: var(--font-size-20);
     line-height: 2;
   }
 
@@ -479,12 +558,12 @@
 
     b {
       margin-bottom: rem(12);
-      font-size: rem(24);
+      font-size: var(--font-size-24);
       font-weight: $font-semibold;
     }
 
     span {
-      font-size: rem(15);
+      font-size: var(--font-size-15);
       font-weight: $font-medium;
       color: $gray-sub03;
       white-space: pre-line;
