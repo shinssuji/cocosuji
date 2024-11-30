@@ -1,0 +1,86 @@
+@use '../base' as *;
+@use '../components' as *;
+@use '../helpers' as *;
+
+
+/* ----------------------------------------------------------------
+    header
+---------------------------------------------------------------- */
+.member-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: #{$member-header-height}px;
+  padding: 24px 32px;
+  background-color: $bg-dark-color;
+}
+
+.title-main {
+  @include font('title-main');
+}
+
+.sub-main {
+  @include font('sub-main');
+}
+
+/* ----------------------------------------------------------------
+    container
+---------------------------------------------------------------- */
+.member-container {
+  @include scroll($scroll-color: var(--scrollbar-dark-color));
+
+  @include flex;
+  min-height: #{$mobile-min-height}px;  
+  padding-top: #{$member-header-height}px;
+  background-color: $bg-dark-color;
+
+  .title-main {
+    color: $white-001;
+
+    @include tablet {
+     font-weight: $font-semibold;
+    }
+  }
+
+  .sub-main {
+    color: $white-002;
+  }
+}
+
+.member-wrap {
+  width: min(100%, #{$member-con}px);
+  margin: 0 auto;
+  padding: #{$desktop-member-side-space}px;
+
+  @include tablet {
+    padding-left: #{$member-mobile-side-space}px;
+    padding-right: #{$member-mobile-side-space}px;
+  }
+}
+
+.or {
+  @include flex;
+  @include flex-align(center);
+  
+  gap: 20px;
+  margin: 24px auto;
+
+  &::before, &::after {
+    @include flexitem(1);
+
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 0 16px;
+    background-color: $black-006;
+  }
+}
+
+.btn-form .icon-sns {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  @include auto-prefix(transform, translateY(-50%));
+}

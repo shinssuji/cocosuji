@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name="format-detection” content="telephone=no"/>
+    <title>유캔싸인 publishing file directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<style>
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+#wrap {height:auto; padding:30px; background:#fff;}
+a {color:inhert;}
+.flex-table .row {display:flex; border-top:1px solid #e2e4ee;}
+.flex-table .row:last-child {border-bottom:1px solid #e2e4ee;}
+.flex-table .row.head {border-color:#353639;}
+.flex-table .cell {flex:1; padding:14px 20px; font-size:14px; text-align: left; word-break:break-all; transition:0.2s;}
+.flex-table .cell + .cell {border-left:1px solid #e2e4ee;}
+.flex-table .head .cell {background:#f5f6f9; color:#111; font-weight:600; text-align:center;}
+
+.flex-table .group {display:flex; margin:0 -20px;}
+.flex-table .group + .group {border-top:1px solid #e2e4ee;}
+.flex-table .cell .group:first-child {margin-top:-14px;}
+.flex-table .cell .group:last-child {margin-bottom:-14px;}
+.flex-table .body .group:hover .cell {color:#4281ff;}
+
+.flex-table .num {flex:0.2; text-align:center;}
+.flex-table .sub {flex:5.8}
+.flex-table .type {flex:0.5;}
+.flex-table .etc {flex:0.7;}
+</style>
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const directory = [
+        {
+            menu: 'Dashboard',
+            sub: [
+                {
+                    depth2: '조직문서',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../documents.html',
+                        text: 'documents'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '서명 요청하기',
+                    depth3: 'step1',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../editor/step1.html',
+                        text: 'editor/step1'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '서명 요청하기',
+                    depth3: 'step2',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../editor/step2.html',
+                        text: 'editor/step2'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '서명 요청하기',
+                    depth3: 'step3',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../editor/step3.html',
+                        text: 'editor/step3'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '템플릿',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../template.html',
+                        text: 'template'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '템플릿 - 템플릿 설정 1step',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../template/template_step1.html',
+                        text: 'template/template_step1'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '템플릿 - 템플릿 설정 2step',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../template/template_step2.html',
+                        text: 'template/template_step2'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '대량전송',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../bulkTransmit.html',
+                        text: 'bulkTransmit'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '대량전송',
+                    depth3: '대량전송 - 대량전송 시작하기 1step',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../bulk/bulk_step1.html',
+                        text: 'bulk/bulk_step1'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '대량전송',
+                    depth3: '대량전송 - 대량전송 시작하기 2step',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../bulk/bulk_step2.html',
+                        text: 'bulk/bulk_step2'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '문서편집기',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../docuEdit.html',
+                        text: 'docuEdit'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '문서편집기 - 문서 편집',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../docuEdit/docuEdit_step1.html',
+                        text: 'docuEdit/docuEdit_step1'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '사인/도장',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../signStamp.html',
+                        text: 'signStamp'
+                    },
+                    etc: '-'
+                },
+                {
+                    depth2: '설정',
+                    depth3: '-',
+                    type: 'layout',
+                    pathInfo: {
+                        path: '../setting/profile.html',
+                        text: 'setting/profile'
+                    },
+                    etc: '-'
+                },
+            ],
+        },
+    ]
+
+
+    const bodyContainer = document.querySelector(".flex-table .body");
+    directory.forEach((menu, index) => {
+        const allLists = Object.keys(menu);
+        const bodyRow = document.createElement("div");
+        bodyRow.classList.add("row");
+
+        // 첫번재 셀 인덱스 추가
+        const bodyCell = document.createElement("div");
+        bodyCell.classList.add("cell", "num");
+        bodyCell.textContent = index + 1;
+        bodyRow.appendChild(bodyCell);
+        
+        // 전체 리스트 객체 순회
+        allLists.forEach((depth) => {
+            const subLists = menu[depth]; // 전체 리스트 객체의 밸류
+            const bodyCell = document.createElement("div");
+            const cellGroup = document.createElement("div");
+
+            // 밸류 값이 sub 일 때
+            if (depth === 'sub') {
+                // sub 객체 순회
+                subLists.forEach((subRow) => {
+                    const subRowLists = Object.keys(subRow); // sub 객체의 키
+                    const cellGroup = document.createElement("a");
+                    
+                    
+                    // sub 객체의 key 순회
+                    subRowLists.forEach((subCell) => {
+                        const item = subRow[subCell]; // sub 객체의 밸류
+                        const cellItem = document.createElement("div");
+
+
+                        if (subCell === 'pathInfo') {
+                            cellItem.textContent = item.text;
+                            
+                            // a 태그 경로 및 속성 설정
+                            cellGroup.setAttribute("target", "_blank")
+                            cellGroup.setAttribute("href", item.path);
+
+                        } else {
+                            cellItem.textContent = item;
+                        }
+                        
+
+                        cellGroup.appendChild(cellItem);
+                        cellItem.classList.add("cell", subCell);
+                    })
+                    
+
+                    bodyCell.appendChild(cellGroup);
+                    cellGroup.classList.add("group")
+                })
+            } else {
+                bodyCell.textContent = subLists;
+                
+            }
+
+            
+            bodyRow.appendChild(bodyCell);
+            bodyCell.classList.add("cell", depth);
+            
+        })
+        bodyContainer.appendChild(bodyRow);
+    })
+
+
+})
+
+</script>
+<body>
+<div id="wrap">
+    <section id="directory" class="guide-container">
+
+        <div class="flex-table">
+            <div class="head row">
+                <div class="cell num">No</div>
+                <div class="cell menu">1Depth</div>
+                <div class="cell sub">
+                    <div class="group">
+                        <div class="cell depth2">2Depth</div>
+                        <div class="cell depth3">3Depth</div>
+                        <div class="cell type">Type</div>
+                        <div class="cell pathInfo">Path</div>
+                        <div class="cell etc">Etc</div>
+                    </div>
+                </div>
+            </div>
+            <div class="body rowgroup"> <!-- 내용 삽입 --> </div>
+        </div>
+    </section>
+</div>
+<!-- //wrap -->
+
+
+</body>
+
+</html>
+

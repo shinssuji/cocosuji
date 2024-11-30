@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name="format-detection” content="telephone=no"/>
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="../styles/css/style.min.css">
+    <link rel="stylesheet" href="../lib/css/swiper-bundle.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.0/lottie.min.js" integrity="sha512-CRKudfW67SYvlItFrcw71DZphJowX3VzpcTCCi0OI3cBRL6AibHekFfr186WqfPoXbqVSAOBhsKNuXrhUkgIOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="../lib/scripts/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../scripts/common.js"></script>
+</head>
+
+<body>
+<div id="skipNav">
+    <a href="#navigation">네비게이션 바로가기</a>
+    <a href="#container">본문 바로가기</a>
+</div>
+
+<div id="wrap" class="board-container">
+  <aside id="navigation">
+    <nav>
+      <div class="user-wrap">
+        <a href="#a" class="user-box profile-box" title="내정보 바로가기" aria-label="내정보 바로가기">
+          <!-- 프로필 이미지가 존재하지 않을 경우 닉네임의 첫글자에 해당하는 값을 data-none-profile 속성에 삽입 -->
+          <span class="profile" data-none-profile="S">
+            <!-- 프로필 이미지가 존재할 경우 -->
+            <!-- <img src="../images/profile_user_upload_test.png" alt="내 프로필 이미지" class="profile-img" /> -->
+          </span>
+          <span class="name">Siwolmedia</span>
+        </a>
+      </div>
+      <div class="nav-menu">
+        <ul>
+          <!-- 메뉴 활성화 클래스 : is-active -->
+          <li role="presentation"><a href="home.html" class="menu home">홈</a></li>
+          <li role="presentation"><a href="manageChannel.html" class="menu channel">채널관리</a></li>
+          <li role="presentation"><a href="listMusicSources.html" class="menu music">음원목록</a></li>
+          <li role="presentation"><a href="managePerformance.html" class="menu performance">실적관리</a></li>
+          <li role="presentation" class="hidden-md"><a href="manageSettlement.html" class="menu calculate">정산관리</a></li>
+          
+          <li role="presentation" class="visible-md"><a href="aside.html" class="menu moreview">더보기</a></li>
+        </ul>
+        <ul class="menu-mobile">
+          <li role="presentation"><a href="mypage.html" class="menu mypage">마이페이지</a></li>
+          <li role="presentation"><a href="noticeAlarm.html" class="menu alarm">공지 및 알림</a></li>
+          <li role="presentation"><a href="#a" class="menu cardnews">카드뉴스</a></li>
+          <li role="presentation"><a href="guide.html" class="menu guide is-active">사용가이드</a></li>
+          <li role="presentation"><a href="#a" class="menu customer">고객센터</a></li>
+        </ul>
+        
+      </div>
+      <div class="service-wrap">
+        <h3>시월뮤직 APP 다운로드</h3>
+        <p>전용 앱으로 더 편리하게 사용해보세요!</p>
+        <div class="flexbox gap-8">
+          <a href="" class="btn-download" target="_blank" rel="noreferrer noopener">
+            <img src="../images/img_android_download.svg" alt="Get it on Google Play" />
+          </a>
+          <a href="" class="btn-download" target="_blank" rel="noreferrer noopener">
+            <img src="../images/img_ios_download.svg" alt="Download on the App Store" />
+          </a>
+        </div>
+        <span class="app-text">App Store, iCloud, iCloud Drive 및 iTunes Store는 미국과 그 밖의 나라 및 지역에서 등록된 Apple Inc.의 서비스 상표입니다. Google Play 및 Google Play 로고는 Google LLC의 상표입니다.</span>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- # container -->
+  <main id="container" class="container">
+    <div class="board-header">
+      <a href="" class="logo"><span class="sr-only">시월뮤직</span></a>
+      <div class="user-btn-group">
+        <a href="alarm.html" class="btn btn-alarm" aria-label="알림 바로가기">
+          <i class="icon-alarm" aria-hidden="true"><span class="sr-only">알림 바로가기</span></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- # board-content-wrap -->
+    <div class="board-content-wrap">
+      <!-- 사용가이드 -->
+      <!-- 대시보드 타이틀-->
+      <div class="board-title-wrap">
+        <h1 class="board-title">사용가이드</h1>
+      </div>
+
+      <!-- 대시보드 컨텐츠 -->
+      <div class="board-content">
+
+        <!-- 탭 -->
+        <div class="scroll-x-wrap"> <!-- 스크롤 영역 추가 -->
+          <ul class="nav-tabs type-line" id="nav-tab-group01" role="tablist">
+            <li class="tab-item" role="presentation">
+              <!-- 활성화 클래스 : is-active -->
+              <button type="button" id="youtube-tab" class="tab-link" data-tabgroup="tab-group01" role="tab" aria-controls="youtube" aria-selected="false">유튜브</button>
+            </li>
+            <li class="tab-item" role="presentation">
+              <button type="button" id="instagram-tab" class="tab-link" data-tabgroup="tab-group01" role="tab" aria-controls="instagram" aria-selected="false">인스타그램</button>
+            </li>
+            <li class="tab-item" role="presentation">
+              <button type="button" id="pc-tab" class="tab-link is-active" data-tabgroup="tab-group01" role="tab" aria-controls="pc" aria-selected="true">PC</button>
+            </li>
+            <li class="tab-item" role="presentation">
+              <button type="button" id="channel-tab" class="tab-link" data-tabgroup="tab-group01" role="tab" aria-controls="channel" aria-selected="false">채널 인증 방법</button>
+            </li>
+            <li class="tab-item" role="presentation">
+              <button type="button" id="app-tab" class="tab-link" data-tabgroup="tab-group01" role="tab" aria-controls="app" aria-selected="false">앱 다운로드</button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 탭 컨텐츠 -->
+        <div class="tab-content" id="tab-group01">
+          <!-- 유튜브 -->
+          <div class="tab-panel" id="youtube" role="tabpanel" aria-labelledby="youtube-tab">
+            
+          </div>
+
+          <!-- 인스타그램 -->
+          <div class="tab-panel" id="instagram" role="tabpanel" aria-labelledby="instagram-tab">
+
+          </div>
+
+          <!-- PC -->
+          <div class="tab-panel" id="pc" role="tabpanel" aria-labelledby="pc-tab" style="display:block;">
+            <div class="top-info-wrap bg-f3f3f3">
+              <strong class="info-title">주의사항</strong>
+              <ul class="list-text-group list-dots font-13">
+                <li class="text">PC 업로드의 경우 영상 길이가 반드시 <b class="text-lightred">35초 이상</b>이어야 하며, 음원의 볼륨이 유튜브가 인식할 정도로 커야한다는 제약이 있습니다.</li>
+                <li class="text">여러개의 음원을 섞어 사용할 경우 인식이 어려울 수 있으니, <b class="text-lightred">1개의 영상에는 1개의 음원</b>을 이용하시기 바랍니다.</li>
+                <li class="text">위 사항을 모두 준수하더라도 유튜브에서 인식하지 못하는 경우가 있습니다. 반드시 영상 업로드 전 '비공개' 처리 후, <b class="text-lightred">음원 정보 노출 여부</b>를 확인하신 뒤 업로드하시기 바랍니다. (하단 3,4,5번 항목)</li>
+                <li class="text"><b class="text-lightred">채널은 본인 소유이며, 현재 모든 채널 총 조회수 합이 100만을 넘습니다.</b></li>
+              </ul>
+            </div>
+
+            <ol class="user-guide-wrap flex-column">
+              <li class="items">
+                <div class="text">
+                  <b class="step">STEP 1</b>
+                  <p class="par">쇼츠뮤직에서 음원 다운로드</p>
+                </div>
+                <img src="../images/guide/guide_pc_step01@2x.png" alt="쇼츠뮤직에서 음원 다운로드 화면">
+              </li>
+
+              <li class="items">
+                <div class="text">
+                  <b class="step">STEP 2</b>
+                  <p class="par">영상 제작 시, 음원 삽입 (YouTube가 인식할 수 있도록 음원의 볼륨을 키워 삽입)</p>
+                </div>
+              </li>
+
+              <li class="items">
+                <div class="text">
+                  <b class="step">STEP 3</b>
+                  <p class="par">음원 인식 여부 확인 위해 영상 업로드 전 '비공개' 처리 후, 유튜브 스튜디오에서 업로드한 콘텐츠 상세보기 클릭</p>
+                </div>
+                <img src="../images/guide/guide_pc_step03@2x.png" alt="음원 인식 여부 확인 위해 영상 업로드 전 '비공개' 처리 후, 유튜브 스튜디오에서 업로드한 콘텐츠 상세보기 클릭 화면">
+              </li>
+
+              <li class="items">
+                <div class="text">
+                  <b class="step">STEP 4</b>
+                  <p class="par">우측 제한사항 부분에 “세부정보 보기” 클릭</p>
+                </div>
+                <img src="../images/guide/guide_pc_step04@2x.png" alt="우측 제한사항 부분에 “세부정보 보기” 클릭 화면">
+              </li>
+
+              <li class="items">
+                <div class="text">
+                  <b class="step">STEP 5</b>
+                  <p class="par">선택한 음원 정보가 정상적으로 노출이 되는지 확인</p>
+                </div>
+                <img src="../images/guide/guide_pc_step05@2x.png" alt="선택한 음원 정보가 정상적으로 노출이 되는지 확인 화면">
+              </li>
+
+            </ol>
+          </div>
+
+          <!-- 채널 인증 방법 -->
+          <div class="tab-panel" id="channel" role="tabpanel" aria-labelledby="channel-tab">
+          </div>
+
+          <!-- 앱 다운로드 -->
+          <div class="tab-panel" id="app" role="tabpanel" aria-labelledby="app-tab">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+
+</div>
+<!-- //wrap -->
+
+
+</body>
+
+<script>
+</script>
+
+</html>
+

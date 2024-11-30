@@ -1,0 +1,442 @@
+@use 'breakpoint' as *;
+
+// color
+$white-001:#fff;
+$white-002: rgba($white-001, 0.7);
+$white-003: rgba($white-001, 0.4);
+$white-004: #f5f5f5;
+$white-005: #f3f3f3;
+$white-006: #f6f6f6;
+$white-007: #f7f7f7;
+$white-008: #F7F8F9;
+$white-009: #F8F8F8;
+$white-010: #F8F9FF;
+$black-001: #000;
+$black-002: #1e1e1e;
+$black-003: #2c2c2c;
+$black-004: #303030;
+$black-005: #383838;
+$black-006: #444;
+$black-007: #434343;
+$gray-001: #757575;
+$gray-002: #b2b2b2;
+$gray-003: #b3b3b3;
+$gray-004: #d9d9d9;
+$gray-005: #e3e3e3;
+$gray-006: #ECEDF1;
+$gray-007: #EDEDFF;
+$gray-008: #5a5a5a;
+$gray-009: #EBEDF0;
+$gray-010: #ECEDEE;
+$gray-011: #DFE0E2;
+$skyblue-001: #F4FBFF;
+$skyblue-002: #F8F9FC;
+$skyblue-003: #59A8D4;
+$skyblue-004: #3786F1;
+$red-001: #CA3B35;
+$red-002: #B43B35;
+$red-003: #F4776A;
+$red-004: #A73530;
+$red-005: #F04452;
+$red-006: #FFE6E6;
+$red-007: #EE7171;
+$red-008: #D63D36;
+$red-009: #D70E0E;
+$red-010: #FF5151;
+$red-011: #EF4B3E;
+$red-012: #FEE9E9;
+$red-013: #FFE2E2;
+$red-014: #D53D36;
+$red-015: #EF4C3E;
+$red-016: #FF6250;
+$red-017: #BB3831;
+$red-018: #C62C20;
+$green-001: #85E0A3;
+$green-002: #4AA785;
+$green-003: #DEF8EE;
+$purple-001: #7174EE;
+
+$primary-color: $red-001;
+$body-default-color: $black-002;
+$body-secondary-color: $white-002;
+$body-tertiary-color: $gray-001;
+$landing-body-default-color: $white-005;
+$bg-dark-color: $black-002;
+$bg-light-color: $white-006;
+$bg-f3f3f3-color: $white-005;
+
+$box-shadow-01: 0 1px 4px rgba($black-001, 0.1);
+$box-shadow-005: 0 1px 4px rgba($black-001, 0.05);
+$box-shadow-008: 2px 0 4px rgba($black-001, 0.08);
+$box-shadow-012: 0 1px 8px rgba($black-001, 0.12);
+
+$success-color: $green-001;
+$fail-color: $red-003;
+$change-up-color: $red-010;
+$change-down-color: $skyblue-004;
+
+$desktop-admin-gnb-division-color: $black-006;
+$desktop-admin-gnb-bg-color: $black-002;
+$desktop-admin-gnb-text-color: $white-002;
+$mobile-admin-gnb-bg-color: $black-002;
+$mobile-admin-gnb-text-color: $white-003;
+$admin-gnb-text-active-color: $white-001;
+
+$admin-list-hover-bg-color: $white-004;
+$admin-list-unread-bg-color: $skyblue-001;
+
+$table-header-text-color: $body-tertiary-color;
+$card-box-cell-title-text-color: $gray-008;
+
+$tooltip-bg-color: $white-001;
+$tooltip-border-color: $gray-004;
+$tooltip-text-color: $black-001;
+
+$tab-line-color: $white-005;
+
+$chart-tooltip-bg-color: rgba($white-001, 0.96);
+
+// font
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-extrabold: 800;
+
+$font-body-size: 16;
+$mobile-font-body-size: 14;
+
+$main-font-style: "Pretendard Variable", Pretendard;
+
+// space
+$desktop-member-side-space: 48;
+$member-mobile-side-space: 28;
+
+$modal-out-side-space: $member-mobile-side-space;
+
+$admin-nav-side-space: 24;
+$admin-body-header-side-space: 28;
+$admin-body-content-side-space: 48;
+$admin-list-side-space: 16;
+$desktop-admin-body-content-top-space: 28;
+$desktop-admin-body-content-bottom-space: 78; // 98 - 20
+$mobile-admin-body-content-top-space: 16;
+$mobile-admin-body-content-bottom-space: 60;
+
+$mobile-common-side-space: 16;
+
+$input-inner-side-space: 16;
+$selectbox-inner-side-space: 12;
+
+$card-table-header-height: 48;
+$card-table-cell-side-space: 6;
+$card-table-exception-side-space: 32;
+$table-cell-vertical-space: 12;
+$card-box-bottom-gap-space: 16;
+$card-box-space: 16;
+$data-box-gap-space: 16;
+$data-unit-gap-space: 6;
+
+$desktop-data-box-side-space: 24;
+$desktop-data-box-vertical-space: 28;
+$mobile-data-box-side-space: 16;
+$mobile-data-box-vertical-space: $mobile-data-box-side-space;
+
+$desktop-board-box-bottom-gap-space: 24;
+$mobile-board-box-bottom-gap-space: 24;
+$desktop-board-box-vertical-space: 32;
+$mobile-board-box-vertical-space: 24;
+$desktop-board-box-side-space: 32;
+$mobile-board-box-side-space: 16;
+
+$chart-label-horizon-gap-space: 32;
+
+$desktop-btn-top-side-space: 24;
+$mobile-btn-top-side-space: 16;
+
+$tab-content-top-space: 16;
+
+$filters-group-bottom-space: 16;
+
+$desktop-accordion-vertical-space: 12;
+// $mobile-accordion-vertical-space: 16;
+$desktop-accordion-side-space: 32;
+$mobile-accordion-side-space: 12;
+
+$desktop-music-player-side-space: 48;
+$mobile-music-player-side-space: 10;
+
+$desktop-landing-section-side-space: 150;
+
+
+// layout
+$member-header-height: 88;
+$desktop-admin-header-height: 72;
+$mobile-admin-header-height: 48;
+$mobile-admin-gnb-height: 58;
+
+$desktop-admin-gnb-width: 276;
+$laptop-admin-gnb-width: 230;
+
+$desktop-notice-box-height: 40;
+$mobile-notice-box-height: 56;
+$notice-paging-bullet-width: 24;
+
+$desktop-music-player-height: 88;
+$mobile-music-player-height: 58;
+
+$desktop-landing-header-height: 94;
+$mobile-landing-header-height: 60;
+
+$mobile-min-height: 640; // mobile 해상도 최소 높이 : 640
+
+
+// size
+$nav-profile-img-size: 40;
+$table-profile-img-size: 46;
+
+
+// z-index
+$board-header-zindex: 99;
+$landing-header-zindex: 99;
+$tooltip-zindex: 10;
+$music-player-zindex: 99;
+
+
+// layout Theme
+:root {
+  --admin-header-height: #{$desktop-admin-header-height};
+  --admin-gnb-width: #{$desktop-admin-gnb-width};
+  --admin-gnb-height: #{$mobile-admin-gnb-height};
+
+  --card-table-header-height: #{$card-table-header-height};
+  --profile-img-size: #{$table-profile-img-size};
+
+  --btn-top-side-space: #{$desktop-btn-top-side-space};
+  --admin-body-content-top-space: #{$desktop-admin-body-content-top-space};
+  --admin-body-content-bottom-space: #{$desktop-admin-body-content-bottom-space};
+
+  --data-box-side-space: #{$desktop-data-box-side-space};
+  --data-box-vertical-space: #{$desktop-data-box-vertical-space};
+  --main-data-box-scroll-space: 10;
+  --board-box-bottom-gap-space: #{$desktop-board-box-bottom-gap-space};
+  --board-box-vertical-space: #{$desktop-board-box-vertical-space};
+  --board-box-side-space: #{$desktop-board-box-side-space};
+
+
+  --tooltip-bg-color: #{$tooltip-bg-color};
+  --tooltip-border-color: #{$tooltip-border-color};
+  --tooltip-text-color: #{$tooltip-text-color};
+
+  --modal-default-width: 420;
+  --modal-body-all-space: 24;
+  --modal-title-bottom-space: 12;
+
+  --chart-label-horizon-gap-space: #{$chart-label-horizon-gap-space};
+
+  --accordion-vertical-space: #{$desktop-accordion-vertical-space};
+  --accordion-side-space: #{$desktop-accordion-side-space};
+
+  --notice-box-height: #{$desktop-notice-box-height};
+  
+  --input-switch-width: 48;
+
+  --track-list-side-space: 30;
+
+
+  --header-zindex: #{$board-header-zindex};
+  --tooltip-zindex: #{$tooltip-zindex};
+
+  --music-player-height: #{$desktop-music-player-height};
+  --music-player-side-space: #{$desktop-music-player-side-space};
+
+
+  --landing-header-height: #{$desktop-landing-header-height};
+  --landing-section-side-space: #{$desktop-landing-section-side-space};
+
+  @include laptop {
+    --admin-gnb-width: #{$laptop-admin-gnb-width};
+  }
+  
+  @include tablet {
+    --admin-header-height: #{$mobile-admin-header-height};
+    --btn-top-side-space: #{$mobile-btn-top-side-space};
+    --admin-body-content-top-space: #{$mobile-admin-body-content-top-space};
+    --admin-body-content-bottom-space: #{$mobile-admin-body-content-bottom-space};
+    --data-box-side-space: #{$mobile-data-box-side-space};
+    --data-box-vertical-space: #{$mobile-data-box-vertical-space};
+    --notice-box-height: #{$mobile-notice-box-height};
+    --board-box-bottom-gap-space: #{$mobile-board-box-bottom-gap-space};
+    --board-box-vertical-space: #{$mobile-board-box-vertical-space};
+    --board-box-side-space: #{$mobile-board-box-side-space};
+    --accordion-side-space: #{$mobile-accordion-side-space};
+    --track-list-side-space: 0;
+    --music-player-height: #{$mobile-music-player-height};
+    --music-player-side-space: #{$mobile-music-player-side-space};
+    --landing-header-height: #{$mobile-landing-header-height};
+    --landing-section-side-space: #{$mobile-common-side-space};
+  }
+  
+}
+
+nav,
+#aside {
+  --profile-img-size: #{$nav-profile-img-size};
+}
+
+// font Theme
+:root {
+  --card-table-body-font-size: #{$font-body-size};
+  --modal-title-font-size: 20;
+  --data-box-title-font-size: 16;
+  --data-box-ratio-font-size: 16;
+  --data-box-value-font-size: 24;
+
+  @include mobile {
+    --card-table-body-font-size: #{$mobile-font-body-size};
+  }
+}
+
+// style Theme 
+:root {
+  --input-radius: 8;
+  --modal-body-radius: 8;
+  --card-box-radius: 16;
+  --button-radius: 8;
+  --data-box-radius: var(--card-box-radius);
+  --chart-tooltip-radius: 8;
+  --accordion-radius: var(--card-box-radius);
+}
+
+// Colors Theme
+:root {
+  --admin-gnb-text-color: #{$desktop-admin-gnb-text-color};
+  --admin-gnb-text-active-color: #{$admin-gnb-text-active-color};
+
+  --input-text-default-color: #{$black-002};
+  --input-text-disable-color: #{$gray-003};
+  --input-border-color: #{$gray-004};
+  --input-border-focus-color: #{$black-004};
+  --input-bg-default-color: #{$white-001};
+  --input-bg-disable-color: #{$white-004};
+  --input-placeholder-color: #{$gray-003};
+  --input-choice-default-color: #{$gray-001};
+  --input-choice-checked-color: #{$black-003};
+
+  --selectbox-border-color: #{$black-003};
+
+  --modal-border-color: #{$black-006};
+  --modal-bg-color: #{$black-002};
+  --modal-body-color: #{$white-001};
+
+  --scrollbar-light-color: #{$gray-004};
+  --scrollbar-dark-color: #{$gray-001};
+
+  --card-box-shadow: #{$box-shadow-005};
+  --tooltip-box-shadow: #{$box-shadow-01};
+  --data-box-shadow: #{$box-shadow-01};
+  --chart-tooltip-box-shadow: #{$box-shadow-012};
+
+  --admin-gnb-bg-color: #{$desktop-admin-gnb-bg-color};
+
+  --btn-confirm-bg-color: #{$black-003};
+  --btn-confirm-text-color: #{$white-004};
+  --btn-confirm-disabled-bg-color: #{$gray-002}; // 확정시 반영 예정
+
+  --table-row-border-color: #{$gray-006};
+  --data-box-border-color: #{$gray-006};
+
+  --chart-tooltip-bg-color: #{$chart-tooltip-bg-color};
+
+  --accordion-border-color: #{$gray-006};
+
+  --track-list-gradation-color: 255, 255, 255;
+  --track-list-dim-color: rgba(0, 0, 0, 0.3);
+
+  --music-player-bar-bg-color: #{rgba(#702F3D, 0.68)};
+  --music-player-bar-controler-color: #{$red-008};
+
+  --landing-body-bg-color: #171717;
+  --landing-header-bg-color: #{$red-001};
+
+  @include tablet {
+    --admin-gnb-text-color: #{$mobile-admin-gnb-text-color};
+    --admin-gnb-bg-color: #{$mobile-admin-gnb-bg-color};
+  }
+}
+
+// player bar
+.volume {
+  --music-player-bar-bg-color: #{$gray-001};
+  --music-player-bar-controler-color: #{$white-001};
+}
+
+// login || join
+.member-container {
+  --input-text-default-color: #{$white-001};
+  --input-border-color: #{$black-006};
+  --input-border-focus-color: #{$white-001};
+  --input-bg-default-color: #{$black-002};
+  --input-bg-disable-color: #{$black-005};
+  --input-placeholder-color: #{$white-003};
+  --input-choice-default-color: #{$gray-003};
+  --input-choice-checked-color: #{$white-001};
+}
+
+.bg-dark {
+  --btn-confirm-bg-color: #{$white-004};
+  --btn-confirm-text-color: #{$body-default-color};
+  --btn-confirm-disabled-bg-color: #{$black-004};
+}
+
+// modal
+.board-container,
+.landing {
+  --modal-border-color: #{$gray-004};
+  --modal-bg-color: #{$white-001};
+  --modal-body-color: #{$black-002};
+}
+.modal-white {
+  --modal-border-color: #{$gray-004};
+  --modal-bg-color: #{$white-001};
+  --modal-body-color: #{$black-002};
+
+  --modal-default-width: 520;
+  --modal-body-radius: 24;
+}
+.modal-sheet {
+  --modal-body-all-space: 32;
+  --modal-title-bottom-space: 16;
+
+  @include tabletMin {
+    --modal-title-font-size: 24;
+  }
+}
+
+
+$desktop-full-vw-con: 1920;
+$desktop-header-vw-con: 1728;
+$desktop-vw-con: 1520;
+$laptop-vw-con: 1024;
+$tablet-vw-con: 768;
+$mobile-vw-con: 375;
+
+$mobile-vh-con: 812;
+
+$member-con: 460;
+
+$landing-section-max-width: 1520;
+
+// unit
+:root {
+  --vw-size: #{$desktop-vw-con};
+}
+// landing 
+.landing {
+  header {
+    --vw-size: #{$desktop-header-vw-con};
+  }
+  
+  --input-bg-default-color: rgba(152, 152, 152, 0.25);
+}
