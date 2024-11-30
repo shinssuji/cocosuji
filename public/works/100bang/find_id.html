@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name=”format-detection” content=”telephone=no”/>
+    <title>백방</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/side.css">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+
+<body>
+
+<div id="wrap">
+	<header>
+        <h1 class="logo">
+            <a href="index.html" class="gmarket">백방</a>
+        </h1>
+        <form class="search">
+            <input type="text" placeholder="어떤 차를 찾으세요?">
+            <button type="submit"><i class="ico ico-search">검색하기</i></button>
+        </form>
+        <button type="button" class="menu"><i class="ico ico-menu">메뉴</i></button>
+        <!-- 검색 박스 -->
+        <div class="search-box">
+            <a href="tel:02-123-4567"><i class="ico ico-phone"></i>전화상담 연결하기</a>
+            <a href="#a"><i class="ico ico-kakao-right"></i>카톡상담 연결하기</a>
+            <a href="index.html">이벤트 보러가기</a>
+            <a href="estimate_list.html">100인견적으로 이동</a>
+            <a href="estimate_banner.html">배너형 견적창으로 이동</a>
+        </div>
+        <!-- //검색 박스 -->
+    </header>
+    <!-- //header -->
+
+    <nav id="nav" class="gnb">
+        <div class="gnb-cont">
+            <button type="button" title="어사이드 메뉴 닫기" class="btn-close gmarket">X</button>
+            <div class="gnb-btn">
+                <a href="login.html">로그인</a>
+                <a href="signup_terms.html">회원가입</a>
+            </div>
+            <ul class="menu-list">
+                <li><a href="estimate_banner.html">내 견적함 <i class="ico ico-estimate"></i></a></li>
+                <li><a href="index.html">즉시 상담 <i class="ico ico-center"></i></a></li>
+                <li><a href="index.html">백명견적 신청 <i class="ico ico-apply"></i></a></li>
+                <li>
+                    <a href="chatBefore1.html" target="_blank">
+                    일당백 AI채팅 <i class="ico ico-ai"></i>
+                    </a>
+                </li>
+                <li><a href="index.html">장기렌트 가이드 <i class="ico ico-guide"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- //nav -->
+
+	<div id="container" class="container">
+		<div class="find_id_pw">
+			<div class="header_find_id_pw display_flex_center">
+				<button type="button" class="btn_go_back_from_idpw" id="btn_go_back_from_idpw">
+					<img src="images/common/icon_arrow_left.png" alt="">
+				</button>
+				<h1>아이디 / 비밀번호 찾기</h1>
+			</div>
+			<main class="main_find_id_pw id_priority">
+				<section class="section_find_id_pw">
+					<div class="tab_wrapper">
+						<button type="button" class="tab_find_id active">아이디 찾기</button>
+						<button type="button" class="tab_find_pw">비밀번호 찾기</button>
+					</div>
+		
+					<div class="id_pw_table_wrapper">
+						<table>
+							<tbody>
+								<tr>
+									<th scope="row" class="classify_user">회원구분</th>
+									<td>
+										<select id="searchType" name="searchType">
+											<option value="indi" selected="selected">
+												개인 회원
+											</option>
+											<option value="indibuis">개인 사업자 회원</option>
+											<option value="corp">법인 사업자 회원</option>
+											<option value="fore">외국인 회원</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">인증방법</th>
+									<td>
+										<!--
+										<label for="check_method_email" style="white-space: nowrap">
+											<input id="check_method_email" class="check_method" name="check_method" value="email" type="radio" checked="checked" />
+											<span id="search_type_mobile_lable" style="display: inline">이메일</span>
+										</label>
+										-->
+										<label for="check_method_phone" style="white-space: nowrap">
+											<input id="check_method_phone" class="check_method" name="check_method" value="phone" type="radio">
+											<span id="search_type_mobile_lable" style="display: inline">휴대폰번호</span>
+										</label>
+									</td>
+								</tr>
+								<tr id="name_view" class="name">
+									<th scope="row" id="name_lable" class="auth_method">이름</th>
+									<td>
+										<input name="mb_name" id="mb_name" class="enter_name" placeholder="이름입력" value="" type="text">
+									</td>
+								</tr>
+								<!--
+								<tr id="email_view" class="email">
+									<th scope="row" class="auth_method">이메일</th>
+									<td>
+										<input name="mb_email" id="mb_email" class="enter_email" placeholder="이메일 입력" value="" type="email" />
+									</td>
+								</tr>
+								-->
+								<tr id="mobile_view" class="mobile" style="display: none">
+									<th scope="row" class="auth_method">휴대폰 번호</th>
+									<td>
+										<input name="mb_mobile" id="mb_mobile" class="enter_mobile" placeholder="휴대폰번호 입력(- 제외)" value="" type="number">
+									</td>
+								</tr>
+		
+								<tr id="id_search_view" class="mobile" style="display: none">
+									<th scope="row" class="auth_method">회원ID</th>
+									<td>
+										<div id="search_id" class="enter_name"></div>
+									</td>
+								</tr>
+		
+								<tr id="pw_modify_view_1" class="name" style="display: none">
+									<th scope="row" class="auth_method">비밀번호</th>
+									<td>
+										<input type="password" name="mb_password" id="reg_mb_password" class="enter_name" placeholder="변경할 비밀번호를 입력해 주세요" maxlength="20" style="color: #0c0c0c; font-family: 'NanumSquare';">
+									</td>
+								</tr>
+		
+								<tr id="pw_modify_view_2" class="name" style="display: none">
+									<th scope="row" class="auth_method">비밀번호 확인</th>
+									<td>
+										<input type="password" name="mb_password_re" id="reg_mb_password_re" class="enter_name" placeholder="변경할 비밀번호를 동일하게 입력해 주세요" maxlength="20" style="color: #0c0c0c; font-family: 'NanumSquare';">
+									</td>
+								</tr>
+		
+								<input type="hidden" name="mb_no" id="mb_no" value="">
+		
+							</tbody>
+						</table>
+					</div>
+		
+					<div class="submit_button_wrapper">
+						<button type="button" class="btn_submit_info" id="add_reg">확인</button>
+					</div>
+		
+				</section>
+			</main>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$(function () {
+		$(".id_pw_table_wrapper table td input.check_method").on("change", function () {
+			if ( $(".id_pw_table_wrapper table td input.check_method:checked" ).val() === "phone") {
+				$("#mobile_view").css("display", "table-row")
+				$("#email_view").css("display", "none")
+			} else {
+				$("#mobile_view").css("display", "none")
+				$("#email_view").css("display", "table-row")
+			}
+		})
+	})
+
+	// 탭 클릭시
+	$(".tab_find_id").on("click", function () {
+		$(".tab_find_id").addClass("active")
+		$(".tab_find_pw").removeClass("active")
+	})
+	$(".tab_find_pw").on("click", function () {
+		$(".tab_find_id").removeClass("active")
+		$(".tab_find_pw").addClass("active")
+	})
+
+	// 뒤로가기 버튼 클릭 시 뒤로 이동
+	$("#btn_go_back_from_idpw").on("click", function () {
+		history.back()
+	})
+
+	//버튼 클릭시 페이지 이동
+	$(".btn_submit_info").on("click", function () {
+		
+		var email_view_style = $('#email_view').css("display");
+
+		// 아이디 찾기 or 비밀번호 찾기 Tab 구분
+		if($(".tab_find_id").hasClass("active") === true) {
+			var searchType = "ID";
+			//console.log('아이디 찾기!');
+		}else{
+			var searchType = "PASSWORD";
+			//console.log('비밀번호 찾기!');
+		}
+
+		// 이름 값 체크
+		var mb_name = $('#mb_name').val();
+		if(mb_name == ''){
+			alert('이름을 입력해 주세요');
+			$("#mb_name").focus();
+			return false;
+		}
+		
+		// 이메일 또는 휴대폰번호 체크
+		if(email_view_style == 'table-row'){
+			// 이메일 값 체크
+			var mb_email = $('#mb_email').val();
+			if(mb_email == ''){
+				alert('이메일을 입력해 주세요');
+				$("#mb_email").focus();
+				return false;
+			}
+		}else{
+			// 휴대폰번호 값 체크
+			var mb_mobile = $('#mb_mobile').val();
+			if(mb_mobile == ''){
+				alert('휴대폰번호를 입력해 주세요');
+				$("#mb_mobile").focus();
+				return false;
+			}
+		}
+
+		
+		var reg_mb_password = $('#reg_mb_password').val();
+		var reg_mb_password_re = $('#reg_mb_password_re').val();
+		
+		var pw_modify_view_1 = $("#pw_modify_view_1").css("display");
+		var pw_modify_view_2 = $("#pw_modify_view_2").css("display");
+
+		//console.log('pw_modify_view_1 : '+pw_modify_view_1);
+		//console.log('pw_modify_view_2 : '+pw_modify_view_2);
+		
+		// 비밀번호 찾기의 경우
+		if(searchType == 'PASSWORD' && pw_modify_view_1 == 'table-row' && pw_modify_view_2 == 'table-row'){
+		
+			if (reg_mb_password.length < 3) {
+				alert("비밀번호를 3글자 이상 입력해주세요.");
+				$("#reg_mb_password").focus();
+				return false;
+			}
+
+			if (reg_mb_password != reg_mb_password_re) {
+				alert("비밀번호가 같지 않습니다.");
+				$("#reg_mb_password_re").focus();
+				return false;
+			}
+
+			if (reg_mb_password.length > 0) {
+				if (reg_mb_password_re.length < 3) {
+					alert("비밀번호를 3글자 이상 입력해주세요.");
+					$("#reg_mb_password_re").focus();
+					return false;
+				}
+			}
+
+		}
+		
+		
+		if(!reg_mb_password && !reg_mb_password_re){
+			// ID 및 PASSWORD 조회
+			$.post("find_member_check.php",{ mb_name: mb_name, mb_email:mb_email, mb_mobile:mb_mobile, searchType:searchType },function(data){
+				//console.log('msg1 : '+data.msg);
+				if(data.msg == 'success'){
+												if(data.searchType == 'ID'){
+						$("#id_search_view").css("display", "table-row");
+						$('#search_id').html(data.mb_id);
+						$('#mb_no').val(data.mb_no);
+					}
+
+					if(data.searchType == 'PASSWORD'){
+						$("#pw_modify_view_1").css("display", "table-row");
+						$("#pw_modify_view_2").css("display", "table-row");
+						$('#mb_no').val(data.mb_no);
+					}
+					
+				}else{
+					if(data.searchType == 'ID'){
+						alert('이름 또는 휴대폰번호 정보가 틀립니다.');
+					}else{
+						alert('이름 또는 휴대폰번호 정보가 틀립니다.');
+					}
+					location.reload();
+				}
+			}, "JSON");
+
+		}else{
+
+			var mb_no = $('#mb_no').val();
+
+			// PASSWORD 수정
+			$.post("find_member_password_modify.php",{ mb_no: mb_no, mb_password:reg_mb_password, mb_password_re:reg_mb_password_re, searchType:searchType },function(data){
+				//console.log('msg2 : '+data.msg);
+				if(data.msg == 'success'){
+					
+					alert('비밀번호 수정이 완료되었습니다.');
+					location.reload();
+					
+				}else{
+					if(data.searchType == 'ID'){
+						alert('이름 또는 휴대폰번호 정보가 틀립니다!');
+					}else{
+						alert('이름 또는 휴대폰번호 정보가 틀립니다!');
+					}
+					location.reload();
+				}
+			}, "JSON");
+
+		}
+		
+		// window.location.href = "./step2.html"
+	})
+</script>
+
+</body>
+
+</html>
+

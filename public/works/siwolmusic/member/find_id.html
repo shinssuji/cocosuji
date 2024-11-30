@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+  <meta name="format-detection” content="telephone=no"/>
+  <title>아이디 찾기</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="../styles/css/style.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../scripts/jquery-3.6.0.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div id="skipNav">
+  <a href="#header">헤더 바로가기</a>
+  <a href="#container">본문 바로가기</a>
+</div>
+
+<div id="wrap" class="bg-dark">
+  <!-- # container -->
+  <section id="container" class="container member-container">
+    <div id="header" role="heading" class="member-header">
+      <a href="../index.html" class="logo"><h1 class="sr-only">시월뮤직</h1></a>
+    </div>
+    
+    <div class="member-wrap">
+      <div class="form-box text-center">
+        <h2 class="title-main">아이디 찾기</h2>
+      </div>
+
+      <form action="" method="" class="form-wrap">
+        <div class="form-choice">
+          <input type="radio" id="email" name="findId" value="" checked />
+          <label for="email" class="choice-text type-radio">이메일로 찾기</label>
+        </div>
+        <div class="form-group">
+          <label for="email" class="sr-only" aria-label="required">이메일 입력</label>
+          <input type="email" id="email" class="form-control" placeholder="가입 시 등록한 이메일을 입력해주세요." title="가입 시 등록한 이메일을 입력해주세요." aria-label="가입 시 등록한 이메일을 입력해주세요." required />
+        </div>
+
+        <div class="or">또는</div>
+        
+        <div class="form-choice">
+          <input type="radio" id="certify" name="findId" value="" />
+          <label for="certify" class="choice-text type-radio">본인인증으로 찾기</label>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="sr-only">휴대폰으로 인증</label>
+          <button type="button" id="phone" class="btn btn-lg btn-form">휴대폰 인증</button>
+        </div>
+
+        <div class="btn-group mt-24">
+          <button type="submit" class="btn btn-lg btn-confirm">확인</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</div>
+<!-- //wrap -->
+
+
+</body>
+
+</html>
+

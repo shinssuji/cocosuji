@@ -1,0 +1,17 @@
+<svg width="55" height="55" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M29.333 33.458a5.958 5.958 0 1 1-11.916 0 5.958 5.958 0 0 1 11.916 0z" id="78iai0gsra"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path opacity=".5" d="M0 0h55v55H0z"/>
+        <path stroke="#FEFEFE" stroke-width="2" d="M36.381 4.583H11v40.34h33.917V13.77z"/>
+        <path stroke="#FFF" stroke-width="2" d="M35.75 4.583v9.187h8.535"/>
+        <path stroke="#FFF" stroke-width="2" fill="#1999e2" d="m30.357 40.386-.085 11.055 4.585-3.717 4.581 3.684-.029-11.075"/>
+        <g transform="translate(11 4.583)">
+            <use fill="#D8D8D8" xlink:href="#78iai0gsra"/>
+            <use stroke="#FEFEFE" stroke-width="2" fill="#1999e2" xlink:href="#78iai0gsra"/>
+        </g>
+        <path d="M36.667 38.042a2.292 2.292 0 1 1-4.584 0 2.292 2.292 0 0 1 4.584 0z" stroke="#FEFEFE" stroke-width="2"/>
+        <path fill="#FFF" d="M15.583 10.083h15.583v1.833H15.583zM15.583 15.583h15.583v1.833H15.583zM15.583 21.083h24.75v1.833h-24.75zM15.583 26.583h24.75v1.833h-24.75z"/>
+    </g>
+</svg>

@@ -1,6 +1,4 @@
-# Intro
-##### < #####cocosj.dothome.co.kr >
-
+# cocosj.dothome.co.kr
 신수지 포트폴리오 URL입니다.
 
 각 프로젝트 이미지는 지속적으로 업데이트 예정입니다.
