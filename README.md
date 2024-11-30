@@ -1,4 +1,4 @@
-# [#신수지 포트폴리오 : cocosj.dothome.co.kr](https://cocosj.dothome.co.kr)
+# [#신수지 포트폴리오 : cocosj.dothome.co.kr](http://cocosj.dothome.co.kr)
 <br>
 포트폴리오 URL입니다.<br>
 프로젝트 썸네일 이미지는 추가적으로 업데이트 될 예정입니다.
