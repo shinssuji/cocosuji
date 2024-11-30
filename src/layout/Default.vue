@@ -1,11 +1,11 @@
 <template>
   <section id="wrap">
-    <!-- skip navigation
-    <div id="skip-nav">
+    <!-- skip navigation -->
+    <!-- <div id="skip-nav">
       <a href="#workList">작업물 리스트 바로가기</a>
       <a href="#container">메인 컨텐츠 바로가기</a>
-    </div>
-    -->
+    </div> -->
+    
     <Header :darkMode="darkMode" :scrollDir="scrollDir" />
     <section id="container" ref="container">
       <transition name="routing-fade">

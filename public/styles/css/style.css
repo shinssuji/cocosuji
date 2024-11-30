@@ -709,6 +709,7 @@ footer p.copyright {
   font-size: clamp(32px, 5.997vw, 10.4rem);
   color: #999;
   line-height: 1.1538;
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 @media screen and (max-width: 1024px) {

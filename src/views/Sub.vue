@@ -22,9 +22,6 @@
 <script>
 import { workContent } from '@/data/workData.js';
 export default {
-  // props: {
-  //   scrollH: Number
-  // },
   data() {
     return {
       workContent,

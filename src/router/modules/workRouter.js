@@ -29,11 +29,11 @@ const workRouter = {
       name: "udid",
       component: () => import("@/views/detail/DetailCon.vue"),
     },
-    { // 쇼비즈
-      path: "/detail/shobiz",
-      name: "shobiz",
-      component: () => import("@/views/detail/DetailCon.vue"),
-    },
+    // { // 쇼비즈
+    //   path: "/detail/shobiz",
+    //   name: "shobiz",
+    //   component: () => import("@/views/detail/DetailCon.vue"),
+    // },
 
 
     { // 브랜디액션
@@ -46,19 +46,24 @@ const workRouter = {
       name: "singsing",
       component: () => import("@/views/detail/DetailCon.vue"),
     },
-    { // 천안문화도시
-      path: "/detail/cheonan",
-      name: "cheonan",
-      component: () => import("@/views/detail/DetailCon.vue"),
-    },
-    { // 수빈아빠 타타타 - 포함? 삭제? 보류중
-      path: "/detail/tatata",
-      name: "tatata",
-      component: () => import("@/views/detail/DetailCon.vue"),
-    },
+    // { // 천안문화도시
+    //   path: "/detail/cheonan",
+    //   name: "cheonan",
+    //   component: () => import("@/views/detail/DetailCon.vue"),
+    // },
+    // { // 수빈아빠 타타타 - 포함? 삭제? 보류중
+    //   path: "/detail/tatata",
+    //   name: "tatata",
+    //   component: () => import("@/views/detail/DetailCon.vue"),
+    // },
     { // 블로그페이 서비스
       path: "/detail/blogpay",
       name: "blogpay",
+      component: () => import("@/views/detail/DetailCon.vue"),
+    },
+    { // 쇼비즈 무료 스킨 메인 타입
+      path: "/detail/shopskin",
+      name: "shopskin",
       component: () => import("@/views/detail/DetailCon.vue"),
     },
     
@@ -66,11 +71,6 @@ const workRouter = {
     { // 유캔싸인
       path: "/detail/ucansign",
       name: "ucansign",
-      component: () => import("@/views/detail/DetailCon.vue"),
-    },
-    { // 쇼비즈 어드민 - 포함? 삭제? 보류중
-      path: "/detail/shobizAdmin",
-      name: "shobizAdmin",
       component: () => import("@/views/detail/DetailCon.vue"),
     },
 

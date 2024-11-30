@@ -398,6 +398,7 @@
       font-size: clamp(32px, 5.997vw, rem(104));
       color: $gray-sub04;
       line-height: 1.1538;
+      text-transform: uppercase;
       transition: color 0.3s ease;
 
       @include tablet {
