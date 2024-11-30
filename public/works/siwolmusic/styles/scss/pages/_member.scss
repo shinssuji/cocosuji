@@ -32,6 +32,7 @@
   @include scroll($scroll-color: var(--scrollbar-dark-color));
 
   @include flex;
+  // min-height: 640px;
   min-height: #{$mobile-min-height}px;  
   padding-top: #{$member-header-height}px;
   background-color: $bg-dark-color;

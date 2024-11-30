@@ -19,6 +19,7 @@ body {
   color: $body-default-color;
   line-height: 1.42857143em;
   overflow-x: hidden;
+
 }
 
 input, select, textarea {
@@ -64,6 +65,10 @@ h1, h2, strong, b {
 #skipNav a {
   @include blind;
 }
+
+// .row::after {
+//   @include clearfix;
+// }
 
 .block {
   display: block;
@@ -683,5 +688,6 @@ h1, h2, strong, b {
     }
   }
 }
+
 
 

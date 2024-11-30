@@ -32,6 +32,12 @@
     }
 
     .modal & {
+      // &:first-of-type  {
+      //   margin-top: 0;
+      // }
+      // &:last-of-type {
+      //   margin-bottom: 0;
+      // }
       &:first-child {
         margin-top: 0;
       }
@@ -77,10 +83,12 @@
     padding: 16px #{$input-inner-side-space}px;
     border: 1px solid var(--input-border-color);
     background-color: var(--input-bg-default-color);
+    // font-size: #{$font-body-size}px;
     outline: 0;
     transition: 0.2s;
 
-    &[type="password"] {
+    &[type="password"],
+    &[type="text"] {
       padding-right: 48px;
 
       + button[class*="icon-view"] {
@@ -460,6 +468,14 @@ select.form-control,
   color: var(--input-choice-default-color);
   font-weight: $font-medium;
   text-align: center;
+
+  // .form-choice:first-child & {
+  //   @include radius(calc(var(--input-radius) * 1px) 0 0 calc(var(--input-radius) * 1px));
+  // }
+
+  // .form-choice:last-child & {
+  //   @include radius(0 calc(var(--input-radius) * 1px) calc(var(--input-radius) * 1px) 0);
+  // }
 
   &::before {
     @include radius(calc(var(--input-radius) * 1px));

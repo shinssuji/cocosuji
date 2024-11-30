@@ -19,7 +19,8 @@
   }
 
   .landing & {
-    @include size(rem(260), rem(26));
+    // @include size(rem(260), rem(26));
+    @include size(rem(208), rem(21));
     @include bg($name: 'logo_landing.svg');
 
     min-width: 182px;

@@ -527,6 +527,7 @@ $closeTypes: (
 @mixin data-box-style {
   @include radius(calc(var(--data-box-radius) * 1px));
 
+  // padding: calc(var(--data-box-vertical-space) * 1px) calc(var(--data-box-side-space) * 1px);
   border: 1px solid var(--data-box-border-color);
   background-color: $white-001;
 }
