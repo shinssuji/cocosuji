@@ -86,7 +86,7 @@ body {
         --detail-inner-padding: var(--inner-padding);
         --main-inner-top-padding: #{rem(100)};
         --floating-position-right: #{rem(30)};
-        --floating-position-bottom: #{rem(80)};
+        --floating-position-bottom: #{rem(50)};
     }
     @include mobile {
         --header-height: #{rem(60)};

@@ -11,13 +11,18 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [basicRouter, workRouter],
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
+    // 저장된 스크롤 위치가 있다면 해당 위치로 이동
     if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
+      return savedPosition;
     }
-  }
+
+    // 스크롤을 즉시 맨 위로 이동
+    window.scrollTo(0, 0);
+
+    // Vue Router의 기본 스크롤 동작 방지
+    return false;
+  },
 });
 
 router.afterEach(() => {

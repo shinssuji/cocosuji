@@ -31,7 +31,7 @@ export const workContent = {
     },
     title: '시월뮤직 음원 \n서비스 구축',
     do: '퍼블리싱 / 반응형',
-    url: 'http://cocosj.dothome.co.kr/siwolmusic/guide/directory.html',
+    url: './siwolmusic/guide/directory.html',
     subtit: '음원 제작부터 수익 정산까지 가능한 플랫폼',
     perform: '시월뮤직은 음원 제작과 수익 정산을 제공하는 플랫폼으로 외주 요청을 받아 진행한 업무입니다. 이 프로젝트는 랜딩, 회원가입·로그인, 관리자 페이지로 구성되어 있으며 모두 반응형(모바일은 하이브리드 앱 환경)으로 작업했습니다. 일정이 촉박하여 데드라인에 맞추기 위해 최선을 다했던 프로젝트입니다. 특히 관리자 페이지 작업 시 디자인 시스템을 바탕으로 HTML 구조와 스타일 코드를 효율적으로 작성하기 위해 노력했습니다.',
     info: [
@@ -51,7 +51,7 @@ export const workContent = {
     },
     title: '디지털 마케팅 \n대행사 랜딩',
     do: '퍼블리싱 / 반응형',
-    url: 'http://cocosj.dothome.co.kr/brandyaction',
+    url: './brandyaction',
     subtit: '브랜디액션의 디지털 마케팅 대행 서비스',
     perform: '브랜디액션은 디지털 마케팅 대행 서비스를 제공하는 업체입니다. 이 프로젝트는 브랜디액션에서 제공하는 각 분야의 서비스를 소개하는 랜딩 페이지입니다. 외주 요청을 받아 진행한 업무로 병원과 마케팅 서비스가 여기에 해당됩니다. 각 서비스는 독립된 프로젝트로 진행하였고, 추후 유지 보수 측면에서 좋지 않다고 판단하여 이를 개선하기 위해 전체 디렉토리 구조 및 스타일시트 공통화 작업을 진행하였습니다.',
     info: [
@@ -71,7 +71,7 @@ export const workContent = {
     },
     title: '페이앱 홈페이지 \n리뉴얼',
     do: 'UI / 퍼블리싱 / 웹 / 모바일',
-    url: 'http://cocosj.dothome.co.kr/payapp/',
+    url: './payapp/',
     subtit: '온/오프라인 결제가 가능한 무료 통합 결제 솔루션',
     perform: '페이앱은 온/오프라인 어디서나 신용카드, 휴대폰 등으로 결제 받을 수 있는 무료 통합 결제 솔루션입니다. 기존에 오래 유지된 기업 홈페이지를 전면 개편한 프로젝트로 디자인 시스템 정의 후에 퍼블리싱 작업에 착수했습니다. 전체 레이아웃은 부트스트랩을 기반으로 한 클래스를 사용하여 마크업 하였고, scss로 유지보수 및 소스 관리에 용이하도록 작업했습니다. 다양한 동적 효과로 사용자의 이목을 끌고 요소에 집중할 수 있도록 구성하였습니다.',
     info: [
@@ -91,7 +91,7 @@ export const workContent = {
     },
     title: '유캔싸인 솔루션 \n구축',
     do: '퍼블리싱 / 반응형',
-    url: 'http://cocosj.dothome.co.kr/ucansign/guide/directory.html',
+    url: './ucansign/guide/directory.html',
     subtit: '효율적인 계약업무를 위한 전자서명 솔루션',
     perform: '유캔싸인은 직관적인 이용방법으로 간편함과 보안성을 동시에 제공하는 전자계약 서비스입니다. 일정이 촉박하여 데드라인에 맞추기 위해 최선을 다했던 프로젝트입니다. vue.js 환경에서 개발로 일부 화면이 구현된 상태에서 UI 및 퍼블리싱 작업을 진행하였습니다. 프레임워크 내에서 기존에 사용하는 템플릿의 스타일은 유지하며 추가되는 화면에 맞게 화면 구현을 위해 노력했습니다. 이 서비스는 반응형 관리자로 제작하여 사용자에게 어떠한 환경에도 구애받지 않는 동일한 경험을 전달합니다.',
     info: [
@@ -131,7 +131,7 @@ export const workContent = {
     },
     title: '백방 하이브리드앱 \n구축',
     do: '퍼블리싱 / 모바일',
-    url: 'http://cocosj.dothome.co.kr/100bang',
+    url: './100bang',
     subtit: '백명의 견적을 제공하는 장기렌트 견적 플랫폼',
     perform: '',
     info: [
@@ -171,7 +171,7 @@ export const workContent = {
     },
     title: '블로그페이 무료 스킨 메인 구축',
     do: 'UI / 퍼블리싱 / 반응형',
-    url: 'http://cocosj.dothome.co.kr/shopskins/type1/',
+    url: './shopskins/type1/',
     subtit: '블로그페이 무료 스킨',
     perform: '이 사이트는 블로그페이 서비스에서 무료로 제공하는 쇼핑몰 스킨 메인 페이지입니다. 사용자가 직접 편집할 수 있도록 제공하고자 했기 때문에 편집이 가능한 영역마다 모듈화되어 있으며, 분기된 파일로 구성되어 있습니다.',
     info: [
@@ -179,7 +179,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2019'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 80% · 디자인 100%'}
     ],
-    dark: true
+    dark: false
   },
 
   // SINGSINGSALAD

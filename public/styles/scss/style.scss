@@ -7,11 +7,21 @@
 
 /* ----------------------- COMMON */
 .btn-top {
-  @include size(min(13.889vw, rem(66)));
-  @include radius(50%);
   @include bg($filename: 'icon_gotop');
-  
   background-color: $white-main;
+}
+
+.btn-redline {
+  background-color: $white-main;
+  border: 2px solid $red-main;
+  font-weight: $font-medium;
+  color: $red-main;
+}
+
+.btn-black {
+  background-color: $black-sub01;
+  font-weight: $font-medium;
+  color: $white-main;
 }
 
 .floating-btns {
@@ -20,6 +30,16 @@
 
   opacity: 0;
   visibility: hidden;
+
+  button {
+    display: block;
+    @include size(min(13.889vw, rem(66)));
+    @include radius(50%);
+
+    + button {
+      margin-top: rem(15);
+    }
+  }
 
   &.is-show {
     opacity: 1;
@@ -30,7 +50,7 @@
     transition: opacity .4s linear,bottom .5s cubic-bezier(.545,.045,.355,1);
 
     &.hide {
-      bottom: calc(var(--floating-position-bottom) * -1);
+      bottom: calc((var(--floating-position-bottom) + rem(122) + rem(15)) * -1);
     }
   }
 
@@ -39,7 +59,7 @@
   }
 
   &.scr-down {
-    bottom: calc(var(--floating-position-bottom) * -1);
+    bottom: calc((var(--floating-position-bottom) + rem(122) + rem(15)) * -1);
   }
 }
 
@@ -493,10 +513,6 @@
   }
 }
 
-.KBdatahub .detail-intro::before {
-  @include bg-image($img: 'img_kbdatahub_intro', $format: 'png');
-}
-
 .detail-intro {
   position: relative;
   height: vh(100);
@@ -505,6 +521,8 @@
     content: "";
     display: block;
     height: vh(100);
+
+    @include bg-image($img: 'img_detail_sample_intro', $format: 'png');
     background-size: cover;
     background-attachment: fixed;
     background-position: center bottom;

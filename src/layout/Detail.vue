@@ -7,7 +7,7 @@
     </div>
     -->
     <section id="container">
-      <transition name="routing-fade" mode="out-in" appear>
+      <transition name="routing-fade" appear>
         <router-view :work="work" :darkMode="darkMode" />
       </transition>
     </section>

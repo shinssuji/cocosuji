@@ -8,7 +8,7 @@
     
     <Header :darkMode="darkMode" :scrollDir="scrollDir" />
     <section id="container" ref="container">
-      <transition name="routing-fade">
+      <transition name="routing-fade" appear>
         <router-view :scrollH="scrollH" />
       </transition>
 
@@ -16,6 +16,10 @@
         <button type="button" class="btn-ico btn-top" aria-label="페이지 상단으로 가기" @click="goToTop">
           <span class="blind">페이지 상단으로 가기</span>
         </button>
+
+        <template v-if="this.$router.currentRoute.path==='/main'">
+          <button type="button" class="btn-ico btn-redline" aria-label="Github로 이동하기" @click="newWindow('https://github.com/shinssuji/cocosuji/tree/master')">Github</button>
+        </template>
       </div>
     </section>
     <Footer v-if="!(this.$router.currentRoute.path==='/sub')" />
@@ -75,7 +79,7 @@ export default {
 
     goToTop() {
       window.scrollTo({top: 0, behavior: 'smooth'});
-    }
+    },
   }
 };
 </script>

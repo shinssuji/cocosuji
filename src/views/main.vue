@@ -24,13 +24,7 @@
       <section class="box" v-for="(box, index) in workLists" :key="index">
         <div class="item img" data-aos="fade-down" data-aos-anchor-placement="center-bottom">
           <img
-           :src="`../images/${box.img}@1x.png`" :alt="box.sub"
-           :srcset="
-           `../images/${box.img}@1x.png 1x` +
-           `../images/${box.img}@2x.png 2x` +
-           `../images/${box.img}@3x.png 3x`
-           "
-          />
+           :src="`../images/${box.img}@2x.png`" :alt="box.sub" />
         </div>
         <div class="item text" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <span class="s-tit">{{box.sub}}</span>
@@ -38,7 +32,7 @@
           <div class="tags">
             <span class="tag" v-for="(tag, i) in workLists[index].tag" :key="i">#{{tag}}</span>
           </div>
-          <button type="button" class="btn btn-black btn-view" @click="goToPage(box.link)">View Project</button>
+          <button type="button" class="btn btn-blackline btn-view" @click="goToPage(box.link)">View Project</button>
         </div>
       </section>
     </section>

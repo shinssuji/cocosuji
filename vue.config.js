@@ -4,13 +4,6 @@ module.exports = defineConfig({
   // publicPath: '/works',
   // 정적 자산 경로 설정
   assetsDir: 'assets',
-  
-  chainWebpack: config => {
-    config.plugin('copy').tap(([options]) => {
-      options[0].ignore.push('public/works')
-      return [options]
-    })
-  },
 
   // Webpack 설정 커스터마이징
   // chainWebpack: (config) => {

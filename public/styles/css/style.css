@@ -92,7 +92,7 @@ body {
     --detail-inner-padding: var(--inner-padding);
     --main-inner-top-padding: 10rem;
     --floating-position-right: 3rem;
-    --floating-position-bottom: 8rem;
+    --floating-position-bottom: 5rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -113,7 +113,6 @@ color: rgba($color, 0.5); //scss 컬러 내장함수
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 @media screen and (max-width: 1400px) {
   html {
@@ -210,21 +209,11 @@ body {
   color: #363636;
 }
 
-.routing-fade-enter, .routing-fade-leave, .routing-fade-leave-to {
+.routing-fade-enter-active, .routing-fade-leave-active, .routing-fade-appear-active {
+  transition: opacity 0.5s ease-in-out;
+}
+.routing-fade-enter, .routing-fade-leave-to, .routing-fade-appear {
   opacity: 0;
-}
-.routing-fade-enter-active {
-  transition: opacity 1s;
-  transition-delay: 0.15s;
-}
-
-.routing-fadeup-enter, .routing-fadeup-leave, .routing-fadeup-leave-to {
-  opacity: 0;
-  transform: translateY(50%);
-}
-.routing-fadeup-enter-active {
-  transition: opacity 1s, transform 0.7s;
-  transition-delay: 0.15s;
 }
 
 header {
@@ -323,14 +312,24 @@ footer p.copyright {
 
 /* ----------------------- COMMON */
 .btn-top {
-  width: min(13.889vw, 6.6rem);
-  height: min(13.889vw, 6.6rem);
-  border-radius: 50%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100%;
   background-image: url("../../images/icon_gotop.svg");
   background-color: #fff;
+}
+
+.btn-redline {
+  background-color: #fff;
+  border: 2px solid #f63543;
+  font-weight: 500;
+  color: #f63543;
+}
+
+.btn-black {
+  background-color: #000;
+  font-weight: 500;
+  color: #fff;
 }
 
 .floating-btns {
@@ -339,6 +338,15 @@ footer p.copyright {
   opacity: 0;
   visibility: hidden;
 }
+.floating-btns button {
+  display: block;
+  width: min(13.889vw, 6.6rem);
+  height: min(13.889vw, 6.6rem);
+  border-radius: 50%;
+}
+.floating-btns button + button {
+  margin-top: 1.5rem;
+}
 .floating-btns.is-show {
   opacity: 1;
   visibility: visible;
@@ -346,13 +354,13 @@ footer p.copyright {
   transition: opacity 0.4s linear, bottom 0.5s cubic-bezier(0.545, 0.045, 0.355, 1);
 }
 .floating-btns.is-show.hide {
-  bottom: calc(var(--floating-position-bottom) * -1);
+  bottom: calc((var(--floating-position-bottom) + 12.2rem + 1.5rem) * -1);
 }
 .floating-btns.scr-up {
   bottom: var(--floating-position-bottom);
 }
 .floating-btns.scr-down {
-  bottom: calc(var(--floating-position-bottom) * -1);
+  bottom: calc((var(--floating-position-bottom) + 12.2rem + 1.5rem) * -1);
 }
 
 /* ----------------------- MAIN */
@@ -841,10 +849,6 @@ footer p.copyright {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' fill='none'%3E%3Cpath fill='%23ffffff' d='m9.211 7.09 30.406 30.405-2.121 2.122L7.09 9.21 9.21 7.09Z'/%3E%3Cpath fill='%23ffffff' d='M38.91 8.504 8.504 38.91l-2.121-2.122L36.788 6.383l2.122 2.121Z'/%3E%3C/svg%3E");
 }
 
-.KBdatahub .detail-intro::before {
-  background-image: url("../../images/img_kbdatahub_intro.png");
-}
-
 .detail-intro {
   position: relative;
   height: calc(var(--vh, 1vh) * 100);
@@ -853,6 +857,7 @@ footer p.copyright {
   content: "";
   display: block;
   height: calc(var(--vh, 1vh) * 100);
+  background-image: url("../../images/img_detail_sample_intro.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: center bottom;
