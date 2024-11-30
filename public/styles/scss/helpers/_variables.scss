@@ -46,6 +46,9 @@ $font-size-54: rem(54);
 
 // layout
 
+// transform
+$transition-setting01: cubic-bezier(.645,.045,.355,1);
+
 
 /* font */
 body {
@@ -65,12 +68,14 @@ body {
 
     @include mobile {
         --font-size-18: #{$font-size-16};
+        --font-size-15: #{$font-size-12};
     }
 }
 /* layout */
 body {
     --header-height: #{rem(96)};
     --inner-padding: #{rem(100)};
+    --detail-inner-padding: 12.5vw;
     --main-inner-top-padding: #{rem(150)};
     --main-inner-bottom-padding: var(--main-inner-top-padding);
     --floating-position-right: #{rem(50)};
@@ -78,12 +83,13 @@ body {
 
     @include laptop {
         --inner-padding: #{rem(50)};
+        --detail-inner-padding: var(--inner-padding);
         --main-inner-top-padding: #{rem(100)};
         --floating-position-right: #{rem(30)};
         --floating-position-bottom: #{rem(80)};
     }
     @include mobile {
-        --header-height: #{rem(48)};
+        --header-height: #{rem(60)};
         --inner-padding: #{rem(23)};
     }
 }

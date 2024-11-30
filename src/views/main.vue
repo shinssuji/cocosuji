@@ -2,16 +2,14 @@
   <section class="main">
     <!-- VISUAL -->
     <section class="visual">
-      <!-- <p class="text-left" :style="'transform: translateX(calc(-50% - ' + scrollH + 'px))'">Publisher</p>
-      <p class="text-right" :style="'transform: translateX(calc(-50% + ' + scrollH + 'px))'">Shinsuji.</p> -->
       <p class="text-left" :style="`transform: translateX(${scrollH}px)`">Publisher</p>
-      <p class="text-right" :style="`transform: translateX(-${scrollH}px)`">shinsuji.</p>
+      <p class="text-right" :style="`transform: translateX(-${scrollH}px)`">shinsuuji.</p>
       <span aria-hidden="true" class="circle"><em></em></span>
     </section>
 
     <!-- SKILLS -->
     <section class="skills">
-      <h2 class="heading-main">Main skills</h2>
+      <h2 class="heading-main" data-aos="fade-in">Main skills</h2>
       <ul class="skill-wrap">
         <li v-for="(skill, index) in skillLists" :key="index">
           <i :class="`ico-${skill.classname}`"></i>
@@ -24,7 +22,7 @@
     <!-- WORKS -->
     <section class="works">
       <section class="box" v-for="(box, index) in workLists" :key="index">
-        <div class="item img">
+        <div class="item img" data-aos="fade-down" data-aos-anchor-placement="center-bottom">
           <img
            :src="`../images/${box.img}@1x.png`" :alt="box.sub"
            :srcset="
@@ -34,7 +32,7 @@
            "
           />
         </div>
-        <div class="item text">
+        <div class="item text" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <span class="s-tit">{{box.sub}}</span>
           <h3 v-html="box.main"></h3>
           <div class="tags">
@@ -47,6 +45,14 @@
 
   </section>
 </template>
+<style scoped>
+  html:not(.no-js) [data-aos=fade-down] {
+    transform: translate3d(0, -500px, 0)
+  }
+  html:not(.no-js) [data-aos=fade-up] {
+    transform: translate3d(0, 500px, 0)
+  }
+</style>
 <script>
 export default {
   props: {
@@ -129,22 +135,8 @@ export default {
   destroyed() {
   },
   mounted() {
-    // this.setLocomotiveScroll();
   },
   methods: {
-    // handleScroll() {
-    //   const scroller = new LocomotiveScroll({
-    //     el: document.querySelector('[data-scroll-container]'),
-    //     smooth: true
-    //   });
-    // }
-    setLocomotiveScroll() {
-      // new LocomotiveScroll({
-      //     el: this.$refs.container,
-      //     smooth: true,
-      //     multiplier: 5,        //add this
-      //   });
-    },
   }
 };
 </script>

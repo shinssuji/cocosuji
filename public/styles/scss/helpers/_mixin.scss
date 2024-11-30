@@ -36,19 +36,22 @@
 // title
 @mixin heading-main($align: center) {
   margin-bottom: clamp(40px, 8.571vw, rem(120));
-  font-size: clamp(26px, 4vw, rem(56));
+  //font-size: clamp(26px, 4vw, rem(56));
+  font-size: clamp(26px, 5.476vw, rem(56));
   font-weight: $font-semibold;
   text-align: $align;
 }
 
 @mixin heading-work {
-  font-size: clamp(28px, 3.857vw, rem(54));
+  // font-size: clamp(28px, 3.857vw, rem(54));
+  font-size: clamp(28px, 4.954vw, rem(54));
   font-weight: $font-extrabold;
   line-height: 1.4814;
 }
 
 @mixin heading-worksub {
-  font-size: clamp(15px, 1.571vw, rem(22));
+  // font-size: clamp(15px, 1.571vw, rem(22));
+  font-size: clamp(15px, 2.086vw, rem(22));
   color: $gray-sub01;
 }
 
@@ -186,4 +189,18 @@
   @at-root #{$new-selector} {
     @content;
   }
+}
+
+// scroll
+@mixin scroll-remove {
+  &::-webkit-scrollbar {
+    display: noen;
+  }
+  -ms-overflow-style: none; /* 인터넷 익스플로러 */
+  scrollbar-width: none; /* 파이어폭스 */
+}
+
+@mixin scroll-x {
+  white-space: nowrap;
+  overflow-x: auto;
 }

@@ -61,22 +61,20 @@ export default {
   created() {},
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
-    document.querySelector('#wrap').addEventListener('scroll', this.handleScroll);
-    console.log(this.darkMode)
   },
   destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll() {
-      this.scrollH = document.querySelector('#wrap').scrollTop;
+      this.scrollH = window.scrollY;
 
       this.scrollDir = this.scrollH > this.lastScrollH;
       this.lastScrollH = this.scrollH;
     },
 
     goToTop() {
-      document.querySelector('#wrap').scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({top: 0, behavior: 'smooth'});
     }
   }
 };

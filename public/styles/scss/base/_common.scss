@@ -24,7 +24,6 @@ html {
 }
 
 body {
-  opacity: 0.1;
   font-size: rem(16);
   color: $black-main;
 
@@ -62,20 +61,16 @@ body {
 
 // common layout
 #wrap {
-  height: vh(100);
+  // height: vh(100);
   min-height: vh(100);
-  overflow-y: auto;
+  // overflow-y: auto;
 
   * {
     cursor: none;
   }
 
   @include tablet {
-    &::-webkit-scrollbar {
-      display: noen;
-    }
-    -ms-overflow-style: none; /* 인터넷 익스플로러 */
-    scrollbar-width: none; /* 파이어폭스 */
+    @include scroll-remove;
   }
 }
 

@@ -53,6 +53,10 @@
     @include tablet {
       padding: 12vh 0;
     }
+
+    &.works {
+      padding: 0;
+    }
   }
 }
 
@@ -85,7 +89,8 @@
     
     &.text-left {
       left: rem(-44);
-      top: rem(74);
+      // top: rem(74);
+      top: min(13.038vw, rem(60));
 
       // top: 50%;
       // margin-top: rem(-410);
@@ -97,7 +102,7 @@
 
     &.text-right {
       right: rem(-55);
-      bottom: rem(74);
+      bottom: min(13.038vw, rem(60));
       
       // top: 50%;
       // margin-top: rem(115);
@@ -163,6 +168,7 @@
   @include tablet {
     @include flex-dir(column);
     
+    width: 100%;
     padding: 0;
   }
 
@@ -171,7 +177,6 @@
   @each $item in $skillgroup {
     .ico-#{$item} {
       @include inline-block;
-      // @include size(rem(54), rem(58));
       @include size(min(11.111vw, rem(54)), min(11.936vw, rem(58)));
       @include bg(icon_#{$item});
 
@@ -194,33 +199,34 @@
 
     .tit {
       margin: rem(44) 0 rem(38);
-      font-size: clamp(23px, 2.143vw, var(--font-size-30));
+      font-size: clamp(23px, 3.911vw, rem(30));
       font-weight: $font-semibold;
       line-height: rem(30);
 
       @include tablet {
-        margin: rem(34) 0 rem(20);
+        margin: rem(35) 0 rem(25);
         // font-size: clamp(23px, 6.389vw, var(--font-size-30));
       }
     }
 
     .para {
       // font-size: var(--font-size-22);
-      font-size: clamp(14px, 1.571vw, var(--font-size-22));
+      font-size: clamp(14px, 3.889vw, var(--font-size-22));
       line-height: 2;
       letter-spacing: rem(-0.4);
-      // color: $gary-sub02;
+      color: $gary-sub02;
+
+      @include tablet {
+        white-space: wrap;
+      }
     }
   }
 }
 
 /* works */
 .works {
-  @include tablet {
-    padding: 0;
-  }
-
   .box {
+    overflow: hidden;
     @include flex-layout;
 
     @include tabletMin {
@@ -274,7 +280,7 @@
       }
       
       .tag {
-        font-size: clamp(13px, 1.429vw, var(--font-size-20));
+        font-size: clamp(13px, 1.825vw, rem(20));
         color: $gray-sub01;
 
         &:not(:last-child) {
@@ -297,6 +303,7 @@
 .sub {
   @include flex;
   
+  min-height: vh(100);
   background-color: $black-sub01;
 
   @include tablet {
@@ -308,22 +315,48 @@
   }
   
   nav { // sub-nav
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    
     @include tabletMin {
       @include flex;
       @include flex-dir(column);
       @include flex-align(flex-start);
       @include flex-justify(center);
-      @include size(rem(500), vh(100));
+      @include size(min(26.042vw, rem(500)), vh(100));
 
-      position: sticky;
-      top: 0;
-      padding-left: rem(200);
+      padding-left: min(10.417vw, rem(200));
+    }
+
+    @include tablet {
+      @include scroll-remove;
+      @include scroll-x;
+
+      z-index: 99;
+      padding: rem(8) var(--inner-padding);
+      background-color: $black-sub01;
+      transition: .4s #{$transition-setting01};
+
+      header.scr-down + #container & {
+        transform: translateY(0);
+      }
+
+      header.scr-up + #container & {
+        transform: translateY(var(--header-height));
+      }
     }
     
     button {
       margin: rem(12) 0;
-      font-size: var(--font-size-20);
+      font-size: clamp(14px, 2.086vw, rem(20));
       color: $gray-sub04;
+
+      @include tablet {
+        + button {
+          margin-left: rem(40);
+        }
+      }
 
       &.active {
         position: relative;
@@ -344,10 +377,13 @@
 
 .list-wrap {
   @include flexitem(1);
-  
-  // overflow-y: auto;
-  padding: rem(200) rem(100) 0 rem(160);
+
+  padding: rem(200) rem(100) 0 8.333vw;
   overflow: hidden; // for list items transform animation
+
+  @include tablet {
+    padding: 12vw var(--inner-padding);
+  }
 
   .item {
     position: relative;
@@ -359,9 +395,14 @@
 
     .en {
       font-size: rem(104);
+      font-size: clamp(32px, 5.997vw, rem(104));
       color: $gray-sub04;
       line-height: 1.1538;
       transition: color 0.3s ease;
+
+      @include tablet {
+        font-weight: $font-medium;
+      }
     }
 
     .kr {
@@ -381,7 +422,7 @@
       .kr {
         opacity: 1;
         left: rem(40);
-        font-size: var(--font-size-40);;
+        font-size: clamp(12px, 2.347vw, rem(40));
         font-weight: $font-semibold;
         color: $white-main;
         letter-spacing: rem(5);
@@ -420,6 +461,7 @@
 /* ----------------------- DETAIL */
 .detail {
   position: relative;
+  overflow-x: hidden;
 
   .btn-close {
     @include size(rem(46));
@@ -427,10 +469,19 @@
       background-image: icon(close, '000000');
     }
 
-    position: absolute;
+    position: fixed;
     right: rem(50);
     top: rem(40);
     z-index: 10;
+    padding: rem(10);
+    background-color: rgb($white-main, 0.5);
+
+    @include tablet {
+      @include size(rem(35));
+
+      top: var(--inner-padding);
+      right: var(--inner-padding);
+    }
   }
 
   // dark type
@@ -456,10 +507,9 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center bottom;
-    // @include bg-image($img: 'kbdatahub_intro', $format: 'png');
   }
 
-  $detailgroup: KBdatahub;
+  $detailgroup: KBdatahub; // add works class name
   @each $class in $detailgroup {
     .#{$class} &::before {
       @include bg-image($img: 'img_#{$class}_intro', $format: 'png');
@@ -468,15 +518,19 @@
     
   .txt {
     position: absolute;
-    left: rem(240);
+    left: min(10vw, var(--detail-inner-padding));
     top: 50%;
     transform: translateY(-50%);
     font-family: $kr-font, sans-serif;
     color: $white-main;
+
+    // @include laptop {
+    //   left: var(--inner-padding);
+    // }
   }
 
   h1 {
-    font-size: var(--font-size-76);;
+    font-size: clamp(32px, 6.519vw, rem(76));
     font-weight: $font-bold;
     line-height: 1.2;
     white-space: pre-line;
@@ -484,7 +538,7 @@
 
   p {
     margin-top: rem(40);
-    font-size: var(--font-size-34);
+    font-size: clamp(16px, 2.999vw, rem(34));
     font-weight: $font-bold;
   }
 }
@@ -493,16 +547,30 @@
   @include flex;
   @include flex-align(flex-start);
 
-  padding: rem(200) rem(240);
+  padding: rem(200) var(--detail-inner-padding);
   background-color: $white-main;
+  
+  @include tablet {
+    @include flex-dir(column);
 
-  // color: #eee;
+    padding-top: 13.038vw;
+    padding-bottom: 13.038vw;
+  }
 
   .btn-view {
     margin-top: rem(50);
     padding: rem(14) rem(45);
     font-size: var(--font-size-15);
     font-weight: $font-medium;
+
+    @include tablet {
+      margin: 13.038vw 0 -13.038vw;
+    }
+
+    @include mobile-xs {
+      width: 100%;
+      margin: 8vw 0;
+    }
   }
 }
 
@@ -515,6 +583,10 @@
 
   > div {
     padding: rem(130) 0;
+
+    @include tablet {
+      padding: rem(60) 0;
+    }
   }
 
   .copyright {
@@ -528,13 +600,13 @@
   &-tit {
     display: block;
     margin-bottom: rem(40);
-    font-size: var(--font-size-48);
+    font-size: clamp(20px, 3.39vw, rem(40));
     font-weight: $font-bold;
     line-height: 1.1875;
   }
 
   &-txt {
-    font-size: var(--font-size-20);
+    font-size: clamp(12px, 1.695vw, rem(20));
     line-height: 2;
   }
 
@@ -547,23 +619,50 @@
     // padding-left: rem(120);
     padding-left: 8.3333%;
 
+    @include tablet {
+      @include flex;
+      @include flex-justify(space-between);
+
+      gap: rem(10);
+      width: 100%;
+      padding-left: 0;
+    }
+
+    @include mobile-xs {
+      @include flex-dir(column);
+    }
+
     li {
       @include flex;
-      @include flex-dir(column);
-      
+
+      @include tabletMin {
+        @include flex-dir(column);
+      }
+
       + li {
         margin-top: rem(50);
+
+        @include tablet {
+          margin-top: 0;
+        }
       }
     }
 
     b {
+      margin-right: rem(12);
       margin-bottom: rem(12);
-      font-size: var(--font-size-24);
+      font-size: clamp(11px, 1.565vw, rem(24));
       font-weight: $font-semibold;
+      white-space: nowrap;
+
+      @include mobile-xs {
+        width: 30%;
+      }
     }
 
     span {
-      font-size: var(--font-size-15);
+      font-size: 1.434vw;
+      font-size: clamp(10px, 1.434vw, rem(15));
       font-weight: $font-medium;
       color: $gray-sub03;
       white-space: pre-line;

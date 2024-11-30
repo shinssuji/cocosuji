@@ -93,6 +93,8 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
 .custom-cursor {
   cursor: none;
   pointer-events: none;
+  position: relative;
+  z-index: 999;
 }
 .custom-cursor__circle {
   position: fixed;

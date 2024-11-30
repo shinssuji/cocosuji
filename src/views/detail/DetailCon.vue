@@ -14,12 +14,12 @@
 
     <!-- WORK INFO -->
     <section class="detail-info">
-      <div class="info-main">
+      <div class="info-main" data-aos="fade-right">
         <strong class="info-tit">{{work.subtit}}</strong>
         <p class="info-txt">{{work.perform}}</p>
         <button type="button" class="btn btn-black btn-view" @click="newWindow(work.url)">View Project</button>
       </div>
-      <ul class="info-skill">
+      <ul class="info-skill" data-aos="fade-left">
         <li v-for="(data, i) in work.info" :key="i">
           <b>{{data.tit}}</b>
           <span>{{data.text}}</span>

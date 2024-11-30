@@ -7,16 +7,22 @@ header {
 
   position: fixed;
   z-index: 10;
-  padding-top: rem(32);
-  padding-bottom: rem(32);
+  // padding-top: rem(32);
+  // padding-bottom: rem(32);
   background-color: transparent;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 
-  transition: transform 0.4s cubic-bezier(.645,.045,.355,1);
+  transition: transform 0.4s #{$transition-setting01};
 
   // dark type
   &.dark {
+    @include tablet {
+      background-color: $black-sub01;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+
     .logo {
       background-image: icon(logo, 'ffffff');
     }
@@ -39,6 +45,7 @@ header {
 
 .logo {
   // @include size(rem(27), rem(32));
+  @include size(min(5vw, rem(27)), min(5.926vw, rem(32)));
   @include bg($filename: function) {
     background-image: icon(logo, '000000');
   }
@@ -51,7 +58,7 @@ header {
     @include size(rem(34), rem(32));
 
     @include tablet {
-      @include size(min(6.667vw, rem(34)), min(6.278vw, rem(32)));
+      @include size(min(5.556vw, rem(34)), min(6.278vw, rem(32)));
     }
   };
 

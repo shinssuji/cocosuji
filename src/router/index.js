@@ -2,29 +2,26 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import basicRouter from './modules/basicRouter'
 import workRouter from './modules/workRouter'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 Vue.use(VueRouter)
-/*
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import('../views/AboutView.vue')
-  }
-]
-*/
+
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [basicRouter, workRouter],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
+});
+
+router.afterEach(() => {
+  AOS.refresh(); // 페이지 전환 후 AOS 갱신
 });
 
 const mixins = {
@@ -43,7 +40,7 @@ const mixins = {
           },
           mounted() {
             this.setScreenHeight();
-            window.addEventListener('resize', this.setScreenHeight);  
+            window.addEventListener('resize', this.setScreenHeight);
           },
           beforeDestroy() {
             window.removeEventListener('resize', this.setScreenHeight);

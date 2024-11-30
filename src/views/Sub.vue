@@ -22,8 +22,9 @@
 <script>
 import { workContent } from '@/data/workData.js';
 export default {
-  components: {
-  },
+  // props: {
+  //   scrollH: Number
+  // },
   data() {
     return {
       workContent,
@@ -46,15 +47,11 @@ export default {
       return subLists.filter(item => item.type == this.subTypeName);      
     },
   }, 
-  watch: {
-  },
   destroyed() {
   },
   mounted() {
     this.$nextTick(function() {
       this.startMotion();
-
-      console.log(this.subTypeName);
     })
   },
   beforeDestroy() {
@@ -69,7 +66,7 @@ export default {
       
       this.subTypeName = type;
 
-      return document.querySelector("#wrap").scrollTop = 0;
+      return window.scrollY = 0;
     },
 
     // 리스트 모션
@@ -78,18 +75,6 @@ export default {
       this.aniTimer = setTimeout(() => {
           this.$refs.subGropus.classList.add('is-visible');
       }, 200);
-
-      // if (this.winwidth > 1513) {
-      //     clearTimeout(this.aniTimer);
-      //     this.aniTimer = setTimeout(() => {
-      //         document.querySelector('.frontcard').classList.add('active');
-      //     }, 200);
-      // } else {
-      //     clearTimeout(this.aniTimer);
-      //     this.aniTimer = setTimeout(() => {
-      //         document.querySelector('.frontcard').classList.remove('active');
-      //     }, 200);
-      // }
     }
 
 
