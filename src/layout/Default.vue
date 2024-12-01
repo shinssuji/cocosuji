@@ -5,7 +5,6 @@
       <a href="#workList">작업물 리스트 바로가기</a>
       <a href="#container">메인 컨텐츠 바로가기</a>
     </div> -->
-    
     <Header :darkMode="darkMode" :scrollDir="scrollDir" />
     <section id="container" ref="container">
       <transition name="routing-fade" appear>
@@ -36,6 +35,7 @@
       :dotDarkColor="'#f63543'"
       :dotDarkColorHover="'skyblue'"
       :hoverSize="1.5"
+      v-if="!isMobile"
     ></CustomCursor>
   </section>
 </template>

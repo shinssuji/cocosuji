@@ -35,11 +35,19 @@ const mixins = {
       Vue.mixin({
           data() {
               return {
+                isMobile: false, // 모바일 디바이스 상태 저장
               };
           },
           computed: {
           },
           watch: {
+            isMobile(newVal) {
+              if (newVal) {
+                console.log("모바일 디바이스 감지");
+              } else {
+                console.log("데스크톱 디바이스 감지");
+              }
+            },
           },
           created() {
           },
@@ -78,6 +86,15 @@ const mixins = {
                */
               newWindow(path, target, features) {
                   window.open(path, target, features ? features : '');
+              },
+              /**
+               * * 모바일 디바이스 감지
+               */
+              checkIfMobile() {
+                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+                // 모바일 디바이스를 확인하는 정규식
+                this.isMobile = /android|iphone|ipad|ipod|blackberry|windows phone|opera mini|iemobile|mobile/i.test(userAgent);
               },
 
               /**
