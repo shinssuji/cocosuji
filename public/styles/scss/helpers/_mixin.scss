@@ -64,6 +64,7 @@
 // full layout
 @mixin fullHeight {
   height: vh(100);
+  transition: 0.2s;
 }
 
 // background image

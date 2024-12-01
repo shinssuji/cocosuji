@@ -28,15 +28,13 @@
     
     <!-- WORK VISUAL -->
     <section class="detail-visual">
-      <template v-if="work.webimg">
-        <div class="web">
-          <img :src="`../images/${detailImg}_w.png`" v-for="(detailImg, i) in work.webimg" :key="i">
-        </div>
+      <div class="web" v-if="work.webimg">
+        <img :src="`../images/${detailImg}_w.png`" v-for="(detailImg, i) in work.webimg" :key="i">
+      </div>
 
-        <div class="mobile">
+      <div class="mobile">
 
-        </div>
-      </template>
+      </div>
 
       <p class="copyright">ⓒ 2024 suji. all rights reserved.</p>
     </section>

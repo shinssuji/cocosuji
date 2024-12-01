@@ -106,8 +106,8 @@ export default {
           sub: '디지털 마케팅 대행사 랜딩',
           main: '브랜디액션의 \n디지털 마케팅 대행 서비스',
           tag: ['html', 'scss', 'jquery'],
-          img: 'img_brandyact_thumb',
-          link: '/detail/brandyact'
+          img: 'img_brandyaction_thumb',
+          link: '/detail/brandyaction'
         },
         {
           sub: '백방 하이브리드앱 구축',

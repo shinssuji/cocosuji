@@ -42,11 +42,12 @@ const mixins = {
           },
           watch: {
             isMobile(newVal) {
-              if (newVal) {
-                console.log("모바일 디바이스 감지");
-              } else {
-                console.log("데스크톱 디바이스 감지");
-              }
+              // if (newVal) {
+              //   console.log("모바일 디바이스 감지");
+              // } else {
+              //   console.log("데스크톱 디바이스 감지");
+              // }
+              console.log('isMobile 상태 변경:', newVal);
             },
           },
           created() {
@@ -54,6 +55,8 @@ const mixins = {
           mounted() {
             this.setScreenHeight();
             window.addEventListener('resize', this.setScreenHeight);
+
+            this.checkIfMobile();
           },
           beforeDestroy() {
             window.removeEventListener('resize', this.setScreenHeight);

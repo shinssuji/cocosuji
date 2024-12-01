@@ -163,6 +163,7 @@ body {
 
 #wrap {
   min-height: calc(var(--vh, 1vh) * 100);
+  transition: 0.2s;
 }
 #wrap * {
   cursor: none;
@@ -174,6 +175,17 @@ body {
   }
   #wrap::-webkit-scrollbar {
     display: noen;
+  }
+}
+@media (pointer: coarse) {
+  #wrap {
+    /* custom css for "touch targets" */
+  }
+  #wrap .custom-cursor {
+    display: none;
+  }
+  #wrap * {
+    cursor: auto;
   }
 }
 
@@ -388,8 +400,9 @@ footer p.copyright {
 
 /* visual */
 .visual {
-  position: relative;
   height: calc(var(--vh, 1vh) * 100);
+  transition: 0.2s;
+  position: relative;
   overflow: hidden;
   pointer-events: none;
 }
@@ -619,6 +632,7 @@ footer p.copyright {
   display: flex;
   min-height: calc(var(--vh, 1vh) * 100);
   background-color: #000;
+  transition: 0.2s;
 }
 @media screen and (max-width: 1024px) {
   .sub {
@@ -845,33 +859,63 @@ footer p.copyright {
     right: var(--inner-padding);
   }
 }
-.detail.dark .btn-close {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' fill='none'%3E%3Cpath fill='%23ffffff' d='m9.211 7.09 30.406 30.405-2.121 2.122L7.09 9.21 9.21 7.09Z'/%3E%3Cpath fill='%23ffffff' d='M38.91 8.504 8.504 38.91l-2.121-2.122L36.788 6.383l2.122 2.121Z'/%3E%3C/svg%3E");
+.detail.dark .txt {
+  color: #fff;
 }
 
 .detail-intro {
-  position: relative;
   height: calc(var(--vh, 1vh) * 100);
+  transition: 0.2s;
+  position: relative;
 }
 .detail-intro::before {
   content: "";
   display: block;
   height: calc(var(--vh, 1vh) * 100);
-  background-image: url("../../images/img_detail_sample_intro.png");
+  transition: 0.2s;
+  background-image: url("../../images/img_detail_sample_intro_w.png");
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   background-position: center bottom;
 }
+@media screen and (max-width: 767px) {
+  .detail-intro::before {
+    background-image: url("../../images/img_detail_sample_intro_m.png");
+    background-position: right bottom;
+  }
+}
 .KBdatahub .detail-intro::before {
-  background-image: url("../../images/img_KBdatahub_intro.png");
+  background-image: url("../../images/img_KBdatahub_intro_w.png");
+}
+@media screen and (max-width: 767px) {
+  .KBdatahub .detail-intro::before {
+    background-image: url("../../images/img_KBdatahub_intro_m.png");
+  }
+}
+.siwolmusic .detail-intro::before {
+  background-image: url("../../images/img_siwolmusic_intro_w.png");
+}
+@media screen and (max-width: 767px) {
+  .siwolmusic .detail-intro::before {
+    background-image: url("../../images/img_siwolmusic_intro_m.png");
+  }
+}
+.payapp .detail-intro::before {
+  background-image: url("../../images/img_payapp_intro_w.png");
+}
+@media screen and (max-width: 767px) {
+  .payapp .detail-intro::before {
+    background-image: url("../../images/img_payapp_intro_m.png");
+  }
 }
 .detail-intro .txt {
   position: absolute;
   left: min(10vw, var(--detail-inner-padding));
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-58%);
   font-family: "Pretendard Variable", Pretendard, sans-serif;
-  color: #fff;
+  color: #363636;
 }
 .detail-intro h1 {
   font-size: clamp(32px, 6.519vw, 7.6rem);

@@ -35,7 +35,6 @@
       :dotDarkColor="'#f63543'"
       :dotDarkColorHover="'skyblue'"
       :hoverSize="1.5"
-      v-if="!isMobile"
     ></CustomCursor>
   </section>
 </template>

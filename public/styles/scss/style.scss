@@ -87,8 +87,9 @@
 
 /* visual */
 .visual {
+  @include fullHeight;
+  
   position: relative;
-  height: vh(100);
   overflow: hidden;
   pointer-events: none;
 
@@ -325,6 +326,7 @@
   
   min-height: vh(100);
   background-color: $black-sub01;
+  transition: 0.2s;
 
   @include tablet {
     @include flex-dir(column);
@@ -507,31 +509,45 @@
 
   // dark type
   &.dark {
-    .btn-close {
-      background-image: icon(close, 'ffffff');
+    // .btn-close {
+    //   background-image: icon(close, 'ffffff');
+    // }
+
+    .txt {
+      color: $white-main;
     }
   }
 }
 
 .detail-intro {
+  @include fullHeight;
   position: relative;
-  height: vh(100);
 
   &::before {
     content: "";
     display: block;
-    height: vh(100);
+    @include fullHeight;
 
-    @include bg-image($img: 'img_detail_sample_intro', $format: 'png');
+    @include bg-image($img: 'img_detail_sample_intro_w', $format: 'png');
     background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     background-position: center bottom;
+
+    @include mobile {
+      @include bg-image($img: 'img_detail_sample_intro_m', $format: 'png');
+      background-position: right bottom;
+    }
   }
 
-  $detailgroup: KBdatahub; // add works class name
+  $detailgroup: KBdatahub, siwolmusic, payapp; // add works class name = router path
   @each $class in $detailgroup {
     .#{$class} &::before {
-      @include bg-image($img: 'img_#{$class}_intro', $format: 'png');
+      @include bg-image($img: 'img_#{$class}_intro_w', $format: 'png');
+
+      @include mobile {
+        @include bg-image($img: 'img_#{$class}_intro_m', $format: 'png');
+      }
     }
   }
     
@@ -539,9 +555,9 @@
     position: absolute;
     left: min(10vw, var(--detail-inner-padding));
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-58%);
     font-family: $kr-font, sans-serif;
-    color: $white-main;
+    color: $black-main;
 
     // @include laptop {
     //   left: var(--inner-padding);

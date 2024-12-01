@@ -62,6 +62,7 @@ body {
 #wrap {
   // height: vh(100);
   min-height: vh(100);
+  transition: 0.2s;
   // overflow-y: auto;
 
   * {
@@ -70,6 +71,17 @@ body {
 
   @include tablet {
     @include scroll-remove;
+  }
+
+  @media (pointer:coarse) {
+    /* custom css for "touch targets" */
+    .custom-cursor {
+      display: none;
+    }
+    
+    * {
+      cursor: auto;
+    }
   }
 }
 

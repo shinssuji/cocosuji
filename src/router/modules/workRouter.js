@@ -37,8 +37,8 @@ const workRouter = {
 
 
     { // 브랜디액션
-      path: "/detail/brandyact",
-      name: "brandyact",
+      path: "/detail/brandyaction",
+      name: "brandyaction",
       component: () => import("@/views/detail/DetailCon.vue"),
     },
     { // 싱싱샐러드

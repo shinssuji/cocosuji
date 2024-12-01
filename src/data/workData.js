@@ -19,7 +19,7 @@ export const workContent = {
       {tit: '프로젝트 기여도', text: '퍼블리싱 - 구축 40% · 대응,운영 100%'}
     ],
     webimg: ['img_datahub_detail01', 'img_datahub_detail02', 'img_datahub_detail03', 'img_datahub_detail04'],
-    dark: false // 디테일 인트로 영역 폰트 컬러 설정
+    dark: true // 디테일 인트로 영역 폰트 컬러 설정
   },
   // 시월뮤직
   siwolmusic: {
@@ -43,12 +43,12 @@ export const workContent = {
     dark: false
   },
   // BRANDY ACTION
-  brandyact: {
+  brandyaction: {
     type: 'landing',
     sub: {
       en: 'brandy action service',
       kr: '디지털 마케팅 대행사 랜딩',
-      path: 'brandyact'
+      path: 'brandyaction'
     },
     title: '디지털 마케팅 \n대행사 랜딩',
     do: '퍼블리싱 / 반응형',
@@ -133,7 +133,7 @@ export const workContent = {
       kr: '백방 웹 앱 구축',
       path: '100bang'
     },
-    title: '백방 웹 앱 \n구축',
+    title: '백방 웹 앱 구축',
     do: '퍼블리싱 / 모바일',
     url: '../project/100bang',
     code: 'https://github.com/shinssuji/cocosuji/tree/master/public/works/100bang',
