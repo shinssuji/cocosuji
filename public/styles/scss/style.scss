@@ -176,6 +176,15 @@
     }
     
   }
+
+  .copyright {
+    position: absolute;
+    left: 50%;
+    bottom: rem(25); 
+    transform: translateX(-50%);
+    font-size: clamp(11px, 1.695vw, rem(15));
+    color: $gray-sub04;
+  }
 }
 
 /* main skills */
@@ -326,7 +335,7 @@
   
   min-height: vh(100);
   background-color: $black-sub01;
-  transition: 0.2s;
+  // transition: 0.15s;
 
   @include tablet {
     @include flex-dir(column);
@@ -529,13 +538,16 @@
     @include fullHeight;
 
     @include bg-image($img: 'img_detail_sample_intro_w', $format: 'png');
-    background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-size: cover;
 
+    @include mobileMin {
+      background-attachment: fixed;
+      background-position: center bottom;
+    }
     @include mobile {
       @include bg-image($img: 'img_detail_sample_intro_m', $format: 'png');
+      // background-size: auto 100%;
       background-position: right bottom;
     }
   }
@@ -559,9 +571,9 @@
     font-family: $kr-font, sans-serif;
     color: $black-main;
 
-    // @include laptop {
-    //   left: var(--inner-padding);
-    // }
+    @include mobile {
+      transform: translateY(-100%);
+    }
   }
 
   h1 {

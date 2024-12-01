@@ -195,7 +195,7 @@ export const workContent = {
       kr: '싱싱샐러드 랜딩',
       path: 'singsing'
     },
-    title: '싱싱샐러드 랜딩 구축',
+    title: '싱싱샐러드 랜딩 \n구축',
     do: '퍼블리싱 / 반응형',
     url: 'https://singsingsalad.co.kr/',
     subtit: '살아 숨 쉬는 식재료로 건강하게',

@@ -17,8 +17,7 @@ $mobile-xs: 577;
     @content;
   }
 }
-
-// laptop
+// laptopMin
 @mixin laptopMin {
   @media screen and (min-width:#{$laptop+1px}) {
     @content;
@@ -33,7 +32,6 @@ $mobile-xs: 577;
   }
 }
 
-
 // tablet Min
 @mixin tabletMin {
   @media only screen and (min-width: #{$tablet+1px}) {
@@ -47,7 +45,12 @@ $mobile-xs: 577;
     @content;
   }
 }
-
+// mobile Min
+@mixin mobileMin {
+  @media only screen and (min-width: #{$mobile+1px}) {
+    @content;
+  }
+}
 
 // mobile xs
 @mixin mobile-xs {

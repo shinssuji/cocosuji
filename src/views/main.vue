@@ -5,6 +5,8 @@
       <p class="text-left" :style="`transform: translateX(${scrollH}px)`">Publisher</p>
       <p class="text-right" :style="`transform: translateX(-${scrollH}px)`">shinsuuji.</p>
       <span aria-hidden="true" class="circle"><em></em></span>
+      
+      <span class="copyright">ⓒ 2024</span>
     </section>
 
     <!-- SKILLS -->

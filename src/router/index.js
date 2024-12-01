@@ -54,7 +54,11 @@ const mixins = {
           },
           mounted() {
             this.setScreenHeight();
-            window.addEventListener('resize', this.setScreenHeight);
+            window.addEventListener('resize', () => {
+              if (window.innerHeight !== document.documentElement.clientHeight) {
+                this.setScreenHeight;
+              }
+            });
 
             this.checkIfMobile();
           },

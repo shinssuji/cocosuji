@@ -163,7 +163,6 @@ body {
 
 #wrap {
   min-height: calc(var(--vh, 1vh) * 100);
-  transition: 0.2s;
 }
 #wrap * {
   cursor: none;
@@ -401,7 +400,6 @@ footer p.copyright {
 /* visual */
 .visual {
   height: calc(var(--vh, 1vh) * 100);
-  transition: 0.2s;
   position: relative;
   overflow: hidden;
   pointer-events: none;
@@ -479,6 +477,14 @@ footer p.copyright {
   100% {
     transform: rotate(360deg);
   }
+}
+.visual .copyright {
+  position: absolute;
+  left: 50%;
+  bottom: 2.5rem;
+  transform: translateX(-50%);
+  font-size: clamp(11px, 1.695vw, 1.5rem);
+  color: #999;
 }
 
 /* main skills */
@@ -632,7 +638,6 @@ footer p.copyright {
   display: flex;
   min-height: calc(var(--vh, 1vh) * 100);
   background-color: #000;
-  transition: 0.2s;
 }
 @media screen and (max-width: 1024px) {
   .sub {
@@ -865,19 +870,21 @@ footer p.copyright {
 
 .detail-intro {
   height: calc(var(--vh, 1vh) * 100);
-  transition: 0.2s;
   position: relative;
 }
 .detail-intro::before {
   content: "";
   display: block;
   height: calc(var(--vh, 1vh) * 100);
-  transition: 0.2s;
   background-image: url("../../images/img_detail_sample_intro_w.png");
-  background-size: cover;
-  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-size: cover;
+}
+@media only screen and (min-width: 768px) {
+  .detail-intro::before {
+    background-attachment: fixed;
+    background-position: center bottom;
+  }
 }
 @media screen and (max-width: 767px) {
   .detail-intro::before {
@@ -916,6 +923,11 @@ footer p.copyright {
   transform: translateY(-58%);
   font-family: "Pretendard Variable", Pretendard, sans-serif;
   color: #363636;
+}
+@media screen and (max-width: 767px) {
+  .detail-intro .txt {
+    transform: translateY(-100%);
+  }
 }
 .detail-intro h1 {
   font-size: clamp(32px, 6.519vw, 7.6rem);
