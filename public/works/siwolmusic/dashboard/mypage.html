@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name="format-detection” content="telephone=no"/>
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="../styles/css/style.min.css">
+    <link rel="stylesheet" href="../lib/css/swiper-bundle.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.0/lottie.min.js" integrity="sha512-CRKudfW67SYvlItFrcw71DZphJowX3VzpcTCCi0OI3cBRL6AibHekFfr186WqfPoXbqVSAOBhsKNuXrhUkgIOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="../lib/scripts/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../scripts/common.js"></script>
+</head>
+
+<body>
+<div id="skipNav">
+    <a href="#navigation">네비게이션 바로가기</a>
+    <a href="#container">본문 바로가기</a>
+</div>
+
+<div id="wrap" class="board-container">
+  <aside id="navigation">
+    <nav>
+      <div class="user-wrap">
+        <a href="#a" class="user-box profile-box" title="내정보 바로가기" aria-label="내정보 바로가기">
+          <!-- 프로필 이미지가 존재하지 않을 경우 닉네임의 첫글자에 해당하는 값을 data-none-profile 속성에 삽입 -->
+          <span class="profile" data-none-profile="S">
+            <!-- 프로필 이미지가 존재할 경우 -->
+            <!-- <img src="../images/profile_user_upload_test.png" alt="내 프로필 이미지" class="profile-img" /> -->
+          </span>
+          <span class="name">Siwolmedia</span>
+        </a>
+      </div>
+      <div class="nav-menu">
+        <ul>
+          <!-- 메뉴 활성화 클래스 : is-active -->
+          <li role="presentation"><a href="home.html" class="menu home">홈</a></li>
+          <li role="presentation"><a href="manageChannel.html" class="menu channel">채널관리</a></li>
+          <li role="presentation"><a href="listMusicSources.html" class="menu music">음원목록</a></li>
+          <li role="presentation"><a href="managePerformance.html" class="menu performance">실적관리</a></li>
+          <li role="presentation" class="hidden-md"><a href="manageSettlement.html" class="menu calculate">정산관리</a></li>
+          
+          <li role="presentation" class="visible-md"><a href="aside.html" class="menu moreview">더보기</a></li>
+        </ul>
+        <ul class="menu-mobile">
+          <li role="presentation"><a href="mypage.html" class="menu mypage is-active">마이페이지</a></li>
+          <li role="presentation"><a href="noticeAlarm.html" class="menu alarm">공지 및 알림</a></li>
+          <li role="presentation"><a href="#a" class="menu cardnews">카드뉴스</a></li>
+          <li role="presentation"><a href="guide.html" class="menu guide">사용가이드</a></li>
+          <li role="presentation"><a href="#a" class="menu customer">고객센터</a></li>
+        </ul>
+      </div>
+      <div class="service-wrap">
+        <h3>시월뮤직 APP 다운로드</h3>
+        <p>전용 앱으로 더 편리하게 사용해보세요!</p>
+        <div class="flexbox gap-8">
+          <a href="" class="btn-download" target="_blank" rel="noreferrer noopener">
+            <img src="../images/img_android_download.svg" alt="Get it on Google Play" />
+          </a>
+          <a href="" class="btn-download" target="_blank" rel="noreferrer noopener">
+            <img src="../images/img_ios_download.svg" alt="Download on the App Store" />
+          </a>
+        </div>
+        <span class="app-text">App Store, iCloud, iCloud Drive 및 iTunes Store는 미국과 그 밖의 나라 및 지역에서 등록된 Apple Inc.의 서비스 상표입니다. Google Play 및 Google Play 로고는 Google LLC의 상표입니다.</span>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- # container -->
+  <main id="container" class="container bg-f7f8f9">
+    <div class="board-header">
+      <a href="" class="logo"><span class="sr-only">시월뮤직</span></a>
+      <div class="user-btn-group">
+        <a href="alarm.html" class="btn btn-alarm" aria-label="알림 바로가기">
+          <i class="icon-alarm" aria-hidden="true"><span class="sr-only">알림 바로가기</span></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- # board-content-wrap -->
+    <div class="board-content-wrap">
+      <!-- 마이페이지 -->
+      <!-- w) 대시보드 타이틀-->
+      <div class="board-title-wrap hidden-md">
+        <h1 class="board-title">마이페이지</h1>
+      </div>
+      <!-- m) 대시보드 타이틀-->
+      <div class="board-title-wrap page-title-wrap visible-md">
+        <button type="button" class="btn btn-back" aria-label="뒤로가기">
+          <i class="icon-back" aria-hidden="true"></i>
+          <span class="sr-only">뒤로가기</span>
+        </button>
+        <h1 class="board-title">프로필 설정</h1>
+      </div>
+
+      <!-- 대시보드 컨텐츠 -->
+      <div class="board-content">
+        <div class="board-box-wrap type-vertical">
+
+          <div class="board-box">
+            <div class="box-forms">
+              <form action="" method="">
+                <div class="form-group mt-0">
+                  <label for="email" class="form-title">이메일</label>
+                  <input type="email" id="email" class="form-control" value="siwol1234@email.com" placeholder="이메일" title="이메일" aria-label="이메일" disabled />
+                </div>
+
+                <div class="form-group">
+                  <label for="username" class="form-title">닉네임</label>
+                  <input type="text" id="username" class="form-control" value="시월이" placeholder="한글, 영문, 숫자 12자 이내 사용가능" title="한글, 영문, 숫자 12자 이내 사용가능" aria-label="한글, 영문, 숫자 12자 이내 사용가능" readonly />
+                </div>
+
+                <div class="form-group">
+                  <label for="pw" class="form-title">현재 비밀번호</label>
+                  <div class="form-inline">
+                    <input type="password" id="pw" class="form-control" maxlength="" placeholder="새로운 비밀번호" title="새로운 비밀번호" aria-label="새로운 비밀번호" />
+                    <button type="button" class="icon-viewoff" title="비밀번호 보기" aria-label="비밀번호 보기"><span class="sr-only">비밀번호 보기</span></button>
+                    <!-- <button type="button" class="icon-viewon" title="비밀번호 보기" aria-label="비밀번호 보기"><span class="sr-only">비밀번호 보기</span></button> -->
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="pwNew" class="form-title">새 비밀번호</label>
+                  <div class="form-inline">
+                    <input type="password" id="pwNew" class="form-control" maxlength="" placeholder="비밀번호 확인" title="비밀번호 확인" aria-label="비밀번호 확인" />
+                    <button type="button" class="icon-viewoff" title="비밀번호 보기" aria-label="비밀번호 보기"><span class="sr-only">비밀번호 보기</span></button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="pwNewConfirm" class="form-title">새 비밀번호 확인</label>
+                  <div class="form-inline">
+                    <input type="password" id="pwNewConfirm" class="form-control" maxlength="" placeholder="비밀번호 확인" title="비밀번호 확인" aria-label="비밀번호 확인" />
+                    <button type="button" class="icon-viewoff" title="비밀번호 보기" aria-label="비밀번호 보기"><span class="sr-only">비밀번호 보기</span></button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="btn-group">
+                <!-- 비활성화 상태 : disabled -->
+                <button type="submit" class="btn btn-lg btn-apply max-w-320" data-bs-toggle="modal" data-bs-target="#SaveInfo" disabled>변경</button>
+              </div>
+              
+              <div class="guide-text gap-24 mt-50">
+                <p class="text-darkgray">탈퇴를 원하시는 경우, <span class="break-sm">회원 탈퇴 버튼을 눌러 주세요.</span></p>
+                <button type="button" class="btn btn-text-arrow"  data-bs-toggle="modal" data-bs-target="#LeaveMember">회원 탈퇴</button>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        
+      </div>
+
+    </div>
+  </main>
+  
+  
+  <!-- 회원 탈퇴 신청 -->
+  <div class="modal modal-white modal-sheet fade" id="LeaveMember" tabindex="-1" aria-hidden="true">
+    <!-- 모달 내부 스크롤 가능한 클래스 : modal-dialog-scrollable -->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <!-- modal header -->
+        <div class="modal-header">
+          <h4 class="modal-title">회원 탈퇴 신청</h4>
+          <button type="button" class="btn-close lg dark" data-bs-dismiss="modal" aria-label="모달 닫기"><span class="sr-only">모달 닫기</span></button>
+        </div>
+        
+        <!-- modal body -->
+        <div class="modal-body">
+          <strong class="form-title">회원 탈퇴를 진행하시겠습니까?</strong>
+          <div class="guide-box box-round bg-light">
+            <p class="text">회원 탈퇴 전 아래 유의사항을 확인해주세요.</p>
+            <ul class="list-text-group list-dots">
+              <li class="text">시월뮤직의 모든 서비스에서 탈퇴됩니다.</li>
+              <li class="text">회원 탈퇴 완료 후 취소 및 철회가 불가합니다.</li>
+              <li class="text">출금신청 하지 않고 계정을 탈퇴한 경우 보유 포인트를 포기한 것으로 인정되며 포인트는 자동 소멸됩니다.</li>
+              <li class="text">탈퇴 신청 시, 모든 실적 및 활동 포인트는 즉시 소멸되며, 복구되지 않습니다.</li>
+            </ul>
+
+            <div class="form-choice">
+              <input type="checkbox" id="agree" name="agree" value="" />
+              <label for="agree" class="choice-text type-check">유의사항에 모두 확인 및 동의합니다.</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="userpw" class="form-label font-bold" aria-label="required">비밀번호 입력</label>
+            <input type="password" id="userpw" class="form-control" maxlength="" placeholder="비밀번호 입력" title="비밀번호 입력" aria-label="비밀번호 입력" required />
+          </div>
+        </div>
+
+        <!-- modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-confirm w-100" data-bs-dismiss="modal">탈퇴 신청하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- //wrap -->
+
+
+</body>
+
+</html>
+

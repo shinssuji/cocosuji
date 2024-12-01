@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name=”format-detection” content=”telephone=no”/>
+    <title>백방</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/side.css">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+
+<body>
+
+<div id="wrap">
+    <header>
+        <h1 class="logo">
+            <a href="index.html" class="gmarket">백방</a>
+        </h1>
+        <form class="search">
+            <input type="text" placeholder="어떤 차를 찾으세요?">
+            <button type="submit"><i class="ico ico-search">검색하기</i></button>
+        </form>
+        <button type="button" class="menu"><i class="ico ico-menu">메뉴</i></button>
+        <!-- 검색 박스 -->
+        <div class="search-box">
+            <a href="tel:02-123-4567"><i class="ico ico-phone"></i>전화상담 연결하기</a>
+            <a href="#a"><i class="ico ico-kakao-right"></i>카톡상담 연결하기</a>
+            <a href="index.html">이벤트 보러가기</a>
+            <a href="estimate_list.html">100인견적으로 이동</a>
+            <a href="estimate_banner.html">배너형 견적창으로 이동</a>
+        </div>
+        <!-- //검색 박스 -->
+    </header>
+    <!-- //header -->
+
+    <nav id="nav" class="gnb">
+        <div class="gnb-cont">
+            <button type="button" title="어사이드 메뉴 닫기" class="btn-close gmarket">X</button>
+            <div class="gnb-btn">
+                <a href="login.html">로그인</a>
+                <a href="signup_terms.html">회원가입</a>
+            </div>
+            <ul class="menu-list">
+                <li><a href="estimate_banner.html">내 견적함 <i class="ico ico-estimate"></i></a></li>
+                <li><a href="index.html">즉시 상담 <i class="ico ico-center"></i></a></li>
+                <li><a href="index.html">백명견적 신청 <i class="ico ico-apply"></i></a></li>
+                <li>
+                    <a href="chatBefore1.html" target="_blank">
+                    일당백 AI채팅 <i class="ico ico-ai"></i>
+                    </a>
+                </li>
+                <li><a href="index.html">장기렌트 가이드 <i class="ico ico-guide"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- //nav -->
+        
+    <div id="container" class="container">
+        <div class="signup">
+            <main class="main_signup_form">
+				<h1>회원가입하기</h1>
+				<form id="fregisterform" name="fregisterform" action="http://1cho-rent.co.kr/bbs/register_form_update_new.php" onsubmit="return fregisterform_submit_new(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+				<input type="hidden" name="w" value="">
+				<input type="hidden" name="url" value="%2Fsignup.html">
+				<input type="hidden" name="agree" value="">
+				<input type="hidden" name="agree2" value="">
+				<input type="hidden" name="cert_type" value="">
+				<input type="hidden" name="cert_no" value="">
+				<input type="hidden" name="mb_sex" value="">									<label for="reg_mb_id">아이디</label>
+					<div class="form_id">
+						<input type="text" name="mb_id" id="reg_mb_id" value="" required="" class="frm_input full_input required " minlength="3">
+						<button type="button" class="btn_check_duplicated_id">중복확인</button>
+					</div>
+					<label for="reg_mb_password">비밀번호</label>
+					<div class="form_password">
+						<input type="password" class="input_password frm_input full_input required" name="mb_password" id="reg_mb_password" required="" minlength="3">
+					</div>
+					<label for="reg_mb_password_re">비밀번호확인</label>
+					<div class="form_password_check">
+						<input type="password" class="input_password_check frm_input full_input required" name="mb_password_re" id="reg_mb_password_re" required="" minlength="3">
+					</div>
+					<label for="reg_mb_name">이름</label>
+					<div class="form_name">
+						<input type="text" name="mb_name" id="reg_mb_name" value="" required="">
+					</div>
+					<label for="reg_mb_hp">휴대폰</label>
+					<div class="form_phonenumber">
+						<input type="number" name="mb_hp" value="" id="reg_mb_hp">
+											</div>
+					<label for="reg_mb_interest_car">관심차종</label>
+					<div class="form_interests">
+						<input type="text" name="mb_interest_car" id="reg_mb_interest_car" value="" required="">
+					</div>
+
+					<button type="submit" class="btn_submit_form" id="btn_submit">회원가입</button>
+				</form>
+			</main>
+        </div>
+    </div>
+</div>
+
+    <!-- script -->
+    <script type="text/javascript">
+        $(function () {
+            /*
+            $(".btn_submit_form").on("click", function () {
+                window.location.href = "./step2.html"
+            })
+            */
+        })
+    </script>
+
+
+</body>
+
+</html>
+

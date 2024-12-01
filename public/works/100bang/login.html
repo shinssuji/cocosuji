@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name=”format-detection” content=”telephone=no”/>
+    <title>백방</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/side.css">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+
+<body>
+
+<div id="wrap">
+	<div class="login">
+		<form name="flogin" action="http://1cho-rent.co.kr/bbs/login_check.php" onsubmit="return flogin_submit(this);" method="post">
+			<input type="hidden" name="url" value="http%3A%2F%2F1cho-rent.co.kr">
+	
+			<main class="main_login display_flex_center">
+				<h1 class="section_login_bg gmarket">백 <em>-</em> 방</h1>
+				<section class="section_login">
+					<div class="input_group display_flex_center">
+						<input type="text" name="mb_id" id="login_id" maxlength="11" placeholder="전화번호를 입력해주세요." required="">
+						<input type="password" name="mb_password" id="login_pw" maxlength="20" placeholder="PW를 입력해주세요." required="">
+					</div>
+	
+					<div class="login_btn_group">
+						<!-- <button type="button" class="btn_login_main" id="btn_login_main">
+							<img src="images/common/btn_login.png" alt="" onclick="flogin_submit();">
+						</button> -->
+						<div class="login_btn_item">
+							<span role="button" id="btn_login_main" class="btn-white" onclick="location.href='index.html'">로그인</span>
+						<span role="button" class="btn-yellow">카카오 로그인 <i class="ico ico-kakao-left"></i></span>
+						</div>
+					</div>
+	
+					<div class="find_id_pw_wrapper display_flex_center">
+						<button type="button" class="btn_find_id">아이디 찾기</button>
+						<button type="button" class="btn_find_pw">비밀번호 찾기</button>
+					</div>
+				</section>
+			</main>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function flogin_submit(f)
+	{
+		//alert('2');
+		if( $( document.body ).triggerHandler( 'login_sumit', [f, 'flogin'] ) !== false ){
+			return true;
+		}
+		return false;
+	}
+
+	$(function () {
+		// 네비게이션
+		$("#nav").load("./nav.html")
+
+		//로그인 버튼 클릭시 페이지 이동
+		$("#btn_login_main").on("click", function () {
+
+			// 아이디 값 체크
+			if($('#login_id').val() == ''){
+				alert('아이디를 입력해 주세요');
+				$("#login_id").focus();
+				return false;
+			}
+
+			// 비밀번호 값 체크
+			if($('#login_pw').val() == ''){
+				alert('비밀번를 입력해 주세요');
+				$("#login_pw").focus();
+				return false;
+			}
+
+			document.flogin.submit();
+		})
+
+		//아이디,비번찾기 버튼 클릭시 페이지 이동
+		$(".btn_find_id").on("click", function () {
+			window.location.href = "./find_id.html"
+		})
+		$(".btn_find_pw").on("click", function () {
+			window.location.href = "./find_pw.html"
+		})
+	})
+</script>
+
+</body>
+
+</html>
+
