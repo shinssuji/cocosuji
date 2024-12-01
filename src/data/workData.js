@@ -97,7 +97,7 @@ export const workContent = {
     url: '../project/ucansign/guide/directory.html',
     code: 'https://github.com/shinssuji/cocosuji/tree/master/public/works/ucansign',
     subtit: '효율적인 계약업무를 위한 전자서명 솔루션',
-    perform: '유캔싸인은 직관적인 이용방법으로 간편함과 보안성을 동시에 제공하는 전자계약 서비스입니다. 일정이 촉박하여 데드라인에 맞추기 위해 최선을 다했던 프로젝트입니다. vue.js 환경에서 개발로 일부 화면이 구현된 상태에서 UI 및 퍼블리싱 작업을 진행하였습니다. 프레임워크 내에서 기존에 사용하는 템플릿의 스타일은 유지하며 추가되는 화면에 맞게 화면 구현을 위해 노력했습니다. 이 서비스는 반응형 관리자로 제작하여 사용자에게 어떠한 환경에도 구애받지 않는 동일한 경험을 전달합니다.',
+    perform: '유캔싸인은 직관적인 이용방법으로 간편함과 보안성을 동시에 제공하는 전자계약 서비스입니다. 일정이 촉박하여 데드라인에 맞추기 위해 최선을 다했던 프로젝트입니다. vue.js 환경에서 개발로 일부 화면이 구현된 상태에서 UI 및 퍼블리싱 작업을 진행하였습니다. 프레임워크 내에서 기존에 사용하는 템플릿의 스타일은 유지하며 추가되는 화면에 맞게 화면 구현을 위해 노력했습니다. 이 서비스는 반응형 관리자로 제작하였지만 일부 사인 편집 기능 및 에디터 기능은 웹 환경 기준입니다.',
     info: [
       {tit: '기술 스택', text: 'HTML, CSS, Vue(HTML 전달)'},
       {tit: '프로젝트 기간', text: '2021.03 - 2021.07'},
@@ -130,15 +130,15 @@ export const workContent = {
     type: 'mobile',
     sub: {
       en: '100-bang',
-      kr: '백방 하이브리드앱 구축',
+      kr: '백방 웹 앱 구축',
       path: '100bang'
     },
-    title: '백방 하이브리드앱 \n구축',
+    title: '백방 웹 앱 \n구축',
     do: '퍼블리싱 / 모바일',
     url: '../project/100bang',
     code: 'https://github.com/shinssuji/cocosuji/tree/master/public/works/100bang',
     subtit: '백명의 견적을 제공하는 장기렌트 견적 플랫폼',
-    perform: '',
+    perform: '장기렌트 견적을 제공하는 플랫폼입니다. 모바일 화면 기준으로 작업되었습니다.',
     info: [
       {tit: '기술 스택', text: 'HTML, CSS, Jqeury'},
       {tit: '프로젝트 기간', text: '2021.10.18 - 2021.10.30'},

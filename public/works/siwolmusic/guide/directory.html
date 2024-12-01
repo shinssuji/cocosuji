@@ -35,6 +35,18 @@
 .flex-table .sub {flex:5.8}
 .flex-table .type {flex:0.5;}
 .flex-table .etc {flex:0.7;}
+@media (max-width: 767px) {
+    #wrap {padding:0;}
+    .flex-table .row.head {border-color:transparent;}
+    .flex-table .row.head .cell {white-space:nowrap;}
+    .flex-table .cell {padding:5px 10px; font-size:12px; line-height:1.6;}
+    .flex-table .group {margin:0 -10px;}
+    .flex-table .cell .group:first-child {margin-top:-5px;}
+    .flex-table .cell .group:last-child {margin-bottom:-5px;}
+    .flex-table .group .cell:last-child, .flex-table .type {display:none;}
+    .flex-table .num {min-width:36px;}
+    .flex-table .menu {font-size:11px;}
+}
 </style>
 </head>
 <script>
