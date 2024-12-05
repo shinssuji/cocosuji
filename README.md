@@ -1,8 +1,3 @@
-# [#신수지 포트폴리오 : cocosj.dothome.co.kr](http://cocosj.dothome.co.kr)
-<br>
-포트폴리오 URL입니다.<br>
-프로젝트 썸네일 이미지는 추가적으로 업데이트 될 예정입니다.
-
 ## Project List
 * 2021.10 – 현재. KB 데이터허브 프로젝트 구축<br>
   : KB부동산 데이터허브 프로젝트 구축, 대응, 운영(vue를 기반으로 한 반응형 사이트)
