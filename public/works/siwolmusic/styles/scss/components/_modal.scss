@@ -1,0 +1,349 @@
+@use '../helpers' as *;
+
+/* bootstrap modal */
+// stylelint-disable function-disallowed-list
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and stuff
+
+
+// Container that the modal scrolls within
+.modal {
+  // scss-docs-start modal-css-vars
+  // --#{$prefix}modal-zindex: #{$zindex-modal};
+  // --#{$prefix}modal-width: #{$modal-md};
+  // --#{$prefix}modal-padding: #{$modal-inner-padding};
+  // --#{$prefix}modal-margin: #{$modal-dialog-margin};
+  // --#{$prefix}modal-color: #{$modal-content-color};
+  // --#{$prefix}modal-bg: #{$modal-content-bg};
+  // --#{$prefix}modal-border-color: #{$modal-content-border-color};
+  // --#{$prefix}modal-border-width: #{$modal-content-border-width};
+  // --#{$prefix}modal-border-radius: #{$modal-content-border-radius};
+  // --#{$prefix}modal-box-shadow: #{$modal-content-box-shadow-xs};
+  // --#{$prefix}modal-inner-border-radius: #{$modal-content-inner-border-radius};
+  // --#{$prefix}modal-header-padding-x: #{$modal-header-padding-x};
+  // --#{$prefix}modal-header-padding-y: #{$modal-header-padding-y};
+  // --#{$prefix}modal-header-padding: #{$modal-header-padding}; // Todo in v6: Split this padding into x and y
+  // --#{$prefix}modal-header-border-color: #{$modal-header-border-color};
+  // --#{$prefix}modal-header-border-width: #{$modal-header-border-width};
+  // --#{$prefix}modal-title-line-height: #{$modal-title-line-height};
+  // --#{$prefix}modal-footer-gap: #{$modal-footer-margin-between};
+  // --#{$prefix}modal-footer-bg: #{$modal-footer-bg};
+  // --#{$prefix}modal-footer-border-color: #{$modal-footer-border-color};
+  // --#{$prefix}modal-footer-border-width: #{$modal-footer-border-width};
+  // scss-docs-end modal-css-vars
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
+  // See also https://github.com/twbs/bootstrap/issues/17695
+
+  &.fade {
+    transition: opacity .15s linear;
+  }
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  // max-width: #{$modal-default-width + ($modal-out-side-space * 2)}px;
+  max-width: calc((var(--modal-default-width) + (var(--modal-body-all-space) * 2)) * 1px);
+  min-width: 320px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 #{$modal-out-side-space}px;
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
+
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    transition: transform .2s linear;
+    transform: translate(0, -50px);
+  }
+  .modal.show & {
+    transform: none !important;
+  }
+
+  // When trying to close, animate focus to scale
+  .modal.modal-static & {
+    // transform: $modal-scale-transform;
+  }
+
+  // When modal sheet style
+  .modal-sheet.fade & {
+    @include tablet {
+      max-width: none;
+      width: 100%;
+      padding: 0;
+      transform: translate(0, 100px);
+    }
+  }
+}
+
+.modal-dialog-scrollable {
+  // height: calc(100% - var(--#{$prefix}modal-margin) * 2);
+  height: 100%;
+
+  .modal-content {
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .modal-body {
+    @include scroll($size: 4px, $scroll-color: var(--scrollbar-light-color));
+
+    overflow-y: auto;
+  }
+}
+
+.modal-dialog-centered {
+  @include flex;
+  @include flex-align(center);
+  // min-height: calc(100% - var(--#{$prefix}modal-margin) * 2);
+  // min-height: calc(100% - 20px * 2);
+  min-height: 100%;
+
+  .modal-sheet & {
+    @include tablet {
+      @include flex-align(flex-end);
+    }
+  }
+}
+
+// Actual modal
+.modal-content {
+  @include flex;
+  @include flex-dir(column);
+  @include radius(calc(var(--modal-body-radius) * 1px));
+
+  position: relative;
+  width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
+  padding: calc(var(--modal-body-all-space) * 1px);
+  border: 1px solid var(--modal-border-color);
+  background-color: var(--modal-bg-color);
+  color: var(--modal-body-color);
+  box-shadow: 0 16px 32px rgba($black-001, 0.1);
+  pointer-events: auto;
+  outline: 0;
+
+  .modal-sheet & {
+    @include tablet {
+      @include radius(calc(var(--modal-body-radius)*1px) calc(var(--modal-body-radius)*1px) 0 0);
+      padding-left: 24px;
+      padding-right: 24px;
+      
+      &.modal-padding-half {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+  }
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($black-001, 0.8);
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+  @include flex;
+  @include flex-align(center);
+  @include flex-justify(space-between);
+  flex-shrink: 0;
+  // justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
+
+  &.center {
+    @include flex-justify(center);
+  }
+
+  .modal-sheet & {
+    position: relative;
+  }
+  
+  .btn-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    &:not(.lg) {
+      background-size: 20px;
+    }
+
+    .modal-sheet & {
+      top: -16px;
+      right: -8px;
+    }
+  }
+
+  .btn-reset {
+    position: absolute;
+    left: 0;
+    top: 0;    
+  }
+}
+
+// Title text within header
+.modal-title {
+  padding-bottom: calc(var(--modal-title-bottom-space) * 1px);
+  // font-size: 20px;
+  margin-bottom: 0;
+  font-size: calc(var(--modal-title-font-size) * 1px);
+
+  .modal-sheet & {
+    @include fixed-top;
+    
+    // padding-bottom: 16px;
+    
+    // @include tabletMin {
+    //   font-size: 24px;
+    // }
+  }
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  // Enable `flex-grow: 1` so that the body take up as much space as possible
+  // when there should be a fixed height on `.modal-dialog`.
+  flex: 1 1 auto;
+  line-height: 1.4;
+
+  .info-box {
+    margin: 20px 0;
+  }
+}
+
+// Footer (for actions)
+.modal-footer {
+  @include flex;
+  @include flex-justify(flex-end);
+  // @include flex-wrap(wrap);
+
+  flex-shrink: 0;
+  gap: 16px;
+  padding-top: 32px;
+  // Place margin between footer elements
+  // This solution is far from ideal because of the universal selector usage,
+  // but is needed to fix https://github.com/twbs/bootstrap/issues/24800
+  > .btn {
+    min-width: 72px;
+    width: auto;
+    height: 48px;
+
+    &:not(.flex-1) {
+      flex: none;
+    }
+  }
+
+  .modal-sheet & {
+    padding-top: 24px;
+  }
+}
+
+
+.modal-sheet {
+  @include tablet {
+    overflow: hidden;
+  }
+}
+
+.modal-img-box {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// Scale up the modal
+// @include media-breakpoint-up(sm) {
+//   .modal {
+//     --#{$prefix}modal-margin: #{$modal-dialog-margin-y-sm-up};
+//     --#{$prefix}modal-box-shadow: #{$modal-content-box-shadow-sm-up};
+//   }
+
+//   // Automatically set modal's width for larger viewports
+//   .modal-dialog {
+//     max-width: var(--#{$prefix}modal-width);
+//     margin-right: auto;
+//     margin-left: auto;
+//   }
+
+//   .modal-sm {
+//     --#{$prefix}modal-width: #{$modal-sm};
+//   }
+// }
+
+// @include media-breakpoint-up(lg) {
+//   .modal-lg,
+//   .modal-xl {
+//     --#{$prefix}modal-width: #{$modal-lg};
+//   }
+// }
+
+// @include media-breakpoint-up(xl) {
+//   .modal-xl {
+//     --#{$prefix}modal-width: #{$modal-xl};
+//   }
+// }
+
+// // scss-docs-start modal-fullscreen-loop
+// @each $breakpoint in map-keys($grid-breakpoints) {
+//   $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+//   $postfix: if($infix != "", $infix + "-down", "");
+
+//   @include media-breakpoint-down($breakpoint) {
+//     .modal-fullscreen#{$postfix} {
+//       width: 100vw;
+//       max-width: none;
+//       height: 100%;
+//       margin: 0;
+
+//       .modal-content {
+//         height: 100%;
+//         border: 0;
+//         @include border-radius(0);
+//       }
+
+//       .modal-header,
+//       .modal-footer {
+//         @include border-radius(0);
+//       }
+
+//       .modal-body {
+//         overflow-y: auto;
+//       }
+//     }
+//   }
+// }
+// scss-docs-end modal-fullscreen-loop
+
+
+
+
+
+

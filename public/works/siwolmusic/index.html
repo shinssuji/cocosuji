@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!-- ** 랜딩 페이지에 landing id값 추가 -->
+<html lang="ko" class="landing">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name="format-detection” content="telephone=no"/>
+    <title>SIWOL MUSIC</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="./styles/css/style.min.css">
+    <link rel="stylesheet" href="./lib/css/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/scripts/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="./scripts/common.js"></script> -->
+</head>
+
+<body>
+<div id="skipNav">
+    <a href="#header">헤더 바로가기</a>
+    <a href="#container">본문 바로가기</a>
+    <a href="#footer">푸터 바로가기</a>
+</div>
+
+<div id="wrap">
+    <!-- # header -->
+    <header id="header">
+        <div class="header-inner">
+          <a href="index.html" class="logo"><span class="sr-only">시월뮤직</span></a>
+
+          <!-- 비로그인 상태 > 메뉴 클릭 시 로그인 유도 모달 노출 -->
+          <ul class="header-menu hidden-md">
+            <li role="presentation">
+              <!-- <a href="dashboard/home.html" class="menu">대시보드</a> -->
+              <a href="" class="menu" data-bs-toggle="modal" data-bs-target="#MoveLogin">대시보드</a>
+            </li>
+            <li role="presentation">
+              <!-- <a href="dashboard/noticeAlarm.html" class="menu">공지사항</a> -->
+              <button type="button" class="menu" data-bs-toggle="modal" data-bs-target="#MoveLogin">공지사항</button>
+            </li>
+            <li role="presentation">
+              <!-- <a href="dashboard/guide.html" class="menu">사용가이드</a> -->
+              <a href="" class="menu" data-bs-toggle="modal" data-bs-target="#MoveLogin">사용가이드</a>
+            </li>
+          </ul>
+
+          <ul class="header-menu auto-left">
+            <li role="presentation" class="hidden-md">
+              <a href="member/join.html" class="menu">회원가입</a>
+            </li>
+            <li role="presentation">
+              <a href="member/login.html" class="menu menu-round">로그인</a>
+              <!-- 로그인 후 버튼 상태 : menu-round 클래스 삭제 -->
+              <!-- <a href="member/login.html" class="menu">로그아웃</a> -->
+            </li>
+          </ul>
+        </div>
+    </header>
+
+    <!-- #main visual -->
+    <section class="main-visual">
+      <!-- 영상 재생 불가할 경우 대체 이미지 삽입 필요 poster -->
+      <video class="video" poster="" muted autoplay loop preload="metadata" playsinline>
+        <!-- 영상 이미지 삽입할 경우 파일명 main_video.mp4로 적용 -->
+        <source src="./images/video/main_video.mp4" type="" type="video/mp4" />
+      </video>
+
+      <div class="text-group">
+        <!-- 텍스트 타이핑 되는 효과. 자세한 설명은 피그마 설계 확인 부탁드립니다. -->
+        <div class="main-text">
+          <h1>콘텐츠 음원 수익</h1>
+          <p>시월뮤직에서 더 많이 편리하게</p>
+        </div>
+        <!-- // -->
+
+        <div class="input-group form-control type-rounded">
+          <div class="input-group-prepend" aria-hidden="true">
+            <i class="icon-search"></i>
+          </div>
+          <div class="input-group-flexible text-center">오늘 인기있는 숏폼 음원을 검색해 보세요</div>
+          <a href="" class="link-mask"></a> <!-- 이동 링크 해당 위치에 삽입 -->
+        </div>
+
+        <ul class="tags">
+          <li>#OST</li>
+          <li>#연주곡</li>
+          <li>#VLOG</li>
+          <li>#신나는</li>
+          <li>#그루브</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- # container -->
+    <main id="container" class="container">
+      <!-- Service intro -->
+      <section class="sec sec-service">
+        <div class="sec-inner">
+          <div class="headings">
+            <h2 class="heading-small text-center" data-aos="zoom-out" data-aos-delay="100" data-aos-duration="600">
+              음원 제작부터 수익정산까지<br>
+              쉽고 편리한 음원 협업 서비스를 경험해 보세요
+            </h2>
+          </div>
+
+          <div class="intro-service-box flex-md-column">
+            <div class="items col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300" data-aos-duration="900">
+              <i class="icon-music" aria-hidden="true"></i>
+              <strong class="num">200+</strong>
+              <p class="info">200 곡이 넘는 다양한 장르의 음원 보유</p>
+            </div>
+            <div class="items col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300" data-aos-duration="900">
+              <i class="icon-percent" aria-hidden="true"></i>
+              <strong class="num">90%</strong>
+              <p class="info">음원 수익의 90%를 정산</p>
+            </div>
+            <div class="items col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300" data-aos-duration="900">
+              <i class="icon-gift" aria-hidden="true"></i>
+              <strong class="num">100%</strong>
+              <p class="info">이벤트 기간 동안은 수익 정산 100% </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Feature 1 -->
+      <section class="sec sec-image1">
+        <div class="sec-inner">
+          <div class="img-group">
+            <div class="text">
+              <span class="deco-text">Feature 1</span>
+              <h2 class="heading-large">나만의 특별한 음원 제작</h2>
+              <p class="sub-text">원하는 음악이 없다면 나만의 맞춤 음원 <span class="break-sm">제작을 의뢰해 보세요.</span></p>
+
+              <a href="" class="btn btn-main-link">음원 제작 문의하기</a>
+            </div>
+            <div class="img">
+              <img src="images/img_landing_sec1_phone@2x.png" alt="" class="img-phone" data-aos="zoom-out" data-aos-delay="200" data-aos-duration="1000">
+              <span class="img-popup" data-aos="fade-left" data-aos-delay="300" data-aos-duration="800">
+                <img src="images/img_landing_sec1_w_popup@2x.png" alt="" class="hidden-md">
+                <img src="images/img_landing_sec1_m_popup@2x.png" alt="" class="visible-md">
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature 2 -->
+      <section class="sec sec-image2">
+        <div class="sec-inner">
+          <div class="img-group">
+            <div class="text">
+              <span class="deco-text">Feature 2</span>
+              <h2 class="heading-large">복잡한 데이터 분석을<br>단순하고 쉽게!</h2>
+              <p class="sub-text">
+                실시간 협업 관리가 용이한 대시보드를 통해<br>
+                나의 음원 수익 추적 및 맞춤 통계 분석이 가능합니다.
+              </p>
+
+              <a href="" class="btn btn-main-link">대시보드 확인하기</a>
+            </div>
+            <div class="img">
+              <img src="images/img_landing_sec2_phone@2x.png" alt="" class="img-phone" data-aos="zoom-out" data-aos-delay="200" data-aos-duration="1000">
+              <span class="img-popup popup1" data-aos="fade-right" data-aos-delay="250" data-aos-duration="800">
+                <img src="images/img_landing_sec2_w_popup1@2x.png" alt="" class="hidden-md">
+                <img src="images/img_landing_sec2_m_popup1@2x.png" alt="" class="visible-md"> 
+              </span>
+              <span class="img-popup popup2" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="900">
+                <img src="images/img_landing_sec2_popup2@2x.png" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature 3 -->
+      <section class="sec sec-image3">
+        <div class="sec-inner">
+          <div class="img-group">
+            <div class="text">
+              <span class="deco-text">Feature 3</span>
+              <h2 class="heading-large">누구나 조건 없이<br>수익 창출의 가능성을</h2>
+              <p class="sub-text">콘텐츠 크리에이터라면 음원을 넣어 <span class="break-sm">바로 수익을 만들어 보세요. 1조회수 당 평균 </span>0.1~2원의 음원 수익이 발생합니다.</p>
+
+              <a href="" class="btn btn-main-link">내 음원 수익 관리하기</a>
+            </div>
+            <div class="img">
+              <img src="images/img_landing_sec3_w_phone@2x.png" alt="" class="img-phone hidden-md" data-aos="zoom-out" data-aos-delay="200" data-aos-duration="1000">
+              <img src="images/img_landing_sec3_m_phone@2x.png" alt="" class="img-phone visible-md" data-aos="zoom-out" data-aos-delay="200" data-aos-duration="1000">
+              <span class="img-popup">
+                <img src="images/img_landing_sec3_popup@2x.png" alt=""  data-aos="fade-right" data-aos-delay="250" data-aos-duration="800">
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefit -->
+      <section class="sec sec-benefit">
+        <div class="headings text-center">
+          <h2 class="heading-large" data-aos="zoom-out" data-aos-delay="100" data-aos-duration="600">모든 플랫폼의 수익 제공</h2>
+          <p class="sub-text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            인스타그램, 페이스북, 멜론, 지니, 애플뮤직 등<br>
+            다양한플랫폼의 수익을 정산해드립니다.
+          </p>
+        </div>
+
+        <ul class="platform-box">
+          <li role="presentation" class="platform-img" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+            <img src="images/img_app_instagram@2x.png" alt="인스타그램">
+          </li>
+          <li role="presentation" class="platform-img" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <img src="images/img_app_facebook@2x.png" alt="페이스북">
+          </li>
+          <li role="presentation" class="platform-img" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+            <img src="images/img_app_youtube@2x.png" alt="유튜브">
+          </li>
+          <li role="presentation" class="platform-img" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+            <img src="images/img_app_tiktok@2x.png" alt="틱톡">
+          </li>
+          <li role="presentation" class="platform-img" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
+            <img src="images/img_app_applemusic@2x.png" alt="애플뮤직">
+          </li>
+          <li role="presentation" class="platform-img" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+            <img src="images/img_app_melon@2x.png" alt="멜론">
+          </li>
+          <li role="presentation" class="platform-img" data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
+            <img src="images/img_app_genie@2x.png" alt="지니뮤직">
+          </li>
+        </ul>
+      </section>
+
+      <!-- Banner -->
+      <section class="sec sec-banner">
+        <div class="sec-inner text-center">
+          <div class="headings">
+            <h2 class="heading-small" data-aos="fade-in" data-aos-delay="100" data-aos-duration="900">내 영상에 딱 맞는 음악, 지금 만나보세요</h2>
+            <p class="sub-text"  data-aos="fade-in" data-aos-delay="350" data-aos-duration="800">Start for free now.</p>
+          </div>
+  
+          <a href="member/join.html" class="btn btn-main-link btn-white" data-aos="zoom-in" data-aos-delay="550" data-aos-duration="1000">시월뮤직 가입하기</a>
+        </div>
+      </section>
+
+    </main>
+    
+    <!-- # footer -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="flexbox flex-wrap">
+          <div class="company"><h2>(주)시월미디어</h2> 대표 유신일, 안동현&nbsp;</div>
+          <p class="info">사업자등록번호 638-87-02783</p>
+        </div>
+
+        <div class="flexbox flex-column">
+          <address class="info">서울특별시 강남구 역삼동 646-20, 6층 (본사)</address>
+          <address class="info">세종특별자치시 한누리대로 169, 세종행복타워 5층 501-1호(지사)</address>
+        </div>
+
+        <div class="flexbox copyright">
+          <p class="info">© 2024 SIWOLMUSIC</p>
+          <div class="terms-btn">
+            <a href="terms/service.html" target="_blank">이용약관</a>
+            <a href="terms/privacy.html" target="_blank">개인정보처리방침</a>
+          </div>
+        </div>
+
+        <div class="download-group">
+          <div class="flexbox gap-12">
+            <a href="" class="btn-download" target="_blank" rel="noreferrer noopener">
+              <img src="images/img_android_download.svg" alt="Get it on Google Play" />
+            </a>
+            <a href="" class="btn-download" target="_blank" rel="noreferrer noopener">
+              <img src="images/img_ios_download.svg" alt="Download on the App Store" />
+            </a>
+          </div>
+          <span class="app-text">App Store, iCloud, iCloud Drive 및 iTunes Store는 미국과 그 밖의
+            나라 및 지역에서 등록된 Apple Inc.의 서비스 상표입니다.<br>
+            Google Play 및 Google Play 로고는 Google LLC의 상표입니다.</span>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- 로그인 유도 -->
+  <div class="modal fade" id="MoveLogin" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- modal header -->
+        <div class="modal-header">
+          <h4 class="modal-title">안내</h4>
+          <button type="button" class="btn-close lg dark" data-bs-dismiss="modal" aria-label="모달 닫기"><span class="sr-only">모달 닫기</span></button>
+        </div>
+        
+        <!-- modal body -->
+        <div class="modal-body">
+          <p class="text">“메뉴명"는 로그인 고객에서 제공되는 서비스입니다. 로그인 후 계속 사용하세요.</p>
+        </div>
+
+        <!-- modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-confirm w-100">로그인 하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- //wrap -->
+
+
+</body>
+
+<!-- 애니메이션 효과 script 추가 -->
+<script>
+  AOS.init();
+</script>
+
+</html>
+

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta name=”format-detection” content=”telephone=no”/>
+    <title>PAYAPP</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;900&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/aos.css">
+    <link rel="stylesheet" type="text/css" href="./css/layout.css">
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./js/aos.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div id="wrap">
+    <!--<div class="banner-section">
+        <ul class="top-banner">
+            <li>
+                <a href="http://blogpay.co.kr/" rel="noopener noreferrer" target="_blank">
+                    <div class="item blogpay">
+                        <strong>블로그페이 <i class="ico-x"></i> 페이앱</strong>
+                        <p>블로그페이에서 쇼핑몰 생성부터 판매까지 걸리는 시간은, 단 <b>3분</b>!</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <button type="button" class="close"><span>오늘 하루 닫기</span><i class="ico-x"></i></button>
+    </div>-->
+    <!-- //banner-section -->
+
+    <header id="global-header">
+        <div class="sticky-bar"></div>
+        <div class="header-wrapper">
+            <h1>
+                <a href="index.html">페이앱</a>
+            </h1>
+            <nav class="gnb">
+                <div class="menu-btn">
+                    메뉴클릭
+                </div>
+                <div class="mobile-lnb">
+                    <ul>
+                        <li>
+                            <a href="about/about.html">페이앱 소개</a>
+                        </li>
+                        <li class="depth">
+                            <a href="javascript:;">결제방식</a>
+                            <ul class="sub">
+                                <li><a href="pay/pay_simple.html">전자결제</a></li>
+                                <li><a href="pay/pay_sms.html">SMS/카톡결제</a></li>
+                                <li><a href="pay/pay_write.html">수기결제</a></li>
+                                <li><a href="pay/pay_camera.html">카메라결제</a></li>
+                                <li><a href="pay/pay_touch.html">터치결제</a></li>
+                                <li><a href="pay/pay_qr.html">QR코드결제</a></li>
+                                <li><a href="pay/pay_period.html">정기결제</a></li>
+                                <li><a href="pay/pay_register.html">등록결제</a></li>
+                                <li><a href="pay/pay_foreign.html">해외결제</a></li>
+                                <li><a href="pay/pay_sub.html">부계정</a></li>
+                            </ul>
+                        </li>
+                        <li class="depth">
+                            <a href="guide/guide1.html">이용안내</a>
+                            <ul class="sub">
+                                <li><a href="guide/guide1.html">비용안내</a></li>
+                                <li><a href="guide/guide2.html">가입/결제받기</a></li>
+                                <li><a href="guide/guide3.html">구비서류/심사</a></li>
+                                <li><a href="guide/guide4.html">보증보험</a></li>
+                                <li><a href="guide/guide5.html">정산안내</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="reseller/reseller.html">영업안내</a>
+                        </li>
+                        <li>
+                            <a href="api/api.html">API 연동</a>
+                        </li>
+                        <li class="depth">
+                            <a href="javascript:;">고객센터</a>
+                            <ul class="sub">
+                                <li><a href="bbs/bbs_faq.html">자주 묻는 질문</a></li>
+                                <li><a href="bbs/bbs_notice.html">공지사항</a></li>
+                                <li><a href="bbs/bbs_ask.html">문의사항</a></li>
+                                <!--<li><a href="bbs/bbs_use.html">이용가이드</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mobile-info">
+                        <a href="tel:1800-3772">고객센터 연결</a>
+                        <a href="member/login.html">로그인</a>
+                        <a href="/cardevent/cardevent.html" title="페이앱 카드 무이자 행사 내용 보기" target="_blank">무이자 할부안내</a>
+                        <button type="button" onclick="window.open('member/seller_regist.html')" class="btn btn-blue btn-round btn-block">판매자 회원가입</button>
+                        <div class="mobile-ban">
+                            <a href="http://blogpay.co.kr/" target="_blank" title="새창으로 이동">
+                                <img src="images/banner/img_aside_blogpay_m.png" alt="블로그페이 바로가기">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="web">
+                    <ul>
+                        <li>
+                            <a href="about/about.html">페이앱 소개</a>
+                        </li>
+                        <li>
+                            <a href="pay/pay_simple.html">결제방식</a>
+                            <ul class="sub">
+                                <li><a href="pay/pay_simple.html">전자결제</a></li>
+                                <li><a href="pay/pay_sms.html">SMS/카톡결제</a></li>
+                                <li><a href="pay/pay_write.html">수기결제</a></li>
+                                <li><a href="pay/pay_camera.html">카메라결제</a></li>
+                                <li><a href="pay/pay_touch.html">터치결제</a></li>
+                                <li><a href="pay/pay_qr.html">QR코드결제</a></li>
+                                <li><a href="pay/pay_period.html">정기결제</a></li>
+                                <li><a href="pay/pay_register.html">등록결제</a></li>
+                                <li><a href="pay/pay_foreign.html">해외결제</a></li>
+                                <li><a href="pay/pay_sub.html">부계정</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="guide/guide1.html">이용안내</a>
+                            <ul class="sub">
+                                <li><a href="guide/guide1.html">비용안내</a></li>
+                                <li><a href="guide/guide2.html">가입/결제받기</a></li>
+                                <li><a href="guide/guide3.html">구비서류/심사</a></li>
+                                <li><a href="guide/guide4.html">보증보험</a></li>
+                                <li><a href="guide/guide5.html">정산안내</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="reseller/reseller.html">영업안내</a>
+                        </li>
+                        <li>
+                            <a href="api/api.html">API 연동</a>
+                        </li>
+                        <li>
+                            <a href="bbs/bbs_faq.html">고객센터</a>
+                            <ul class="sub">
+                                <li><a href="bbs/bbs_faq.html">자주 묻는 질문</a></li>
+                                <li><a href="bbs/bbs_notice.html">공지사항</a></li>
+                                <li><a href="bbs/bbs_ask.html">문의사항</a></li>
+                                <!--<li><a href="bbs/bbs_use.html">이용가이드</a></li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="gnb-info">
+                <a href="member/login.html">로그인</a>
+                <a href="javascript:;" onclick="location.href='member/seller_regist.html'">판매자 회원가입</a>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <section class="container" id="intro">
+        <section class="visual-motion">
+            <div class="visual-wrap">
+                <ul class="main-visual">
+                    <li class="visual visual1">
+                        <div class="inner-lg">
+                            <div class="main-tit">
+                                <h2>ALL Ready<br>통합결제 솔루션, 페이앱</h2>
+                                <p>사이트 연동 결제 방식과, 앱을 이용한 온/오프라인 결제, 주문서/쇼핑몰 등<span class="br-break-lg">다양한 부가 서비스까지 페이앱 무료가입으로. 모두 쉽게. 한번에.</span></p>
+                                <div class="btn-group visual-btn">
+                                    <button class="btn btn-white btn-lg btn-rounded" type="button" onclick="window.open('https://play.google.com/store/apps/details?id=com.udid.payapp')"><i class="ico ico-l ico-androad"></i>Google Play</button>
+                                    <button class="btn btn-white btn-lg btn-rounded" type="button" onclick="window.open('https://apps.apple.com/kr/app/payapp/id538328034')"><i class="ico ico-l ico-ios"></i>App Store</button>
+                                </div>
+                            </div>
+                            <div class="img-area">
+                                <img src="images/main/visual1_img.png" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- //visual1 -->
+                    <li class="visual visual2">
+                        <div class="inner-lg">
+                            <div class="main-tit">
+                                <h2>네이버페이, 카카오페이<br>기본탑재!</h2>
+                                <p>네이버페이, 카카오페이, 페이코, 삼성페이 등 유수의 간편결제가<span class="br-break-lg">기본 탑재돼있어 별도 계약할 필요 없이 바로 결제받기 가능.</span></p>
+                                <div class="btn-group visual-btn">
+                                    <button class="btn btn-white btn-lg btn-rounded" type="button" onclick="window.open('https://play.google.com/store/apps/details?id=com.udid.payapp')"><i class="ico ico-l ico-androad"></i>Google Play</button>
+                                    <button class="btn btn-white btn-lg btn-rounded" type="button" onclick="window.open('https://apps.apple.com/kr/app/payapp/id538328034')"><i class="ico ico-l ico-ios"></i>App Store</button>
+                                </div>
+                            </div>
+                            <div class="img-area">
+                                <img src="images/main/visual2_img.png" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- //visual2 -->
+                    <li class="visual visual3">
+                        <div class="inner-lg">
+                            <div class="main-tit">
+                                <h2>어디서든 사용 가능한 주문서에 <span class="br-break-lg">무료 쇼핑몰까지 기본 제공!</span></h2>
+                                <p>페이앱 무료가입으로 이용 가능한 No.1 무료 간편 쇼핑 플랫폼<span class="br-break-lg">블로그페이로 SNS마켓과 온라인 시장을 내품에!</span></p>
+                                <div class="btn-group visual-btn">
+                                    <button class="btn btn-blue btn-lg btn-rounded" type="button" onclick="window.open('http://blogpay.co.kr/')">자세히보기</button>
+                                </div>
+                            </div>
+                            <div class="img-area">
+                                <img src="images/main/visual3_img.png" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- //visual3 -->
+                    <li class="visual visual4">
+                        <div class="inner-lg">
+                            <div class="main-tit">
+                                <h2>사업자 없이도, <span class="br-break-sm">리더기 없이도</span><span class="br-break-lg">즉시 결제받기 가능!</span></h2>
+                                <p>사업자도, 사업자 없는 개인도, 결제 리더기 없이도 <span class="br-break-lg">무료가입 후 앱으로 PC로 즉시 결제 받기 가능.</span></p>
+                                <div class="btn-group visual-btn">
+                                    <button class="btn btn-white btn-lg btn-rounded" type="button" onclick="window.open('https://play.google.com/store/apps/details?id=com.udid.payapp')"><i class="ico ico-l ico-androad"></i>Google Play</button>
+                                    <button class="btn btn-white btn-lg btn-rounded" type="button" onclick="window.open('https://apps.apple.com/kr/app/payapp/id538328034')"><i class="ico ico-l ico-ios"></i>App Store</button>
+                                </div>
+                            </div>
+                            <div class="img-area">
+                                <img src="images/main/visual4_img.png" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- //visual4 -->
+                </ul>
+            </div>
+            <div class="fixed-menu">
+                <div class="menu-list">
+                    <a href="javascript:;" onclick="window.open('./popup/pay_test.html','원격 결제 테스트','width=800,height=700,top=200,left=300,location=no,status=no,scrollbars=yes');">결제 테스트</a>
+                    <a href="member/seller_regist.html">서비스 신청</a>
+                    <a href="member/login.html">관리자 로그인</a>
+                    <a href="/cardevent/cardevent.html">무이자 할부</a>
+                    <a href="javascript:;" onclick="window.open('./popup/pay_view1.html','결제 내역 조회','width=460,height=850,top=200,left=400,location=no,status=no,scrollbars=yes');">결제내역 조회</a>
+                    <a href="bbs/ask_write.html">1:1 문의</a>
+                </div>
+            </div>
+        </section>
+        <!-- //visual-motion -->
+
+        <section class="section1">
+            <div class="inner">
+                <div class="main-sub">
+                    <h2>페이앱 특장점</h2>
+                    <a href="./about/about.html" class="btn-view pull-right hidden-xs">자세히 <i class="arrow arrow-sm right light"></i></a>
+                </div>
+                <div class="benefit-area box-group">
+                    <div class="item">
+                        <div class="txt">
+                            <i class="ico"></i>
+                            <p>간편한 사이트<br>결제연동은 기본</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="txt">
+                            <i class="ico ico-allpay"></i>
+                            <p>온/오프라인<br>대면/비대면 통합결제</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="txt">
+                            <i class="ico ico-nkpay"></i>
+                            <p>네이버페이, 카카오페이<br>기본 탑재</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="txt">
+                            <i class="ico ico-personal"></i>
+                            <p>사업자 없는<br>개인도 사용 OK</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="txt">
+                            <i class="ico ico-free"></i>
+                            <p>리더기가 필요없는<br>결제 앱 무료 제공</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="txt">
+                            <i class="ico ico-account"></i>
+                            <p>주계정 하나로<br>부계정 무제한 지원</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="txt">
+                            <i class="ico ico-admin"></i>
+                            <p>PC용 관리자<br>기본 제공</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="txt">
+                            <i class="ico ico-service"></i>
+                            <p>주문서, 쇼핑몰 등<br>막강한 무료 부가서비스</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section class="section2">
+            <div class="inner">
+                <div class="main-sub">
+                    <h2>결제수수료(부가세별도) <span class="br-break-sm">/ 정산안내</span></h2>
+                    <a href="./guide/guide5.html" class="btn-view pull-right hidden-xs">자세히 <i class="arrow arrow-sm right light"></i></a>
+                    <p>결제 수수료 외 어떠한 추가비용도 없습니다.</p>
+                </div>
+                <table class="table">
+                    <caption>페이앱 결제수수료와 정산안내 테이블</caption>
+                    <colgroup>
+                        <col style="width:26%;">
+                        <col span="2" style="width:37%;">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th scope="col">구분</th>
+                        <th scope="col">카드결제 수수료</th>
+                        <th scope="col">휴대폰결제 수수료</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="sub-line">
+                        <th scope="row"><span class="tit">사업자<em class="br-break-sm">(법인/개인)</em></span></th>
+                        <td>
+                            <p>
+                                <span class="label label-round">영중소</span>
+                                <strong>2.1<em>%</em> ~ 2.9<em>%</em></strong>
+                            </p>
+                            <p>
+                                <span class="label label-round">일반</span>
+                                <strong>3.4<em>%</em></strong>
+                            </p>
+                        </td>
+                        <td>
+                            <span class="label label-round visible-md hidden">영중소</span>
+                            <strong>5.0<em>%</em></strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="tit">비사업자 <em class="br-break-sm">개인</em></span></th>
+                        <td>
+                            <span class="label label-round">일반</span>
+                            <strong>4.0<em>%</em></strong>
+                        </td>
+                        <td>
+                            <span class="label label-round visible-md hidden">일반</span>
+                            <strong>5.7<em>%</em></strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><span class="tit">정산안내</span></th>
+                        <td>
+                            <b class="sub-tit">표준정산</b>
+                            <strong>D+5<em>일</em></strong>
+                        </td>
+                        <td>
+                            <b class="sub-tit">빠른정산</b>
+                            <strong>D+3<em>일 /</em> D+1<em>일</em></strong>
+                            <span class="label label-round">부가서비스</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <!-- //section2 -->
+
+        <section class="section3">
+            <div class="inner">
+                <div class="main-sub">
+                    <h2>이용안내</h2>
+                </div>
+                <div class="use-area box-group">
+                    <div class="item">
+                        <dl class="txt" onclick="location.href='./member/seller_regist.html'">
+                            <dt>무료가입/즉시결제</dt>
+                            <dd>
+                                <p>간편 무료 가입 후<br>즉시 결제받기가 가능합니다.</p>
+                                <span class="btn-view">자세히 <i class="arrow arrow-sm right light"></i></span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl class="txt" onclick="location.href='./guide/guide3.html'">
+                            <dt>판매점 계약 안내</dt>
+                            <dd>
+                                <p>결제가 난 뒤 계약서류가 완료되면<br>정산이 시작됩니다. (이메일 접수)</p>
+                                <span class="btn-view">자세히 <i class="arrow arrow-sm right light"></i></span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl class="txt" onclick="location.href='./guide/guide4.html'">
+                            <dt>보증보험 안내</dt>
+                            <dd>
+                                <p>건당 결제금액 10만원 이상 or 월매출<br>300만원 이상인 경우 보증보험 가입을<br>요청 드릴 수 있습니다. </p>
+                                <span class="btn-view">자세히 <i class="arrow arrow-sm right light"></i></span>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section3 -->
+
+        <section class="section4">
+            <div class="inner">
+                <div class="col-6">
+                    <div class="menu-panel">
+                        <h3>
+                            <a href="bbs/bbs_faq.html">
+                                FAQ<i class="ico ico-arrow-r-white"></i>
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="menu-panel">
+                        <h3>
+                            <a href="bbs/bbs_notice.html">
+                                공지사항 <span class="hidden-xs">더보기</span><i class="ico ico-arrow-r-white"></i>
+                            </a>
+                        </h3>
+                        <ul class="hidden-xs col-6">
+                            <li>LGU+ 휴대폰 소액결제 서비스 작업 공지</li>
+                            <li>2020년 9월 9일 네이버페이 작업 안내</li>
+                            <li>SK텔링크 휴대폰 소액결제 서비스 작업 공지 SK텔링크 휴대폰 소액결제 서비스 작업 공지</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="menu-panel">
+                        <i class="ico ico-phone hidden-xs"></i>
+                        <h3>
+                            <span>대표전화</span> <a href="tel:1800-3772">1800-3772</a>
+                        </h3>
+                        <ul>
+                            <li>평일 09:00 ~ 18:00 (점심 12:00 ~ 13:00)</li>
+                            <li>fax. 02-6008-9760</li>
+                            <li>e-mail. payapp@udid.co.kr</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section4 -->
+    </section>
+    <!-- //container -->
+
+    <footer id="global-footer">
+        <div class="footer-area">
+            <section class="footer-wrap">
+                <h1>(주)유디아이디</h1>
+                <div class="familysite">
+                    <span class="select-btn"></span>
+                    <span class="select-chk">FamilySite</span>
+                    <ul class="site-list">
+                        <li><a href="http://blogpay.co.kr/" target="_blank">블로그페이</a></li>
+                        <li><a href="https://make.link/" target="_blank">메이크링크</a></li>
+                        <li><a href="http://mklink.co.kr/main" target="_blank">마케터링크</a></li>
+                        <li><a href="https://prosell.co.kr/" target="_blank">프로셀</a></li>
+                        <li><a href="https://www.ciderpay.com/" target="_blank">사이다페이</a></li>
+                        <li><a href="https://zipsa.net/" target="_blank">집사</a></li>
+                        <li><a href="https://danbipay.com/main" target="_blank">단비페이</a></li>
+                    </ul>
+                </div>
+                <div class="copyright-wrap">
+                    <div class="company">
+                        <p>
+                            <span>상호명 : (주)유디아이디</span><span>대표자 : 김재인</span><span>개인정보관리책임자 : 김미정</span><span>사업자등록번호 : 113-86-56537</span>
+                        </p>
+                        <p>
+                            <span>통신판매업 신고번호 : 제 2012-서울구로-0239호<a href="http://www.ftc.go.kr/www/bizCommList.do?key=232" target="_blank"> [사업자정보확인]</a></span><span>고객센터 : 1800-3772</span><span>팩스 : 02-6008-9760</span><span><a href="mailto:payapp@udid.co.kr">이메일 : payapp@udid.co.kr</a></span>
+                        </p>
+                        <p>주소 : 서울특별시 구로구 디지털로 26길 61 에이스하이엔드타워 2차 1202호</p>
+                        <p>COPYRIGHT © 2012 UDID CORP. All rights reserved. Inspired by Charlie C</p>
+                    </div>
+                </div>
+                <div class="terms">
+                    <a href="http://udid.co.kr/" target="_blank">회사소개</a>
+                    <a href="udidTerms/index.html">이용약관</a>
+                    <a href="udidTerms/index.html">개인정보처리방침</a>
+                    <a href="http://payapp.kr/dev_center/dev_center01.html" target="_blank">개발자센터</a>
+                    <a href="https://pf.kakao.com/_LAsjT" target="_blank">제휴문의</a>
+                </div>
+                <div class="banner-wrap">
+                    <div class="banner-area">
+                        <div class="banner">
+                            <strong>PG</strong>
+                            <span>전자지급결제대행업 등록번호 02-004-00096</span>
+                        </div>
+                        <div class="banner">
+                            <strong>ESCROW</strong>
+                            <span>결제대금예치업 등록번호 02-006-00035</span>
+                        </div>
+                        <div class="banner">
+                            <strong>통신과금서비스제공업</strong>
+                            <span>등록번호 058</span>
+                        </div>
+                        <div class="banner">
+                            <strong>ISMS</strong>
+                            <span>정보보호 관리체계 인증 19-016</span>
+                        </div>
+                    </div>
+                    <div class="social">
+                        <a href="javascript:;"><img src="./images/common/img_mark_isms.png" alt="ISMS"></a>
+                        <a href="https://www.instagram.com/payapp_official/" target="_blank" title="페이앱 공식 인스타그램"><i class="ico ico-insta"></i></a>
+                        <a href="https://www.facebook.com/udidcorporation" target="_blank" title="페이앱 공식 페이스북"><i class="ico ico-facebook"></i></a>
+                        <a href="https://pf.kakao.com/_LAsjT" target="_blank" title="페이앱 공식 플러스친구"><i class="ico ico-kakaoplus"></i></a>
+                        <a href="https://blog.naver.com/udidcompany" target="_blank" title="페이앱 공식 네이버 블로그"><i class="ico ico-blog"></i></a>
+                        <a href="https://post.naver.com/udidpayapp" target="_blank" title="블로그페이 공식 포스트"><i class="ico ico-post"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="floating-cont">
+            <div class="fixed-menu">
+                <div class="menu-list">
+                    <a href="javascript:;" onclick="window.open('./popup/pay_test.html','원격 결제 테스트','width=800,height=700,top=200,left=300,location=no,status=no,scrollbars=yes');">결제 테스트</a>
+                    <a href="member/seller_regist.html">서비스 신청</a>
+                    <a href="member/login.html">관리자 로그인</a>
+                    <a href="/cardevent/cardevent.html">무이자 할부</a>
+                    <a href="javascript:;" onclick="window.open('./popup/pay_view1.html','결제 내역 조회','width=460,height=850,top=200,left=400,location=no,status=no,scrollbars=yes');">결제내역 조회</a>
+                    <a href="bbs/ask_write.html">1:1 문의</a>
+                </div>
+            </div>
+        </div>
+        <div class="floating-menu">
+            <div role="button" class="f-btn go-top">
+                <b>TOP</b>
+            </div>
+            <div role="button" class="f-btn go-menu"></div>
+        </div>
+
+    </footer>
+    <!-- //footer -->
+
+    <!--<div class="pop-wrap">
+        <div class="popup-section">
+            <ul class="main-popup">
+                <li data-text="페이앱가입혜택">
+                    <a href="./event/event01.html" target="_blank">
+                        <img src="images/popup/img_pop_joinBenefit.jpg" alt="페이앱가입혜택">
+                    </a>
+                </li>
+            </ul>
+            <div class="btn-area">
+                <button type="button" onclick="javascript:todaycloseWin();">오늘 하루 닫기</button>
+                <button type="button" class="bbtnClose_new">닫기</button>
+            </div>
+        </div>
+        <div class="pop-overlay"></div>
+    </div>-->
+     <!--//popup-->
+
+</div>
+<!-- //main-wrap -->
+</body>
+
+
+</html>
+
