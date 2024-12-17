@@ -94,18 +94,28 @@
   pointer-events: none;
 
   p {
+    // overflow: hidden;
     position: absolute;
+    display: flex;
+    gap: 20px;
     
     font-size: rem(200);
-    font-weight: $font-regular;
+    font-weight: $font-medium;
     color: $black-sub01;
     white-space: nowrap;
+    // letter-spacing: rem(30);
 
     @include laptop {
       font-size: rem(150)
     }
     @include tablet {
       font-size: min(22.222vw, rem(150));
+    }
+
+    > span {
+      display: inline-block;
+      position: relative;
+      font-weight: $font-regular;
     }
     
     &.text-left {
@@ -136,7 +146,11 @@
 
 
   .circle {
-    @include pos-center;
+    // @include pos-center;
+    position: fixed;
+    transform: translate(-50%, -55%);
+    left: 50%;
+    top: 50%;
     
     display: block;
 
@@ -262,28 +276,36 @@
     @include tabletMin {
       padding: rem(110) 0;
       
-      &:nth-of-type(even) {
-        .img {
-          order: 2;
-        }
-      }
+      // &:nth-of-type(even) {
+      //   .img {
+      //     order: 2;
+      //   }
+      // }
     }
 
     @include tablet {
       @include flex-dir(column);
     }
   }
+
+  .img {
+    padding-left: rem(50);
+    padding-right: rem(50);
+  }
   
   .item {
     @include flexitem; 
+    // flex: 1;
     min-width: 50%;
+    // flex: 0 0 auto;
+    // width: 30%;
   }
   
   .text {
     padding-left: min(6.667vw, rem(200));
 
     @include tablet {
-      width:100%;
+      width: 100%;
       padding: 12vw var(--inner-padding) 22vw;
     }
     

@@ -406,8 +406,10 @@ footer p.copyright {
 }
 .visual p {
   position: absolute;
+  display: flex;
+  gap: 20px;
   font-size: 20rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #000;
   white-space: nowrap;
 }
@@ -421,6 +423,11 @@ footer p.copyright {
     font-size: min(22.222vw, 15rem);
   }
 }
+.visual p > span {
+  display: inline-block;
+  position: relative;
+  font-weight: 400;
+}
 .visual p.text-left {
   left: -4.4rem;
   top: min(13.038vw, 6rem);
@@ -430,10 +437,10 @@ footer p.copyright {
   bottom: min(13.038vw, 6rem);
 }
 .visual .circle {
-  position: absolute;
+  position: fixed;
+  transform: translate(-50%, -55%);
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
   display: block;
 }
 .visual .circle::before {
@@ -574,14 +581,15 @@ footer p.copyright {
   .works .box {
     padding: 11rem 0;
   }
-  .works .box:nth-of-type(even) .img {
-    order: 2;
-  }
 }
 @media screen and (max-width: 1024px) {
   .works .box {
     flex-direction: column;
   }
+}
+.works .img {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 .works .item {
   flex: 1;
