@@ -23,8 +23,8 @@ router.beforeEach((to, from, next) => {
   /**
    * loading
    */
-  // detail에서 sub로 이동하는 경우만 제외
-  const skipLoading = from.path.includes('detail') && to.name === 'sub';
+  // const skipLoading = from.path.includes('detail') && to.name === 'sub';
+  const skipLoading = from.name != 'main' && to.name != 'main';
 
   if (!skipLoading) {
     EventBus.$emit('toggle-loading', to);

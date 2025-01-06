@@ -61,7 +61,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2024.01.08 - 2024.01.15\n2024.01.29 - 2024.01.31'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 100%'}
     ],
-    dark: false
+    dark: true
   },
   // 페이앱 
   payapp: {
@@ -82,7 +82,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2020.10.26 - 2020.12.31'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 80% · 디자인 20%'}
     ],
-    dark: false
+    dark: true
   },
   // 유캔싸인
   ucansign: {
@@ -123,7 +123,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2021.02.19 - 2021.05.14'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 100%'}
     ],
-    dark: false
+    dark: true
   },
   // 100bang
   '100bang': {
