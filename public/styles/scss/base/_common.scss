@@ -1,11 +1,5 @@
 @use '../helpers' as *;
 
-
-/*
-$color: red;
-
-color: rgba($color, 0.5); //scss 컬러 내장함수
-*/
 * {
   font-family: $en-font, $kr-font, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
@@ -16,10 +10,6 @@ html {
   @include desktop {
     font-size: 55%;
   }
-
-  // @include tablet {
-  //   font-size: 62.5%;
-  // }
 }
 
 body {
@@ -38,14 +28,14 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  @include size(4px);
+
   &-thumb {
-    width: 4px;
-    height: 30%;
+    @include size(4px, 30%);
+    @include radius(10px);
+
     background: #f4f4f4 !important;
     border: 4px solid #ccc;
-    border-radius: 10px;
     
     &:hover {
       background: #f4f4f4 !important;
@@ -53,24 +43,13 @@ body {
   }
 
   &-track {
-    background: rgb(0 0 0 / 0%);
+    background: rgb($black-sub01, 0);
   }
 }
 
-
-// common layout
-#wrap {
-  // height: vh(100);
-  min-height: vh(100);
-  // transition: 0.15s;
-  // overflow-y: auto;
-
+body {
   * {
     cursor: none;
-  }
-
-  @include tablet {
-    @include scroll-remove;
   }
 
   @media (pointer:coarse) {
@@ -82,6 +61,46 @@ body {
     * {
       cursor: auto;
     }
+  }
+}
+
+// skip navigation
+#skipNav {
+  position: absolute;
+  width: 100%;
+
+  a {
+    @include flex-layout($justify: center);
+    @include size(100%, 50px);
+    
+    position: absolute;
+    top: 0;
+    background: $black-sub01;
+    color: $white-main;
+    transform: translateY(-100%);
+
+    &:focus,
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+// common layout
+#wrap {
+  // height: vh(100);
+  min-height: vh(100);
+  // overflow-x: hidden;
+  // transition: 0.15s;
+  // overflow-y: auto;
+
+  // * {
+  //   cursor: none;
+  // }
+
+  @include tablet {
+    @include scroll-remove;
   }
 }
 
@@ -117,16 +136,71 @@ body {
 
 // vue transition ani.
 .routing-fade {
-  &-enter-active,
-  &-leave-active,
-  &-appear-active {
-    transition: opacity 0.5s ease-in-out;
-  }
+  // &-enter-active,
+  // &-leave-active,
+  // &-appear-active {
+  //   transition: opacity 1.5s ease-in-out;
+  // }
 
+  // &-leave-active {
+  //   // transition-delay: 2s;
+  //     transition: opacity 1.5s ease-in-out 2s;
+  //   }
+  //   &-leave {
+  //       opacity: 0;
+  //     }
+
+
+  
+  // &-enter,
+  // &-leave-to,
+  // &-appear {
+  //   opacity: 0;
+  // }
+  
+}
+
+
+
+
+.routing-fade {
+  // 진입(enter) 애니메이션 - 빠르게
+  &-enter-active {
+    transition: opacity 1s ease-in-out;
+  }
+  
+  // 퇴장(leave) 애니메이션 - 천천히
+  &-leave-active {
+    transition: opacity 2s ease-in-out;
+  }
+  
+  // appear는 enter와 동일하게 빠르게
+  &-appear-active {
+    transition: opacity 1s ease-in-out;
+  }
+  
+  // 초기 상태와 최종 상태는 동일하게 유지
   &-enter,
   &-leave-to,
   &-appear {
     opacity: 0;
   }
-  
 }
+
+
+
+
+
+
+// .routing-fade {
+//   &-enter-active,
+//   &-appear-active {
+//     transition: opacity 0.5s ease-in-out;
+//   }
+  
+//   &-enter,
+//   &-leave-to,
+//   &-appear {
+//     opacity: 0;
+//   }
+// }

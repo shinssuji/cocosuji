@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-cursor">
+  <div aria-hidden="true" class="custom-cursor">
     <div class="custom-cursor__circle" :style="circleStyle" ref="customCursorCircle"></div>
     <div class="custom-cursor__dot" :style="dotStyle" ref="customCursorDot"></div>
   </div>
@@ -9,7 +9,10 @@
 export default {
   name: "CustomCursor",
   props: {
-    targets: Array,
+    targets: {
+      type: Array,
+      default: () => ['.logo', '.work-list.en', '.work-list.kr', 'button', 'a'] // 기본값 설정
+    },
     circleColor: String,
     circleColorHover: String,
     dotColor: String,
@@ -30,8 +33,16 @@ export default {
       circlePosY: null,
       dotPosX: null,
       dotPosY: null,
-      circleStyle: null,
-      dotStyle: null
+      // 커서 스타일 초기 세팅
+      circleStyle: {
+        transform: 'translate(-50%, -50%) scale(1)',
+        backgroundColor: this.circleColor || '#000',
+      },
+      dotStyle: {
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: this.dotColor || '#000',
+      },
+      isAnimating: false, // 애니메이션 제어
     };
   },
   mounted() {
@@ -45,43 +56,53 @@ export default {
   },
   methods: {
     customCursor(e) {
-      // cursor pos
+      // cursor 좌표 업데이트
       this.x = e.clientX;
       this.y = e.clientY;
 
-      // cursor circle
-      const circle = this.$refs.customCursorCircle;
-      if(circle) {
-        this.circlePosX = this.x - circle.clientWidth / 2;
-        this.circlePosY = this.y - circle.clientWidth / 2;
-      }
-      
-      // cursor dot
-      const dot = this.$refs.customCursorDot;
-      if(dot) {
-        this.dotPosX = this.x - dot.clientWidth / 2;
-        this.dotPosY = this.y - dot.clientHeight / 2;
+      if (!this.isAnimating) {
+        this.isAnimating = true;
+        requestAnimationFrame(this.updateCursorPosition);
       }
 
-      //change style when hovering on selected targets
-
-      if (
-        (this.targets.length > 0 &&
-          this.targets.includes(e.target.tagName.toLowerCase())) ||
-        this.targets.includes(e.target.className.toLowerCase())
-      ) {
+      // cursor 호버, 셀렉트 타겟
+      const isHoverTarget = this.targets.some(target =>
+        e.target.matches(target)
+      );
+      if (isHoverTarget) {
         this.scale = this.hoverSize;
-        this.circleStyle = this.darkMode ? { backgroundColor: this.circleDarkColorHover } : { backgroundColor: this.circleColorHover };
-        this.dotStyle = this.darkMode ? { backgroundColor: this.dotDarkColorHover } : { backgroundColor: this.dotColorHover };
+        this.circleStyle.backgroundColor = this.darkMode ? this.circleDarkColorHover : this.circleColorHover;
+        this.dotStyle.backgroundColor = this.darkMode ? this.dotDarkColorHover : this.dotColorHover;
       } else {
         this.scale = 1;
-        this.circleStyle = this.darkMode ? { backgroundColor: this.circleDarkColor } : { backgroundColor: this.circleColor };
-        this.dotStyle = this.darkMode ? { backgroundColor: this.dotDarkColor } : { backgroundColor: this.dotColor };
+        this.circleStyle.backgroundColor = this.darkMode ? this.circleDarkColor : this.circleColor;
+        this.dotStyle.backgroundColor = this.darkMode ? this.dotDarkColor : this.dotColor;
       }
 
-      //move custom cursor
-      circle.style.transform = `translate(${this.circlePosX}px,${this.circlePosY}px) scale(${this.scale})`;
-      dot.style.transform = `translate(${this.dotPosX}px,${this.dotPosY}px)`;
+      if (!this.isAnimating) {
+        this.isAnimating = true;
+        requestAnimationFrame(this.updateCursorPosition);
+      }
+    },
+    updateCursorPosition() {
+      // cursor 이동
+      const circle = this.$refs.customCursorCircle;
+      const dot = this.$refs.customCursorDot;
+
+      if (circle) {
+        this.circlePosX = this.x - circle.clientWidth / 2;
+        this.circlePosY = this.y - circle.clientWidth / 2;
+
+        circle.style.setProperty('--scale', this.scale);
+        circle.style.transform = `translate(${this.circlePosX}px, ${this.circlePosY}px) scale(${this.scale})`;
+      }
+      if (dot) {
+        this.dotPosX = this.x - dot.clientWidth / 2;
+        this.dotPosY = this.y - dot.clientHeight / 2;
+        dot.style.transform = `translate(${this.dotPosX}px, ${this.dotPosY}px)`;
+      }
+      
+      this.isAnimating = false; // 애니메이션 완료
     }
   }
 };
@@ -103,10 +124,14 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   left: 0;
   width: 40px;
   height: 40px;
-  /* background-color: rgb(255 255 255 / 30%); */
   border-radius: 50%;
-  transform: translate(-100%, -100%);
-  transition: transform 0.4s $ease;
+  // transform: translate(-100%, -100%);
+  transform: translate(-50%, -50%) scale(var(--scale, 1));
+  transition: scale 0.4s $ease, background-color 0.2s $ease;
+
+  // transition: scale 0.4s $ease;
+  transition: transform 0.4s $ease, background-color 0.2s $ease;
+  will-change: background-color;
 }
 
 .custom-cursor__dot {
@@ -118,7 +143,10 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   height: 4px;
   border-radius: 50%;
   background-color: #2f2f2f;
-  transform: translate(-100%, -100%);
-  transition: transform 0.2s $ease;
+  transform: translate(-50%, -50%);
+  // transition: scale 0.4s $ease;
+  // transition: transform 0.1s $ease, background-color 0.2s $ease;
+  transition: transform 0.1s $ease, background-color 0.2s $ease;
+  will-change: background-color;
 }
 </style>

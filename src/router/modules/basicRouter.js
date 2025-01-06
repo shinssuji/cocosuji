@@ -8,11 +8,17 @@ const basicRouter = {
       path: "/main",
       name: "main", // 메인
       component: () => import("@/views/Main.vue"),
+      meta: {
+        title: 'Portfolio of suji'
+      }
     },
     {
       path: "/sub",
       name: "sub", // 작업물
       component: () => import("@/views/Sub.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio'
+      }
     },
   ],
 };

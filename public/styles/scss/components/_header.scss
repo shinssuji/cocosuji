@@ -7,18 +7,15 @@ header {
 
   position: fixed;
   z-index: 10;
-  // padding-top: rem(32);
-  // padding-bottom: rem(32);
   background-color: transparent;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
-
   transition: transform 0.4s #{$transition-setting01};
+  will-change: transform;
 
   // dark type
   &.dark {
-    @include tablet {
-      background-color: $black-sub01;
+    @include tablet { 
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
     }
@@ -39,18 +36,20 @@ header {
   
   &.scr-up {
     transform: translateY(rem(0));
-    transition-delay: 0.2s;
+
+    @include tablet {
+      &.dark {
+        background-color: $black-sub01;
+      }
+    }
   }
 }
 
 .logo {
-  // @include size(rem(27), rem(32));
   @include size(min(5vw, rem(27)), min(5.926vw, rem(32)));
   @include bg($filename: function) {
     background-image: icon(logo, '000000');
   }
-
-  cursor: pointer;
 }
 
 .btn-menu {

@@ -8,26 +8,41 @@ const workRouter = {
       path: "/detail/KBdatahub",
       name: "KBdatahub",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - KB데이터허브'
+      }
     },
     { // 시월뮤직
       path: "/detail/siwolmusic",
       name: "siwolmusic",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 시월뮤직'
+      }
     },
     { // 페이앱 
       path: "/detail/payapp",
       name: "payapp",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 페이앱'
+      }
     },
     { // 하이컴AS
       path: "/detail/hicomAS",
       name: "hicomAS",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 하이컴AS'
+      }
     },
     { // UDID
       path: "/detail/udid",
       name: "udid",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 유디아이디'
+      }
     },
     // { // 쇼비즈
     //   path: "/detail/shobiz",
@@ -40,18 +55,24 @@ const workRouter = {
       path: "/detail/brandyaction",
       name: "brandyaction",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 브랜디액션'
+      }
     },
     { // 싱싱샐러드
       path: "/detail/singsing",
       name: "singsing",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 싱싱샐러드'
+      }
     },
     // { // 천안문화도시
     //   path: "/detail/cheonan",
     //   name: "cheonan",
     //   component: () => import("@/views/detail/DetailCon.vue"),
     // },
-    // { // 수빈아빠 타타타 - 포함? 삭제? 보류중
+    // { // 수빈아빠 타타타 - 보류중
     //   path: "/detail/tatata",
     //   name: "tatata",
     //   component: () => import("@/views/detail/DetailCon.vue"),
@@ -60,11 +81,17 @@ const workRouter = {
       path: "/detail/blogpay",
       name: "blogpay",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 블로그페이'
+      }
     },
     { // 쇼비즈 무료 스킨 메인 타입
       path: "/detail/shopskin",
       name: "shopskin",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 쇼핑몰 스킨'
+      }
     },
     
 
@@ -72,6 +99,9 @@ const workRouter = {
       path: "/detail/ucansign",
       name: "ucansign",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 유캔싸인'
+      }
     },
 
     
@@ -79,12 +109,15 @@ const workRouter = {
       path: "/detail/100bang",
       name: "100bang",
       component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 100방'
+      }
     },
-    { // smart u ems
-      path: "/detail/samrtumes",
-      name: "samrtumes",
-      component: () => import("@/views/detail/DetailCon.vue"),
-    },
+    // { // smart u ems
+    //   path: "/detail/samrtumes",
+    //   name: "samrtumes",
+    //   component: () => import("@/views/detail/DetailCon.vue"),
+    // },
   ],
 };
 

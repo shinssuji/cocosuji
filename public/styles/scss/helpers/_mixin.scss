@@ -33,6 +33,13 @@
   transform: translate(-50%, -50%);
 }
 
+// position sticky {
+@mixin pos-sticky($y: 0) {
+  position: -webkit-sticky;
+  position: sticky;
+  top: $y;
+}
+
 // title
 @mixin heading-main($align: center) {
   margin-bottom: clamp(40px, 8.571vw, rem(120));

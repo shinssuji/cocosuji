@@ -7,15 +7,14 @@
         @click="SelectType(type)"
         :class="{active:subTypeName===type}"
       >
-          {{type}}
+        {{type}}
       </button>
     </nav>
-
     <div role="list" class="list-wrap list-motion-wrap" ref="subGropus">
-        <div role="listitem" class="item" v-for="(work, i) in subVisibleLists" :key="i" @click="goToPage('detail/'+work.sub.path)">
-          <p class="work-list en">{{work.sub.en}}</p>
-          <p class="work-list kr">{{work.sub.kr}}</p>
-        </div>
+      <div role="listitem" class="item" v-for="(work, i) in subVisibleLists" :key="i" @click="goToPage('detail/'+work.sub.path)">
+        <p class="work-list en">{{work.sub.en}}</p>
+        <p class="work-list kr">{{work.sub.kr}}</p>
+      </div>
     </div>
   </section>
 </template>
@@ -63,9 +62,9 @@ export default {
       
       this.subTypeName = type;
 
-      return window.scrollY = 0;
+      // return window.scrollY = 0;
+      return this.$lenis.scrollTo(0, { immediate: true });
     },
-
     // 리스트 모션
     startMotion() {
       clearTimeout(this.aniTimer);
@@ -73,9 +72,6 @@ export default {
           this.$refs.subGropus.classList.add('is-visible');
       }, 200);
     }
-
-
-
   }
 };
 </script>

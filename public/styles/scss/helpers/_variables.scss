@@ -3,21 +3,17 @@
 
 // colors
 $white-main: #fff;
-
 $black-main: #363636; // main black
 $black-sub01: #000;
 $black-sub02: #161616;
-
 $gray-sub01: #888;
 $gary-sub02: #8f8f8f;
 $gray-sub03: #666;
 $gray-sub04: #999;
-
 $light-gray-sub01: #f2f3f5;
-
 $red-main: #f63543; //main red
 
-// font family
+// font style
 $kr-font: "Pretendard Variable", Pretendard;
 $en-font: "Poppins";
 
@@ -46,8 +42,10 @@ $font-size-54: rem(54);
 
 // layout
 
+
 // transform
 $transition-setting01: cubic-bezier(.645,.045,.355,1);
+// $transition-setting02: cubic-bezier(.545,.045,.355,1);
 
 
 /* font */
@@ -68,18 +66,24 @@ body {
 
     @include mobile {
         --font-size-18: #{$font-size-16};
-        --font-size-15: #{$font-size-12};
+        --font-size-15: #{$font-size-14};
     }
 }
+
+
 /* layout */
 body {
     --header-height: #{rem(96)};
+    --sub-nav-width: #{min(26.042vw, rem(500))};
     --inner-padding: #{rem(100)};
     --detail-inner-padding: 12.5vw;
     --main-inner-top-padding: #{rem(150)};
     --main-inner-bottom-padding: var(--main-inner-top-padding);
     --floating-position-right: #{rem(50)};
-    --floating-position-bottom: #{rem(100)};
+    --floating-position-bottom: #{rem(60)};
+
+    --main-circle-size: #{rem(240)};
+    --tablet-main-circle-size: 41.667vw;
 
     @include laptop {
         --inner-padding: #{rem(50)};
@@ -91,5 +95,7 @@ body {
     @include mobile {
         --header-height: #{rem(60)};
         --inner-padding: #{rem(23)};
+        --floating-position-right: var(--inner-padding);
+        --floating-position-bottom: #{rem(30)};
     }
 }

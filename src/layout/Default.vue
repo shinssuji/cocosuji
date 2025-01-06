@@ -1,11 +1,16 @@
 <template>
   <section id="wrap">
-    <!-- skip navigation -->
-    <!-- <div id="skip-nav">
+    <!-- #SKIP NAVIGATION -->
+    <div id="skipNav">
       <a href="#workList">작업물 리스트 바로가기</a>
       <a href="#container">메인 컨텐츠 바로가기</a>
-    </div> -->
+      <a href="#footer">푸터 바로가기</a>
+    </div>
+
+    <!-- #HEADER -->
     <Header :darkMode="darkMode" :scrollDir="scrollDir" />
+
+    <!-- #CONTAINER -->
     <section id="container" ref="container">
       <transition name="routing-fade" appear>
         <router-view :scrollH="scrollH" />
@@ -15,38 +20,21 @@
         <button type="button" class="btn-ico btn-top" aria-label="페이지 상단으로 가기" @click="goToTop">
           <span class="blind">페이지 상단으로 가기</span>
         </button>
-
         <template v-if="this.$router.currentRoute.path==='/main'">
           <button type="button" class="btn-ico btn-redline" aria-label="Github로 이동하기" @click="newWindow('https://github.com/shinssuji/cocosuji/tree/master')">Github</button>
         </template>
       </div>
     </section>
-    <Footer v-if="!(this.$router.currentRoute.path==='/sub')" />
-
-    <CustomCursor
-      :darkMode="darkMode"
-      :targets="['logo', 'work-list en', 'work-list kr', 'button', 'a']"
-      :circleColor="'rgb(0 0 0 / 10%)'"
-      :circleColorHover="'rgb(246 53 67 / 30%)'"
-      :dotColor="'#f63543'"
-      :dotColorHover="'#f63543'"
-      :circleDarkColor="'rgb(255 255 255 / 10%)'"
-      :circleDarkColorHover="'rgb(255 255 255 / 30%)'"
-      :dotDarkColor="'#f63543'"
-      :dotDarkColorHover="'skyblue'"
-      :hoverSize="1.5"
-    ></CustomCursor>
   </section>
 </template>
 <script>
 import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
-import CustomCursor from '@/components/common/CustomCursor.vue';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger); // ScrollTrigger 등록
 export default {
   components: {
     Header,
-    Footer,
-    CustomCursor
   },
   data() {
     return {
@@ -72,12 +60,13 @@ export default {
     handleScroll() {
       this.scrollH = window.scrollY;
 
-      this.scrollDir = this.scrollH > this.lastScrollH;
-      this.lastScrollH = this.scrollH;
-    },
+      if(this.scrollH > 0) {
+        this.scrollDir = this.scrollH > this.lastScrollH;
+      } else {
+        this.scrollDir = null;
+      }
 
-    goToTop() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      this.lastScrollH = this.scrollH;
     },
   }
 };
