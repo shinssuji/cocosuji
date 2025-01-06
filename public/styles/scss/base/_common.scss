@@ -89,15 +89,7 @@ body {
 
 // common layout
 #wrap {
-  // height: vh(100);
   min-height: vh(100);
-  // overflow-x: hidden;
-  // transition: 0.15s;
-  // overflow-y: auto;
-
-  // * {
-  //   cursor: none;
-  // }
 
   @include tablet {
     @include scroll-remove;
@@ -136,50 +128,22 @@ body {
 
 // vue transition ani.
 .routing-fade {
-  // &-enter-active,
-  // &-leave-active,
-  // &-appear-active {
-  //   transition: opacity 1.5s ease-in-out;
-  // }
-
-  // &-leave-active {
-  //   // transition-delay: 2s;
-  //     transition: opacity 1.5s ease-in-out 2s;
-  //   }
-  //   &-leave {
-  //       opacity: 0;
-  //     }
-
-
-  
-  // &-enter,
-  // &-leave-to,
-  // &-appear {
-  //   opacity: 0;
-  // }
-  
-}
-
-
-
-
-.routing-fade {
-  // 진입(enter) 애니메이션 - 빠르게
+  // 진입(enter)
   &-enter-active {
     transition: opacity 1s ease-in-out;
   }
   
-  // 퇴장(leave) 애니메이션 - 천천히
+  // 퇴장(leave)
   &-leave-active {
     transition: opacity 2s ease-in-out;
   }
   
-  // appear는 enter와 동일하게 빠르게
+  // appear(enter)
   &-appear-active {
     transition: opacity 1s ease-in-out;
   }
   
-  // 초기 상태와 최종 상태는 동일하게 유지
+  // 초기 상태, 최종 상태
   &-enter,
   &-leave-to,
   &-appear {
