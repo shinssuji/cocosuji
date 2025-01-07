@@ -45,9 +45,6 @@
   </section>
 </template>
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 export default {
   props: {
     work: {
@@ -73,8 +70,8 @@ export default {
   methods: {
     commonAnimate() {
       // fade up GSAP
-      gsap.utils.toArray(".animate-fadeUp").forEach((ele) => {
-        gsap.from(ele, {
+      this.$gsap.utils.toArray(".animate-fadeUp").forEach((ele) => {
+        this.$gsap.from(ele, {
           y: 100,
           autoAlpha: 0,
           duration: 1,

@@ -57,11 +57,8 @@
 </template>
 <script>
 import Footer from "@/components/Footer.vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { store } from '@/router/index.js'
 
-gsap.registerPlugin(ScrollTrigger); // ScrollTrigger 등록
 export default {
   components: {
     Footer,
@@ -168,10 +165,10 @@ export default {
 
     });
 
-    window.addEventListener("resize", ScrollTrigger.update);
+    window.addEventListener("resize", this.$ScrollTrigger.update);
   },
   beforeDestroy() {
-    window.removeEventListener("resize", ScrollTrigger.update);
+    window.removeEventListener("resize", this.$ScrollTrigger.update);
     store.introVisible = false;
   },
   methods: {
@@ -179,7 +176,7 @@ export default {
       const numberText = document.querySelector(".intro-number em");
       let fakeProgress = 0;
 
-      const master = gsap.timeline({
+      const master = this.$gsap.timeline({
           paused: false,
           delay: 0.2,
       });
@@ -209,7 +206,7 @@ export default {
       }
       const introAnimation = () => {
         // 넘버 TIMELINE
-        const numbertl = gsap.timeline({
+        const numbertl = this.$gsap.timeline({
           defaults: {
             ease: animationOptions.ease,
             duration: 0,
@@ -224,7 +221,7 @@ export default {
         })
 
         // 인트로 TIMELINE
-        const introtl = gsap.timeline({
+        const introtl = this.$gsap.timeline({
           defaults: {
             ease: animationOptions.ease,
             duration: 1,
@@ -283,7 +280,7 @@ export default {
        */
       // 분리된 텍스트 fade up GSAP
       const animteText = (time) => {
-        gsap.to(document.querySelectorAll('.main .text-split span'), {
+        this.$gsap.to(document.querySelectorAll('.main .text-split span'), {
           y: 0,
           delay: time,
           autoAlpha: 1,
@@ -293,10 +290,10 @@ export default {
         });
       }
       // fade up GSAP
-      gsap.utils.toArray(".animate-fadeUp").forEach((ele) => {
-        ScrollTrigger.matchMedia({
+      this.$gsap.utils.toArray(".animate-fadeUp").forEach((ele) => {
+        this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tablet] : function () {
-            gsap.from(ele, {
+            this.$gsap.from(ele, {
               y: 100,
               autoAlpha: 0,
               duration: 1,
@@ -313,10 +310,10 @@ export default {
         })
       });
       // fade left GSAP
-      gsap.utils.toArray(".animate-fadeLeft").forEach((ele) => {
-        ScrollTrigger.matchMedia({
+      this.$gsap.utils.toArray(".animate-fadeLeft").forEach((ele) => {
+        this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tablet] : function () {
-            gsap.from(ele, {
+            this.$gsap.from(ele, {
               xPercent: 100,
               opacity: 0,
               duration: 0.8,
@@ -331,10 +328,10 @@ export default {
         })
       });
       // fade right GSAP
-      gsap.utils.toArray(".animate-fadeRight").forEach((ele) => {
-        ScrollTrigger.matchMedia({
+      this.$gsap.utils.toArray(".animate-fadeRight").forEach((ele) => {
+        this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tablet] : function () {
-            gsap.from(ele, {
+            this.$gsap.from(ele, {
               xPercent: -100,
               opacity: 0,
               duration: 0.8,
@@ -357,7 +354,7 @@ export default {
         ease: 'elastic.out(1, 1)'
       }
       // VISUAL FIRST TIMELINE
-      const mainmaster = gsap.timeline({
+      const mainmaster = this.$gsap.timeline({
         onComplete: () => {
           // 스크롤 활성화
           this.enableScroll();
@@ -404,9 +401,9 @@ export default {
       const visualAnimation = () => {
         const self = this; // Vue 컴포넌트의 this
 
-        ScrollTrigger.matchMedia({
+        this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tabletMin]: function() {
-              const visualtl = gsap.timeline({
+              const visualtl = self.$gsap.timeline({
                 duration: 0.2,
                 yoyo: true,
                 paused: false, // 초기에는 애니메이션 정지
@@ -448,9 +445,11 @@ export default {
        */
       const skillAnimation = () => {
         const self = this; // vue 컴포넌트의 this
-        ScrollTrigger.matchMedia({
+        this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tabletMin]: function() {
-            gsap.fromTo(".animate-scaleup", {
+            console.log(self.$gsap);
+
+            self.$gsap.fromTo(".animate-scaleup", {
               autoAlpha: 0,
               yPercent: 300,
               scale: 3,
@@ -469,7 +468,7 @@ export default {
             });
 
             // SKILL TIMELINE
-            const skilltl = gsap.timeline({
+            const skilltl = self.$gsap.timeline({
               scrollTrigger: {
                 trigger: ".skill-wrap li",
                 start: "top 70%", 
@@ -505,12 +504,13 @@ export default {
        */
       const workAnimation = () => {
         const workBoxes = document.querySelectorAll(".works .box");
+        const self = this;
 
-        ScrollTrigger.matchMedia({
+        this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tabletMin]: function() {
             // 텍스트 각 요소 TIMELINE
             workBoxes.forEach((box) => {   
-              const worktl = gsap.timeline({
+              const worktl = self.$gsap.timeline({
                 scrollTrigger: {
                   trigger: box,
                   start: "40% 50%",
@@ -552,7 +552,7 @@ export default {
                 ? { xPercent: -15, y: "15vh" } // 짝수
                 : { xPercent: 15, y: "10vh" }; // 홀수
 
-              gsap.fromTo(textItems, {
+              self.$gsap.fromTo(textItems, {
                 scale: 0.8,
                 y: 0
               },{
@@ -572,7 +572,7 @@ export default {
                 ? { xPercent: 15, y: "10vh" } // 짝수
                 : { xPercent: -15, y: "15vh" }; // 홀수
               
-              gsap
+              self.$gsap
               .fromTo(imageItems, {
                 scale: 0.8,
                 xPercent: 0,
@@ -593,7 +593,7 @@ export default {
             // 텍스트/이미지 영역 TIMELINE
             workBoxes.forEach((box) => {
               let imageItems = box.querySelectorAll('.img img');
-              gsap.to(imageItems, {
+              this.$gsap.to(imageItems, {
                 yPercent: -20,
                 ease: "power2.out",
                 scrollTrigger: {
