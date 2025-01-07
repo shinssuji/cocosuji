@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import basicRouter from './modules/basicRouter'
 import workRouter from './modules/workRouter'
 import { EventBus } from '@/assets/js/eventBus';
+import debounce from '@/assets/js/debounce';
 
 Vue.use(VueRouter)
 
@@ -16,7 +17,8 @@ const router = new VueRouter({
 });
 
 export const store = Vue.observable({
-  introVisible: false
+  introVisible: false, // 인트로 화면 상태
+  isMobile: false // 모바일 디바이스 상태
 })
 
 router.beforeEach((to, from, next) => {
@@ -30,14 +32,7 @@ router.beforeEach((to, from, next) => {
     EventBus.$emit('toggle-loading', to);
     EventBus.$once('animation-complete', (nextRoute) => {
       if (nextRoute.fullPath === to.fullPath) {
-        // Lenis 스크롤 처리
-        if (Vue.prototype.$lenis && Vue.prototype.$lenis.isActive()) {
-          Vue.prototype.$lenis.scrollTo(0, {
-            duration: 0,
-            immediate: true
-          })
-        }
-        next();
+        next()
       }
     });
   } else {
@@ -65,21 +60,23 @@ router.beforeEach((to, from, next) => {
   if (app && app.$lenis && app.$lenis.isActive()) {
     app.$lenis.scrollTo(0, {
       duration: 0,
-      immediate: true
-    });
+      immediate: true,
+      onComplete: () => next()
+    })
+  } else {
+    next()
   }
-  next();
 
 
-  // 라우트 변경 시 스크롤 초기화 
-  if (Vue.prototype.$lenis && Vue.prototype.$lenis.isActive()) {
-    Vue.prototype.$lenis.scrollTo(0, {
-      duration: 0,
-      immediate: true
-    });
-  }
+  // // 라우트 변경 시 스크롤 초기화 
+  // if (Vue.prototype.$lenis && Vue.prototype.$lenis.isActive()) {
+  //   Vue.prototype.$lenis.scrollTo(0, {
+  //     duration: 0,
+  //     immediate: true
+  //   });
+  // }
   
-  next();
+  // next();
 });
 
 router.afterEach((to) => {
@@ -91,43 +88,57 @@ router.afterEach((to) => {
    * lenis
    */
   Vue.nextTick(() => {
-    if (window.$lenis && window.$lenis.isActive()) {
-      window.$lenis.update()
+    const app = router.app
+    if (app && app.$lenis && app.$lenis.isActive()) {
+      // 지연을 주어 DOM 업데이트
+      setTimeout(() => {
+        app.$lenis.update()
+      }, 100)
     }
   })
 });
 
 const mixins = {
   install(Vue) {
+    // store를 Vue 인스턴스에 전역으로 추가
+    Vue.prototype.$store = store
+
     // 글로벌 믹스인
     Vue.mixin({
       data() {
         return {
-          isMobile: false, // 모바일 디바이스 상태 저장
-          isTabletScreen: window.innerWidth < 1025 // 1024 이하 스크린
+          // isMobile: false, // 모바일 디바이스 상태 저장
         };
       },
       computed: {
+        isMobile() {
+          return store.isMobile;
+        }
       },
-      watch: {
-        isMobile(state) {
-          console.log('isMobile 상태 변경:', state);
-        },
-      },
+      // watch: {
+      //   isMobile(state) {
+      //     console.log('isMobile 상태 변경:', state);
+      //   },
+      // },
       created() {
       },
       mounted() {
         this.setScreenHeight();
         this.checkIfMobile();
 
-        window.addEventListener('resize', () => {
-          if (window.innerHeight !== document.documentElement.clientHeight) {
-            this.setScreenHeight;
-          }
-        });
+        // const debouncedCheck = debounce(function() {
+        //   this.checkIfMobile();
+        // }, 250);
+
+        this.debouncedCheck = debounce(this.checkIfMobile, 250);
+
+        window.addEventListener('resize', this.debouncedCheck);
+
+        this.debouncedSetHeight = debounce(this.setScreenHeight, 250);
+        // window.addEventListener('resize', this.debouncedSetHeight);
       },
       beforeDestroy() {
-        window.removeEventListener('resize', this.setScreenHeight);
+        // window.removeEventListener('resize', this.debouncedSetHeight);
       },
       methods: {
         /**
@@ -176,13 +187,7 @@ const mixins = {
           const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
           // 모바일 디바이스를 확인하는 정규식
-          this.isMobile = /android|iphone|ipad|ipod|blackberry|windows phone|opera mini|iemobile|mobile/i.test(userAgent);
-        },
-        /**
-         * * 1024 이하 스크린 감지
-         */
-        checkScreenSize() {
-          this.isTabletScreen = window.innerWidth < 1025;
+          store.isMobile = /android|iphone|ipad|ipod|blackberry|windows phone|opera mini|iemobile|mobile/i.test(userAgent);
         },
         /**
          * 공용: vh 세팅

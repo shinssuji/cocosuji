@@ -1171,6 +1171,14 @@ footer p.copyright {
     background-image: url("../../images/img_hicomAS_intro_m.png");
   }
 }
+.shopskin .detail-intro::before {
+  background-image: url("../../images/img_shopskin_intro_w.png");
+}
+@media screen and (max-width: 767px) {
+  .shopskin .detail-intro::before {
+    background-image: url("../../images/img_shopskin_intro_m.png");
+  }
+}
 .detail-intro .txt {
   position: absolute;
   left: min(10vw, var(--detail-inner-padding));

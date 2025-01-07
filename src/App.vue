@@ -32,17 +32,58 @@ export default {
     return {
     };
   },
+  computed: {
+    isMobile() {
+      return this.$store.isMobile;
+    }
+  },
   watch: {
-    '$route'() {
-      // 라우트 변경 시 스크롤 위치 초기화
-      if (this.$lenis.isActive()) {
-        this.$lenis.scrollTo(0, { immediate: true })
-      }
+    // '$route': {
+    //   handler() {
+    //     this.$nextTick(() => {
+    //       if (this.$lenis && this.$lenis.isActive()) {
+    //         // 라우트 변경 후 스크롤 위치 초기화, lenis 업데이트
+    //         this.$lenis.scrollTo(0, {
+    //           immediate: true,
+    //           onComplete: () => {
+    //             setTimeout(() => {
+    //               this.$lenis.update()
+    //             }, 100)
+    //           }
+    //         })
+    //       }
+    //     })
+    //   },
+    //   immediate: true,
+    // }
+    '$route': {
+      handler() {
+        this.$nextTick(() => {
+          if (this.isMobile) {
+            window.scrollTo({
+              top: 0,
+              behavior: 'auto'
+            });
+          } else if (this.$lenis && this.$lenis.isActive()) {
+            this.$lenis.scrollTo(0, {
+              immediate: true,
+              onComplete: () => {
+                this.$lenis.update()
+              }
+            })
+          }
+        })
+      },
+      immediate: true,
     }
   },
   mounted() {
-    const container = this.$root.$refs.scrollContainer;
-    this.$lenis.init(container);
+    // const container = this.$root.$refs.scrollContainer;
+    // this.$lenis.init(container);
+    if (!this.isMobile) {
+      const container = this.$root.$refs.scrollContainer;
+      this.$lenis.init(container);
+    }
   },
   beforeDestroy() {
     this.$lenis.destroy();
