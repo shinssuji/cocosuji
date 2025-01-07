@@ -740,7 +740,7 @@
     }
   }
 
-  $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopskin; // add works class name = router path
+  $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopskin, udid, singsing; // add works class name = router path
   @each $class in $detailgroup {
     .#{$class} &::before {
       @include bg-image($img: 'img_#{$class}_intro_w', $format: 'png');

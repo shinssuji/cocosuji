@@ -1179,6 +1179,22 @@ footer p.copyright {
     background-image: url("../../images/img_shopskin_intro_m.png");
   }
 }
+.udid .detail-intro::before {
+  background-image: url("../../images/img_udid_intro_w.png");
+}
+@media screen and (max-width: 767px) {
+  .udid .detail-intro::before {
+    background-image: url("../../images/img_udid_intro_m.png");
+  }
+}
+.singsing .detail-intro::before {
+  background-image: url("../../images/img_singsing_intro_w.png");
+}
+@media screen and (max-width: 767px) {
+  .singsing .detail-intro::before {
+    background-image: url("../../images/img_singsing_intro_m.png");
+  }
+}
 .detail-intro .txt {
   position: absolute;
   left: min(10vw, var(--detail-inner-padding));

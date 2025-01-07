@@ -164,7 +164,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2020.07.20 - 2020.08.14'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 100% · 디자인 80%'}
     ],
-    dark: false
+    dark: true
   },
   // shopskin
   shopskin: {
