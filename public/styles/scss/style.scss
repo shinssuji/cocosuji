@@ -416,7 +416,7 @@
 
     @include tabletMin {
       overflow: hidden;
-      height: vh(100);
+      min-height: vh(100);
       padding: rem(110) 0;
       
       &:nth-of-type(even) {
@@ -435,10 +435,10 @@
     overflow: hidden;
     aspect-ratio: 192 / 148;
 
-    @include tabletMin {
-      padding-left: rem(50);
-      padding-right: rem(50);
-    }
+    // @include tabletMin {
+    //   padding-left: rem(50);
+    //   padding-right: rem(50);
+    // }
 
     @include tablet {
       max-width: 100%;
@@ -685,8 +685,9 @@
   position: relative;
 
   .btn-close {
-    @include size(rem(46));
-    @include bg($filename: function) {
+    @include radius(rem(5));
+    @include size(rem(50));
+    @include bg($filename: function, $size: 90%) {
       background-image: icon(close, '000000');
     }
 
@@ -698,8 +699,7 @@
     background-color: rgb($white-main, 0.5);
 
     @include tablet {
-      @include size(rem(35));
-
+      @include size(max(4.297vw, 30px));
       top: var(--inner-padding);
       right: var(--inner-padding);
     }
@@ -740,13 +740,13 @@
     }
   }
 
-  $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopskin, udid, singsing; // add works class name = router path
+  $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopskin, udid, singsing, hundredbang; // add works class name = router path
   @each $class in $detailgroup {
     .#{$class} &::before {
-      @include bg-image($img: 'img_#{$class}_intro_w', $format: 'png');
+      @include bg-image($img: 'img_#{$class}_intro_w', $format: 'jpg');
 
       @include mobile {
-        @include bg-image($img: 'img_#{$class}_intro_m', $format: 'png');
+        @include bg-image($img: 'img_#{$class}_intro_m', $format: 'jpg');
       }
     }
   }

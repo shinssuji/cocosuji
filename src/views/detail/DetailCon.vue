@@ -28,14 +28,9 @@
     
     <!-- #WORK VISUAL -->
     <section class="detail-visual">
-      <div class="web" v-if="work.webimg">
-        <img :src="`../images/${detailImg}_w.png`" v-for="(detailImg, i) in work.webimg" :key="i">
+      <div class="">
+        <img :src="`../images/${detailImg}.jpg`" v-for="(detailImg, i) in work.detailimages" :key="i">
       </div>
-
-      <div class="mobile">
-
-      </div>
-
       <p class="copyright">ⓒ 2025 suji. all rights reserved.</p>
     </section>
 

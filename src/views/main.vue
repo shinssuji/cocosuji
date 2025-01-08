@@ -39,7 +39,7 @@
       <section class="box" v-for="(box, index) in workLists" :key="index">
         <div class="item img">
           <img
-           :src="`../images/${box.img}@2x.png`" :alt="box.sub" />
+           :src="`../images/${box.img}@2x.jpg`" :alt="box.sub" />
         </div>
         <div class="item text">
           <span class="s-tit">{{box.sub}}</span>
@@ -98,7 +98,7 @@ export default {
           sub: 'KB부동산 데이터허브 구축',
           main: 'KB부동산 \n빅데이터 통계 분석 플랫폼',
           tag: ['vue', 'html', 'css', 'javascript'],
-          img: 'img_datahub_thumb',
+          img: 'img_KBdatahub_thumb',
           link: '/detail/KBdatahub'
         },
         {
@@ -133,8 +133,8 @@ export default {
           sub: '백방 하이브리드앱 구축',
           main: '백 명의 견적을 제공하는 \n장기 렌트 견적 플랫폼',
           tag: ['html', 'css', 'jquery'],
-          img: 'img_100bang_thumb',
-          link: '/detail/100bang'
+          img: 'img_hundredbang_thumb',
+          link: '/detail/hundredbang'
         }
       ],
     }
@@ -514,7 +514,7 @@ export default {
               const worktl = self.$gsap.timeline({
                 scrollTrigger: {
                   trigger: box,
-                  start: "40% 50%",
+                  start: "30% 50%",
                 }
               });
               worktl
@@ -551,7 +551,7 @@ export default {
               
               const textanimationConfig = (index % 2 === 0)
                 ? { xPercent: -15, y: "15vh" } // 짝수
-                : { xPercent: 15, y: "10vh" }; // 홀수
+                : { xPercent: 15, y: "15vh" }; // 홀수
 
               self.$gsap.fromTo(textItems, {
                 scale: 0.8,
@@ -570,12 +570,12 @@ export default {
               let imageItems = box.querySelectorAll('.img');
 
               const imageanimationConfig = (index % 2 === 0)
-                ? { xPercent: 15, y: "10vh" } // 짝수
-                : { xPercent: -15, y: "15vh" }; // 홀수
+                ? { xPercent: 20, y: "10vh" } // 짝수
+                : { xPercent: -20, y: "10vh" }; // 홀수
               
               self.$gsap
               .fromTo(imageItems, {
-                scale: 0.8,
+                scale: 0.7,
                 xPercent: 0,
                 y: 0,
               },{

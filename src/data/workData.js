@@ -18,7 +18,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2021.10 - 2024.12'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 - 구축 40% · 대응,운영 100%'}
     ],
-    webimg: ['img_datahub_detail01', 'img_datahub_detail02', 'img_datahub_detail03', 'img_datahub_detail04'],
+    detailimages: ['img_datahub_detail01', 'img_datahub_detail02', 'img_datahub_detail03', 'img_datahub_detail04'],
     dark: true // 디테일 인트로 영역 폰트 컬러 설정
   },
   // 시월뮤직
@@ -82,6 +82,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2020.10.26 - 2020.12.31'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 80% · 디자인 20%'}
     ],
+    detailimages: ['img_payapp_detail01', 'img_payapp_detail02', 'img_payapp_detail03'],
     dark: true
   },
   // 유캔싸인
@@ -126,12 +127,12 @@ export const workContent = {
     dark: true
   },
   // 100bang
-  '100bang': {
+  'hundredbang': {
     type: 'mobile',
     sub: {
       en: '100-bang',
       kr: '백방 웹 앱 구축',
-      path: '100bang'
+      path: 'hundredbang'
     },
     title: '백방 웹 앱 구축',
     do: '퍼블리싱 / 모바일',
@@ -144,7 +145,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2021.10.18 - 2021.10.30'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 100%'}
     ],
-    dark: false
+    dark: true
   },
   // UDID
   udid: {

@@ -106,8 +106,8 @@ const workRouter = {
 
     
     { // 100방
-      path: "/detail/100bang",
-      name: "100bang",
+      path: "/detail/hundredbang",
+      name: "hundredbang",
       component: () => import("@/views/detail/DetailCon.vue"),
       meta: {
         title: 'Project of Suji Portfolio - 100방'
