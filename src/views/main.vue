@@ -275,6 +275,7 @@ export default {
 
     },
     animateMain() {
+      const self = this; // Vue 컴포넌트의 this
       /**
        * * COMMON
        */
@@ -293,7 +294,7 @@ export default {
       this.$gsap.utils.toArray(".animate-fadeUp").forEach((ele) => {
         this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tablet] : function () {
-            this.$gsap.from(ele, {
+            self.$gsap.from(ele, {
               y: 100,
               autoAlpha: 0,
               duration: 1,
@@ -313,7 +314,7 @@ export default {
       this.$gsap.utils.toArray(".animate-fadeLeft").forEach((ele) => {
         this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tablet] : function () {
-            this.$gsap.from(ele, {
+            self.$gsap.from(ele, {
               xPercent: 100,
               opacity: 0,
               duration: 0.8,
@@ -331,7 +332,7 @@ export default {
       this.$gsap.utils.toArray(".animate-fadeRight").forEach((ele) => {
         this.$ScrollTrigger.matchMedia({
           [this.scrollTriggerDefaults.tablet] : function () {
-            this.$gsap.from(ele, {
+            self.$gsap.from(ele, {
               xPercent: -100,
               opacity: 0,
               duration: 0.8,
@@ -593,7 +594,7 @@ export default {
             // 텍스트/이미지 영역 TIMELINE
             workBoxes.forEach((box) => {
               let imageItems = box.querySelectorAll('.img img');
-              this.$gsap.to(imageItems, {
+              self.$gsap.to(imageItems, {
                 yPercent: -20,
                 ease: "power2.out",
                 scrollTrigger: {
