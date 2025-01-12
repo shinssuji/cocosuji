@@ -40,6 +40,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2024.07.18 - 2024.08.20'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 - 100%'}
     ],
+    detailimages: ['img_siwolmusic_detail01', 'img_siwolmusic_detail02'],
     dark: false
   },
   // BRANDY ACTION
@@ -165,6 +166,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2020.07.20 - 2020.08.14'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 100% · 디자인 80%'}
     ],
+    detailimages: ['img_udid_detail01', 'img_udid_detail02', 'img_udid_detail03'],
     dark: true
   },
   // shopskin
@@ -185,6 +187,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2019'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 80% · 디자인 100%'}
     ],
+    detailimages: ['img_shopskin_detail01', 'img_shopskin_detail02', 'img_shopskin_detail03', 'img_shopskin_detail04', 'img_shopskin_detail05'],
     dark: false
   },
 
