@@ -974,22 +974,24 @@ footer p.copyright {
 .list-wrap .item .kr::after {
   content: ".";
 }
-.list-wrap .item:hover .en {
-  color: #363636;
-  text-decoration: line-through;
-}
-.list-wrap .item:hover .kr {
-  opacity: 1;
-  left: 4rem;
-  font-size: clamp(12px, 2.347vw, 4rem);
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 0.5rem;
-  transition: left 0.5s ease, opacity 0.2s linear;
-  transition-delay: 0.2s;
-}
-.list-wrap .item:hover .kr::after {
-  color: #f63543;
+@media (hover: hover) and (pointer: fine) {
+  .list-wrap .item:hover .en {
+    color: #363636;
+    text-decoration: line-through;
+  }
+  .list-wrap .item:hover .kr {
+    opacity: 1;
+    left: 4rem;
+    font-size: clamp(12px, 2.347vw, 4rem);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5rem;
+    transition: left 0.5s ease, opacity 0.2s linear;
+    transition-delay: 0.2s;
+  }
+  .list-wrap .item:hover .kr::after {
+    color: #f63543;
+  }
 }
 
 .list-motion-wrap .item {

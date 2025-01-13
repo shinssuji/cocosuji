@@ -113,7 +113,6 @@
     top: 0;
     left: 0;
     background-color: $black-sub01;
-    // background-color: $red-main;
     transform: scaleY(0);
   }
 
@@ -632,24 +631,26 @@
       }
     }
 
-    &:hover {
-      .en {
-        color: $black-main;
-        text-decoration: line-through;
-      }
-
-      .kr {
-        opacity: 1;
-        left: rem(40);
-        font-size: clamp(12px, 2.347vw, rem(40));
-        font-weight: $font-semibold;
-        color: $white-main;
-        letter-spacing: rem(5);
-        transition: left 0.5s ease, opacity 0.2s linear;
-        transition-delay: 0.2s;
-
-        &::after {
-          color: $red-main;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .en {
+          color: $black-main;
+          text-decoration: line-through;
+        }
+  
+        .kr {
+          opacity: 1;
+          left: rem(40);
+          font-size: clamp(12px, 2.347vw, rem(40));
+          font-weight: $font-semibold;
+          color: $white-main;
+          letter-spacing: rem(5);
+          transition: left 0.5s ease, opacity 0.2s linear;
+          transition-delay: 0.2s;
+  
+          &::after {
+            color: $red-main;
+          }
         }
       }
     }
