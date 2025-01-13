@@ -1,7 +1,7 @@
 <template>
-  <div aria-hidden="true" class="custom-cursor">
-    <div class="custom-cursor__circle" :style="circleStyle" ref="customCursorCircle"></div>
-    <div class="custom-cursor__dot" :style="dotStyle" ref="customCursorDot"></div>
+  <div aria-hidden="true" :class="['custom-cursor', {dark:darkMode}, {'is-hover':isHovered}]">
+    <div class="custom-cursor-circle" ref="customCursorCircle"></div>
+    <div class="custom-cursor-dot" ref="customCursorDot"></div>
   </div>
 </template>
 
@@ -9,101 +9,68 @@
 export default {
   name: "CustomCursor",
   props: {
-    targets: {
+    hoverTargets: {
       type: Array,
       default: () => ['.logo', '.work-list.en', '.work-list.kr', 'button', 'a'] // 기본값 설정
     },
-    circleColor: String,
-    circleColorHover: String,
-    dotColor: String,
-    dotColorHover: String,
-    circleDarkColor: String,
-    circleDarkColorHover: String,
-    dotDarkColor: String,
-    dotDarkColorHover: String,
-    hoverSize: Number,
-    darkMode: Boolean
+    darkMode: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
       scale: 1,
-      x: null,
-      y: null,
-      circlePosX: null,
-      circlePosY: null,
-      dotPosX: null,
-      dotPosY: null,
-      // 커서 스타일 초기 세팅
-      circleStyle: {
-        transform: 'translate(-50%, -50%) scale(1)',
-        backgroundColor: this.circleColor || '#000',
-      },
-      dotStyle: {
-        transform: 'translate(-50%, -50%)',
-        backgroundColor: this.dotColor || '#000',
-      },
-      isAnimating: false, // 애니메이션 제어
+      mouseX: 0,
+      mouseY: 0,
+      isAnimating: false, // 애니메이션 상태
+      isHovered: false, // 호버 상태
     };
   },
   mounted() {
     this.$nextTick(() => {
-      window.addEventListener("mousemove", this.customCursor);
+      window.addEventListener("mousemove", this.onMouseMove);
     });
     
   },
   beforeDestroy() {
-    window.removeEventListener("mousemove", this.customCursor);
+    window.removeEventListener("mousemove", this.onMouseMove);
   },
   methods: {
-    customCursor(e) {
-      // cursor 좌표 업데이트
-      this.x = e.clientX;
-      this.y = e.clientY;
+    onMouseMove(e) {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
 
+      // 호버 상태 체크
+      this.isHovered = this.hoverTargets.some(target => {
+        return e.target.matches(target);
+      })
+      this.scale = this.isHovered ? 1.5 : 1;
+
+      console.log(this.isHovered);
+
+      // 애니메이션 실행
       if (!this.isAnimating) {
         this.isAnimating = true;
-        requestAnimationFrame(this.updateCursorPosition);
-      }
-
-      // cursor 호버, 셀렉트 타겟
-      const isHoverTarget = this.targets.some(target =>
-        e.target.matches(target)
-      );
-      if (isHoverTarget) {
-        this.scale = this.hoverSize;
-        this.circleStyle.backgroundColor = this.darkMode ? this.circleDarkColorHover : this.circleColorHover;
-        this.dotStyle.backgroundColor = this.darkMode ? this.dotDarkColorHover : this.dotColorHover;
-      } else {
-        this.scale = 1;
-        this.circleStyle.backgroundColor = this.darkMode ? this.circleDarkColor : this.circleColor;
-        this.dotStyle.backgroundColor = this.darkMode ? this.dotDarkColor : this.dotColor;
-      }
-
-      if (!this.isAnimating) {
-        this.isAnimating = true;
-        requestAnimationFrame(this.updateCursorPosition);
+        requestAnimationFrame(this.updatePosition);
       }
     },
-    updateCursorPosition() {
-      // cursor 이동
+    updatePosition() {
       const circle = this.$refs.customCursorCircle;
       const dot = this.$refs.customCursorDot;
 
-      if (circle) {
-        this.circlePosX = this.x - circle.clientWidth / 2;
-        this.circlePosY = this.y - circle.clientWidth / 2;
+      if (circle && dot) {
+        const circleX = this.mouseX - circle.clientWidth / 2;
+        const circleY = this.mouseY - circle.clientWidth / 2;
+        circle.style.transform = `translate(${circleX}px, ${circleY}px) scale(${this.scale})`;
+        
+        const dotX = this.mouseX - dot.clientWidth / 2;
+        const dotY = this.mouseY - dot.clientWidth / 2;
+        dot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+      }
 
-        circle.style.setProperty('--scale', this.scale);
-        circle.style.transform = `translate(${this.circlePosX}px, ${this.circlePosY}px) scale(${this.scale})`;
-      }
-      if (dot) {
-        this.dotPosX = this.x - dot.clientWidth / 2;
-        this.dotPosY = this.y - dot.clientHeight / 2;
-        dot.style.transform = `translate(${this.dotPosX}px, ${this.dotPosY}px)`;
-      }
-      
-      this.isAnimating = false; // 애니메이션 완료
-    }
+      this.isAnimating = false;
+    },
   }
 };
 </script>
@@ -116,37 +83,50 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   pointer-events: none;
   position: relative;
   z-index: 999;
-}
-.custom-cursor__circle {
-  position: fixed;
-  cursor: none;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  // transform: translate(-100%, -100%);
-  transform: translate(-50%, -50%) scale(var(--scale, 1));
-  transition: scale 0.4s $ease, background-color 0.2s $ease;
 
-  // transition: scale 0.4s $ease;
-  transition: transform 0.4s $ease, background-color 0.2s $ease;
-  will-change: background-color;
-}
+  &-circle {
+    position: fixed;
+    cursor: none;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url('../../../public/images/img_cursor_bg_black.svg');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.2;
+    transition: all 0.4s $ease;
+    will-change: background-image, transform;
+    
+    .is-hover & {
+      opacity: 0.5;
+      background-image: url('../../../public/images/img_cursor_bg_red.svg');
+    }
 
-.custom-cursor__dot {
-  position: fixed;
-  cursor: none;
-  top: 1px;
-  left: 1px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #2f2f2f;
-  transform: translate(-50%, -50%);
-  // transition: scale 0.4s $ease;
-  // transition: transform 0.1s $ease, background-color 0.2s $ease;
-  transition: transform 0.1s $ease, background-color 0.2s $ease;
-  will-change: background-color;
+    .dark & {
+      background-image: url('../../../public/images/img_cursor_bg_red.svg');
+    }
+  }
+
+  &-dot {
+    position: fixed;
+    cursor: none;
+    top: 1px;
+    left: 1px;
+    width: 2px;
+    height: 2px;
+    background-color: #f63543;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s $ease, background-color 0.2s $ease;
+    will-change: background-color, transform;
+
+    .dark.is-hover & {
+      background-color: #fff;
+    }
+  }
 }
 </style>

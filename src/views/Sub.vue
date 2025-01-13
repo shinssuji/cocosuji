@@ -13,7 +13,7 @@
     <div role="list" class="list-wrap list-motion-wrap" ref="subGropus">
       <div role="listitem" class="item" v-for="(work, i) in subVisibleLists" :key="i">
         <p class="work-list en" @click="goToPage('detail/'+work.sub.path)">{{work.sub.en}}</p>
-        <p class="work-list kr">{{work.sub.kr}}</p>
+        <p class="work-list kr" @click="goToPage('detail/'+work.sub.path)">{{work.sub.kr}}</p>
       </div>
     </div>
   </section>
