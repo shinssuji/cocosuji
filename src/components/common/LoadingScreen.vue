@@ -6,9 +6,6 @@
 </template>
 <script>
 import { EventBus } from '@/assets/js/eventBus';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 export default {
     name: 'LoadingScreen',
     data() {
@@ -48,7 +45,7 @@ export default {
             });
 
             // 로딩 TIMELINE
-            const introtl = gsap.timeline({
+            const introtl = this.$gsap.timeline({
                 defaults: {
                     ease: 'expo.inOut',
                     duration: 1,
