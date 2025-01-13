@@ -377,8 +377,7 @@ footer p.copyright {
   position: fixed;
   right: var(--floating-position-right);
   z-index: 99;
-  opacity: 0;
-  visibility: hidden;
+  transition: bottom 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .floating-btns button {
   width: min(12.8vw, 6.6rem);
@@ -396,34 +395,53 @@ footer p.copyright {
   margin-top: 1.5rem;
 }
 .floating-btns .btn-code {
-  animation: bounce 2s infinite ease-in-out;
+  position: fixed;
+  bottom: var(--floating-position-bottom);
 }
-.floating-btns.is-show {
-  opacity: 1;
-  visibility: visible;
-  bottom: calc(var(--floating-position-bottom) * -1);
-  transition: opacity 0.4s linear, bottom 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+.floating-btns .btn-code::before {
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  top: -6px;
+  bottom: -6px;
+  z-index: -1;
+  background-color: #363636;
+  opacity: 0.5;
+  animation: 2.3s ease-in-out 0s normal none infinite running circle-fill;
 }
-.floating-btns.is-show.hide {
+.detail .floating-btns .btn-top {
+  opacity: 0;
+  margin-bottom: calc(min(12.8vw, 6.6rem) + 1.5rem);
+  transition: opacity 0.2s linear;
+}
+*:not(.detail) .floating-btns.is-hidden {
   bottom: calc((var(--floating-position-bottom) + 12.2rem + 1.5rem) * -1);
 }
 .floating-btns.scr-up {
   bottom: var(--floating-position-bottom);
 }
+.floating-btns.scr-up .btn-top {
+  opacity: 1;
+  transition: opacity 0.75s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 .floating-btns.scr-down {
   bottom: calc((var(--floating-position-bottom) + 12.2rem + 1.5rem) * -1);
 }
 
-@keyframes bounce {
-  40% {
-    height: min(12.8vw, 6.6rem);
+@keyframes circle-fill {
+  0% {
+    opacity: 0.2;
+    transform: rotate(0deg) scale(0.7) skew(1deg);
   }
   50% {
-    transform: translate(0, 3rem);
-    height: min(12.8vw - 4px, 6.6rem - 4px);
+    opacity: 0.2;
+    transform: rotate(0deg) scale(1) skew(1deg);
   }
-  65% {
-    height: min(12.8vw, 6.6rem);
+  100% {
+    opacity: 0.2;
+    transform: rotate(0deg) scale(0.7) skew(1deg);
   }
 }
 /* ----------------------- LOADING */

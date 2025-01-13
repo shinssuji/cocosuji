@@ -34,20 +34,39 @@
       <p class="copyright">ⓒ 2025 suji. all rights reserved.</p>
     </section>
 
-    <div class="floating-btns is-show scr-up" v-if="work.code">
-      <button type="button" class="btn-ico btn-black btn-code" aria-label="Code 보기" @click="newWindow(work.code)">View Code</button>
-    </div>
+    <FloatingButton
+        :scrollDir="scrollDir"
+        :scrollH="scrollH"
+    >
+      <template
+        v-slot:add-buttons
+        v-if="work.code"
+      >
+        <button
+         type="button" 
+         class="btn-ico btn-black btn-code" aria-label="Code 보기" 
+         @click="newWindow(work.code)"
+        >
+          View Code
+        </button>
+      </template>
+    </FloatingButton>
   </section>
 </template>
 <script>
+import FloatingButton from "@/components/common/FloatingButton.vue";
 export default {
+  components: {
+    FloatingButton
+  },
   props: {
     work: {
-      Type: Array
+      type: Object,
+      required: true
     },
-    darkMode: {
-      Type: Boolean
-    }
+    darkMode: Boolean,
+    scrollH: Number,
+    scrollDir: Boolean
   },
   data() {
     return {

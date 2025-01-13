@@ -28,9 +28,7 @@
   position: fixed;
   right: var(--floating-position-right);
   z-index: 99;
-
-  opacity: 0;
-  visibility: hidden;
+  transition: bottom .5s #{$transition-setting01};
 
   button {
     @include size(min(12.8vw, rem(66)));
@@ -49,25 +47,46 @@
   }
 
   .btn-code {
-    -webkit-animation: bounce 2s infinite ease-in-out;
-    animation: bounce 2s infinite ease-in-out;
+    position: fixed;
+    bottom: var(--floating-position-bottom);
+
+    &::before {
+      @include radius(50%);
+
+      content: "";
+      position: absolute;
+      left: -6px;
+      right: -6px;
+      top: -6px;
+      bottom: -6px;
+      z-index: -1;
+      background-color: $black-main;
+      opacity: 0.5;
+      animation: 2.3s ease-in-out 0s normal none infinite running circle-fill;
+    }
   }
 
-  &.is-show {
-    opacity: 1;
-    visibility: visible;
+  .detail & {
+    .btn-top {
+      opacity: 0;
+      margin-bottom: calc(min(12.8vw, rem(66)) + rem(15));
+      transition: opacity 0.2s linear;
+    }
+  }
 
-    bottom: calc(var(--floating-position-bottom) * -1);
-
-    transition: opacity .4s linear, bottom .5s #{$transition-setting01};
-
-    &.hide {
+  &.is-hidden {
+    *:not(.detail) & {
       bottom: calc((var(--floating-position-bottom) + rem(122) + rem(15)) * -1);
     }
   }
 
   &.scr-up {
     bottom: var(--floating-position-bottom);
+
+    .btn-top {
+      opacity: 1;
+      transition: opacity 0.75s #{$transition-setting01};
+    }
   }
 
   &.scr-down {
@@ -75,16 +94,18 @@
   }
 }
 
-@keyframes bounce {
-  40% {
-    height: min(12.8vw, rem(66));
+@keyframes circle-fill {
+  0% {
+    opacity: 0.2;
+    transform: rotate(0deg) scale(0.7) skew(1deg);
   }
   50% {
-      transform: translate(0, rem(30));
-      height: min(12.8vw - 4px, rem(66) - 4px);
+    opacity: 0.2;
+    transform: rotate(0deg) scale(1) skew(1deg);
   }
-  65% {
-    height: min(12.8vw, rem(66));
+  100% {
+    opacity: 0.2;
+    transform: rotate(0deg) scale(0.7) skew(1deg);
   }
 }
 

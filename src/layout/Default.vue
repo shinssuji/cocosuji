@@ -16,25 +16,20 @@
         <router-view :scrollH="scrollH" />
       </transition>
 
-      <div class="floating-btns is-show" :class="[{'scr-down':scrollDir}, {'scr-up':!scrollDir}, {'hide':scrollH<=199}]">
-        <button type="button" class="btn-ico btn-top" aria-label="페이지 상단으로 가기" @click="goToTop">
-          <span class="blind">페이지 상단으로 가기</span>
-        </button>
-        <template v-if="this.$router.currentRoute.path==='/main'">
-          <button type="button" class="btn-ico btn-redline" aria-label="Github로 이동하기" @click="newWindow('https://github.com/shinssuji/cocosuji/tree/master')">Github</button>
-        </template>
-      </div>
+      <FloatingButton
+        :scrollDir="scrollDir"
+        :scrollH="scrollH"
+      />
     </section>
   </section>
 </template>
 <script>
 import Header from "@/components/Header.vue";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger); // ScrollTrigger 등록
+import FloatingButton from "@/components/common/FloatingButton.vue";
 export default {
   components: {
     Header,
+    FloatingButton
   },
   data() {
     return {
