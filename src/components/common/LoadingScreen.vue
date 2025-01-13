@@ -5,7 +5,7 @@
     </div>
 </template>
 <script>
-import { EventBus } from '@/assets/js/eventBus';
+// import { EventBus } from '@/assets/js/eventBus';
 export default {
     name: 'LoadingScreen',
     data() {
@@ -15,10 +15,10 @@ export default {
         }
     },
     created() {
-        EventBus.$on('toggle-loading', this.startLoadingAnimation);
+        this.$EventBus.$on('toggle-loading', this.startLoadingAnimation);
     },
     beforeDestroy() {
-        EventBus.$off('toggle-loading', this.startLoadingAnimation);
+        this.$EventBus.$off('toggle-loading', this.startLoadingAnimation);
     },
     mounted() {
     },
@@ -51,7 +51,7 @@ export default {
                     duration: 1,
                 },
                 onComplete: () => {
-                    EventBus.$emit('animateion-complete', nextRoute);
+                    this.$EventBus.$emit('animateion-complete', nextRoute);
                     this.isLoading = false;
                 }
             });
