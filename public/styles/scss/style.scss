@@ -7,15 +7,24 @@
 
 /* ----------------------- COMMON */
 .btn-top {
-  @include bg($filename: 'icon_gotop');
-  background-color: $white-main;
+  background-image: icon(gotop, '363636');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
 }
 
 .btn-redline {
   background-color: $white-main;
-  border: 2px solid $red-main;
+  border: 1px solid $red-main;
   font-weight: $font-medium;
   color: $red-main;
+}
+
+.btn-blackline {
+  background-color: $white-main;
+  border: 1px solid $black-sub01;
+  font-weight: $font-medium;
+  color: $black-sub01;
 }
 
 .btn-black {
@@ -31,12 +40,17 @@
   transition: bottom .5s #{$transition-setting01};
 
   button {
-    @include size(min(12.8vw, rem(66)));
+    @include size(min(11.8vw, rem(66)));
     @include radius(50%);
     
     display: block;
+    
     line-height: 1.2;
 
+    @include mobileMin {
+      border-width: 2px;
+    }
+    
     @include mobile-xs {
       font-size: rem(13);
     }
@@ -66,10 +80,21 @@
     }
   }
 
+  .sub + & {
+    .btn-top {
+      background-image: icon(gotop, 'ffffff');
+    }
+
+    .btn-blackline {
+      border-color: $white-main;
+      background-color: var(--sub-bg-color);
+    }
+  }
+
   .detail & {
     .btn-top {
       opacity: 0;
-      margin-bottom: calc(min(12.8vw, rem(66)) + rem(15));
+      margin-bottom: calc(min(11.8vw, rem(66)) + rem(15));
       transition: opacity 0.2s linear;
     }
   }
@@ -538,7 +563,7 @@
   @include flex;
   
   min-height: vh(100);
-  background-color: $black-sub01;
+  background-color: var(--sub-bg-color);
 
   @include tablet {
     @include flex-dir(column);
@@ -835,7 +860,9 @@
   padding-bottom: rem(30);
 
   > * {
-    @include inner;
+    @include tabletMin {
+      @include inner;
+    }
   }
 
   > div {

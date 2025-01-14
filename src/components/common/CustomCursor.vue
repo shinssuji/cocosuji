@@ -47,8 +47,6 @@ export default {
       })
       this.scale = this.isHovered ? 1.5 : 1;
 
-      console.log(this.isHovered);
-
       // 애니메이션 실행
       if (!this.isAnimating) {
         this.isAnimating = true;

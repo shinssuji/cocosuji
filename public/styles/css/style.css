@@ -76,6 +76,11 @@ body {
   }
 }
 
+/* color */
+body {
+  --sub-bg-color: #000;
+}
+
 /* layout */
 body {
   --header-height: 9.6rem;
@@ -353,18 +358,24 @@ footer p.copyright {
 
 /* ----------------------- COMMON */
 .btn-top {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='66' height='66' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%23363636' d='m44.71 37.29-8.17-8.17a5.001 5.001 0 0 0-7.08 0l-8.17 8.17a1.004 1.004 0 1 0 1.42 1.42l8.17-8.17a3 3 0 0 1 4.24 0l8.17 8.17a1.002 1.002 0 0 0 1.64-.326 1.002 1.002 0 0 0-.22-1.094Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M21 21h24v24H21z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: center;
   background-size: 100%;
-  background-image: url("../../images/icon_gotop.svg");
-  background-color: #fff;
 }
 
 .btn-redline {
   background-color: #fff;
-  border: 2px solid #f63543;
+  border: 1px solid #f63543;
   font-weight: 500;
   color: #f63543;
+}
+
+.btn-blackline {
+  background-color: #fff;
+  border: 1px solid #000;
+  font-weight: 500;
+  color: #000;
 }
 
 .btn-black {
@@ -380,11 +391,16 @@ footer p.copyright {
   transition: bottom 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .floating-btns button {
-  width: min(12.8vw, 6.6rem);
-  height: min(12.8vw, 6.6rem);
+  width: min(11.8vw, 6.6rem);
+  height: min(11.8vw, 6.6rem);
   border-radius: 50%;
   display: block;
   line-height: 1.2;
+}
+@media only screen and (min-width: 768px) {
+  .floating-btns button {
+    border-width: 2px;
+  }
 }
 @media screen and (max-width: 577px) {
   .floating-btns button {
@@ -411,9 +427,16 @@ footer p.copyright {
   opacity: 0.5;
   animation: 2.3s ease-in-out 0s normal none infinite running circle-fill;
 }
+.sub + .floating-btns .btn-top {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='66' height='66' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%23ffffff' d='m44.71 37.29-8.17-8.17a5.001 5.001 0 0 0-7.08 0l-8.17 8.17a1.004 1.004 0 1 0 1.42 1.42l8.17-8.17a3 3 0 0 1 4.24 0l8.17 8.17a1.002 1.002 0 0 0 1.64-.326 1.002 1.002 0 0 0-.22-1.094Z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M21 21h24v24H21z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+.sub + .floating-btns .btn-blackline {
+  border-color: #fff;
+  background-color: var(--sub-bg-color);
+}
 .detail .floating-btns .btn-top {
   opacity: 0;
-  margin-bottom: calc(min(12.8vw, 6.6rem) + 1.5rem);
+  margin-bottom: calc(min(11.8vw, 6.6rem) + 1.5rem);
   transition: opacity 0.2s linear;
 }
 *:not(.detail) .floating-btns.is-hidden {
@@ -874,7 +897,7 @@ footer p.copyright {
 .sub {
   display: flex;
   min-height: calc(var(--vh, 1vh) * 100);
-  background-color: #000;
+  background-color: var(--sub-bg-color);
 }
 @media screen and (max-width: 1024px) {
   .sub {
@@ -1277,9 +1300,11 @@ footer p.copyright {
 .detail-visual {
   padding-bottom: 3rem;
 }
-.detail-visual > * {
-  padding-left: var(--inner-padding);
-  padding-right: var(--inner-padding);
+@media only screen and (min-width: 1025px) {
+  .detail-visual > * {
+    padding-left: var(--inner-padding);
+    padding-right: var(--inner-padding);
+  }
 }
 .detail-visual > div {
   padding: 0 0 13rem;

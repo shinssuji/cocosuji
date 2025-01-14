@@ -28,16 +28,11 @@
     
     <!-- #WORK VISUAL -->
     <section class="detail-visual">
-      <div class="">
-        <img :src="`../images/${detailImg}.jpg`" v-for="(detailImg, i) in work.detailimages" :key="i">
-      </div>
+      <img :src="`../images/${detailImg}.jpg`" v-for="(detailImg, i) in work.detailimages" :key="i">
       <p class="copyright">ⓒ 2025 suji. all rights reserved.</p>
     </section>
 
-    <FloatingButton
-        :scrollDir="scrollDir"
-        :scrollH="scrollH"
-    >
+    <FloatingButton :scrollDir="scrollDir" :scrollH="scrollH">
       <template
         v-slot:add-buttons
         v-if="work.code"
