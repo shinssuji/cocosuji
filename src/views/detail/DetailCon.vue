@@ -1,5 +1,5 @@
 <template>
-  <section :class="['detail', {dark:darkMode}, work.sub.path]">
+  <section :class="['detail', {dark:darkMode}, work.sub.path, {'has-code':work.code}]">
     <button type="button" aria-label="페이지 닫기" class="btn-ico btn-close" @click="goToPage('/sub')"></button>
     
     <!-- #WORK INTRO -->

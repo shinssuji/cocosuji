@@ -436,8 +436,10 @@ footer p.copyright {
 }
 .detail .floating-btns .btn-top {
   opacity: 0;
-  margin-bottom: calc(min(11.8vw, 6.6rem) + 1.5rem);
   transition: opacity 0.2s linear;
+}
+.has-code .floating-btns .btn-top {
+  margin-bottom: calc(min(11.8vw, 6.6rem) + 1.5rem);
 }
 *:not(.detail) .floating-btns.is-hidden {
   bottom: calc((var(--floating-position-bottom) + 12.2rem + 1.5rem) * -1);

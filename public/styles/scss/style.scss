@@ -94,8 +94,13 @@
   .detail & {
     .btn-top {
       opacity: 0;
-      margin-bottom: calc(min(11.8vw, rem(66)) + rem(15));
       transition: opacity 0.2s linear;
+    }
+  }
+
+  .has-code & {
+    .btn-top {
+      margin-bottom: calc(min(11.8vw, rem(66)) + rem(15));
     }
   }
 
