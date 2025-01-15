@@ -4,7 +4,7 @@
     
     <!-- #WORK INTRO -->
     <section class="detail-intro">
-      <div aria-hidden="true" class="obj"></div>
+      <div aria-hidden="true" class="intro-thumb" ref="thumbnail"></div>
       <div class="txt">
         <h1>{{work.title}}</h1>
         <p>{{work.do}}</p>
@@ -91,7 +91,15 @@ export default {
           },
         });
       });
-      //
+      // thumbnail GSAP
+      this.$gsap.to(this.$refs.thumbnail, {
+        scale: 1.4,
+        scrollTrigger: {
+          scrub: 0.2,
+          trigger: this.$refs.thumbnail,
+          start: 'top 0%',
+        }
+      });
     }
   }
 };

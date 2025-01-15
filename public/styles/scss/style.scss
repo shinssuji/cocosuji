@@ -764,40 +764,37 @@
   @include fullHeight;
 
   position: relative;
+  overflow: hidden;
 
-  &::before {
-    @include fullHeight;
-
-    content: "";
-    display: block;
-
+  .intro-thumb {
+    @include size(100%);
+    // aspect-ratio: 1920 / 1024;
     @include bg-image($img: 'img_detail_sample_intro_w', $format: 'png');
     background-repeat: no-repeat;
     background-size: cover;
 
     @include mobileMin {
-      background-attachment: fixed;
       background-position: center bottom;
     }
 
     @include mobile {
       @include bg-image($img: 'img_detail_sample_intro_m', $format: 'png');
-
       background-position: right bottom;
     }
-  }
 
-  $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopskin, udid, singsing, hundredbang; // add works class name = router path
-  @each $class in $detailgroup {
-    .#{$class} &::before {
-      @include bg-image($img: 'img_#{$class}_intro_w', $format: 'jpg');
+    // add works class name = router path
+    $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopskin, udid, singsing, hundredbang;
+    @each $class in $detailgroup {
+      .#{$class} & {
+        @include bg-image($img: 'img_#{$class}_intro_w', $format: 'jpg');
 
-      @include mobile {
-        @include bg-image($img: 'img_#{$class}_intro_m', $format: 'jpg');
+        @include mobile {
+          @include bg-image($img: 'img_#{$class}_intro_m', $format: 'jpg');
+        }
       }
     }
   }
-    
+
   .txt {
     position: absolute;
     left: min(10vw, var(--detail-inner-padding));
@@ -859,23 +856,16 @@
 .detail-visual {
   padding-bottom: rem(30);
 
-  > * {
-    @include tabletMin {
-      @include inner;
-    }
-  }
-
-  > div {
-    padding: 0 0 rem(130);
-
-    @include tablet {
-      padding: 0 0 rem(60);
-    }
-  }
-
   .copyright {
+    @include inner;
+
+    margin-top: rem(130);
     font-size: var(--font-size-12);
     font-weight: $font-light;
+
+    @include tablet {
+      margin-top: rem(60);
+    }
   }
 }
 
