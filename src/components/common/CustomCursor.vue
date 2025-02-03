@@ -87,25 +87,25 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
     cursor: none;
     top: 0;
     left: 0;
-    width: 50px;
-    height: 50px;
-    background-image: url('../../../public/images/img_cursor_bg_black.svg');
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #aaa;
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(1);
-    opacity: 0.2;
     transition: all 0.4s $ease;
-    will-change: background-image, transform;
-    
-    .is-hover & {
-      opacity: 0.5;
-      background-image: url('../../../public/images/img_cursor_bg_red.svg');
-    }
+    will-change: transform;
 
     .dark & {
-      background-image: url('../../../public/images/img_cursor_bg_red.svg');
+      width: 25px;
+      height: 25px;
+      border-color: #666;
+    }
+
+    .dark.is-hover & {
+      width: 35px;
+      height: 35px;
+      background-color: rgb(255 255 255 / 30%);
+      border-color: #fff;
     }
   }
 
@@ -114,13 +114,23 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
     cursor: none;
     top: 1px;
     left: 1px;
-    width: 2px;
-    height: 2px;
-    background-color: #f63543;
+    width: 4px;
+    height: 4px;
+    background-color: #000;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: transform 0.2s $ease, background-color 0.2s $ease;
     will-change: background-color, transform;
+
+    .is-hover & {
+      width: 10px;
+      height: 10px;
+      background-color: #f63543;
+    }
+
+    .dark & {
+      background-color: #f63543;
+    }
 
     .dark.is-hover & {
       background-color: #fff;

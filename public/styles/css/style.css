@@ -566,7 +566,7 @@ footer p.copyright {
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 99999;
   background-color: #000;
 }
 .intro-text {
@@ -893,6 +893,11 @@ footer p.copyright {
   border-radius: 50px;
   padding: 1.7rem 5rem;
   font-size: var(--font-size-18);
+  transition: background-color 0.3s ease;
+}
+.works .text .btn-view:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 /* ----------------------- SUB */

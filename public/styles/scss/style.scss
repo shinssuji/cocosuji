@@ -239,7 +239,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 99999;
   background-color: $black-sub01;
 
   &-text {
@@ -559,6 +559,12 @@
 
       padding: rem(17) rem(50);
       font-size: var(--font-size-18);
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $black-sub01;
+        color: $white-main;
+      }
     }
   }
 }

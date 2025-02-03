@@ -28,7 +28,7 @@
     
     <!-- #WORK VISUAL -->
     <section class="detail-visual">
-      <img :src="`../images/${detailImg}.jpg`" v-for="(detailImg, i) in work.detailimages" :key="i">
+      <img loading="lazy" :src="`../images/${detailImg}.jpg`" v-for="(detailImg, i) in work.detailimages" :key="i">
       <p class="copyright">ⓒ 2025 suji. all rights reserved.</p>
     </section>
 

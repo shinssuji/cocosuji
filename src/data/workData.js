@@ -43,7 +43,7 @@ export const workContent = {
     detailimages: ['img_siwolmusic_detail01', 'img_siwolmusic_detail02'],
     dark: false
   },
-  // BRANDY ACTION
+  // 브랜디액션
   brandyaction: {
     type: 'landing',
     sub: {
@@ -62,6 +62,7 @@ export const workContent = {
       {tit: '프로젝트 기간', text: '2024.01.08 - 2024.01.15\n2024.01.29 - 2024.01.31'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 100%'}
     ],
+    detailimages: ['img_brandyaction_detail01', 'img_brandyaction_detail02', 'img_brandyaction_detail03', 'img_brandyaction_detail04'],
     dark: true
   },
   // 페이앱 
