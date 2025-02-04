@@ -3614,7 +3614,7 @@ aside {
     height: -moz-calc(100vh - 5em);
     height: calc(100vh - 5em);
     margin-left: -700px;
-    padding: 25px 25px 40px 0;
+    padding: 25px 25px 80px 0;
     border-right: 1px solid #e0e2e4;
     overflow-y: auto;
 }

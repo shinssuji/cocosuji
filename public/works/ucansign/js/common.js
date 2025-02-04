@@ -43,14 +43,16 @@ $(function(){
     });
 
     // modal popup
-    function modalLocate(){
-        var modal = $('.modal'),
-            left = ( $(window).scrollLeft() + ( $(window).width() - modal.outerWidth(true)) / 2 ),
-            top = ( $(window).innerHeight() - modal.height()) / 2;
-        modal.css({'left':left,'top':top, 'position':'fixed'})
-    }
-    modalLocate();
-    $(window).resize(function(){ modalLocate() });
+    // function modalLocate(){
+    //     var modal = $('.modal'),
+    //         left = ( $(window).scrollLeft() + ( $(window).width() - modal.outerWidth(true)) / 2 ),
+    //         top = ( $(window).innerHeight() - modal.height()) / 2;
+    //     modal.css({'left':left,'top':top, 'position':'fixed'})
+
+    //     console.log(left);
+    // }
+    // modalLocate();
+    // $(window).resize(function(){ modalLocate() });
 
     modules = {
         $window: $(window),
@@ -79,12 +81,30 @@ $(function(){
             modal: $('.modal'),
             scrollTopPosition: null,
 
+            updateModalPosition: function($targetModal) {
+                var left = (modules.$window.scrollLeft() + (modules.$window.width() - $targetModal.outerWidth(true)) / 2);
+                var top = (modules.$window.height() - $targetModal.height()) / 2;
+                $targetModal.css({
+                    'left': left,
+                    'top': top,
+                    'position': 'fixed'
+                });
+            },
+
             init: function () {
                 var self = this;
 
                 if ((self.trigger.length > 0 || self.triggerClick.length > 0) && self.modal.length > 0) {
                     self.appendDiv();
                     self.triggers();
+
+                    // Add resize handler
+                    modules.$window.on('resize', function() {
+                        if (modules.$html.hasClass('modal-show')) {
+                            var $visibleModal = $('.modal.modal-show');
+                            self.updateModalPosition($visibleModal);
+                        }
+                    });
                 }
             },
             appendDiv: function () {
@@ -136,6 +156,8 @@ $(function(){
                     .attr('data-modal-effect', $targetModal.data('modal-effect'));
 
                 $targetModal.addClass('modal-show');
+
+                self.updateModalPosition($targetModal);
 
                 modules.$container.scrollTop(scrollTopPosition);
             },
