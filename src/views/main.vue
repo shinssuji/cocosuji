@@ -38,8 +38,13 @@
     <section class="works">
       <section class="box" v-for="(box, index) in workLists" :key="index">
         <div class="item img">
-          <img
-           :src="`../images/${box.img}@2x.jpg`" :alt="box.sub" />
+          <!-- <img
+           :src="`../images/${box.img}@2x.webp`" :alt="box.sub" /> -->
+           <picture>
+            <source media="(min-width: 1025px)" :srcset="`../images/${box.img}@2x.webp`" />
+            <source media="(max-width: 1024px)" :srcset="`../images/${box.img}.webp`" />
+            <img :src="`../images/${box.img}.webp`" alt="box.sub" />
+           </picture>
         </div>
         <div class="item text">
           <span class="s-tit">{{box.sub}}</span>

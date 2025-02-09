@@ -832,6 +832,9 @@ footer p.copyright {
     max-width: 100%;
   }
 }
+.works .img picture {
+  height: 100%;
+}
 @media screen and (max-width: 1024px) {
   .works .img img {
     max-width: none;
@@ -1152,7 +1155,6 @@ footer p.copyright {
 .detail-intro .intro-thumb {
   width: 100%;
   height: 100%;
-  background-image: url("../../images/img_detail_sample_intro_w.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1163,88 +1165,87 @@ footer p.copyright {
 }
 @media screen and (max-width: 767px) {
   .detail-intro .intro-thumb {
-    background-image: url("../../images/img_detail_sample_intro_m.png");
     background-position: right bottom;
   }
 }
 .KBdatahub .detail-intro .intro-thumb {
-  background-image: url("../../images/img_KBdatahub_intro_w.jpg");
+  background-image: url("../../images/img_KBdatahub_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .KBdatahub .detail-intro .intro-thumb {
-    background-image: url("../../images/img_KBdatahub_intro_m.jpg");
+    background-image: url("../../images/img_KBdatahub_intro_m.webp");
   }
 }
 .siwolmusic .detail-intro .intro-thumb {
-  background-image: url("../../images/img_siwolmusic_intro_w.jpg");
+  background-image: url("../../images/img_siwolmusic_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .siwolmusic .detail-intro .intro-thumb {
-    background-image: url("../../images/img_siwolmusic_intro_m.jpg");
+    background-image: url("../../images/img_siwolmusic_intro_m.webp");
   }
 }
 .payapp .detail-intro .intro-thumb {
-  background-image: url("../../images/img_payapp_intro_w.jpg");
+  background-image: url("../../images/img_payapp_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .payapp .detail-intro .intro-thumb {
-    background-image: url("../../images/img_payapp_intro_m.jpg");
+    background-image: url("../../images/img_payapp_intro_m.webp");
   }
 }
 .brandyaction .detail-intro .intro-thumb {
-  background-image: url("../../images/img_brandyaction_intro_w.jpg");
+  background-image: url("../../images/img_brandyaction_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .brandyaction .detail-intro .intro-thumb {
-    background-image: url("../../images/img_brandyaction_intro_m.jpg");
+    background-image: url("../../images/img_brandyaction_intro_m.webp");
   }
 }
 .ucansign .detail-intro .intro-thumb {
-  background-image: url("../../images/img_ucansign_intro_w.jpg");
+  background-image: url("../../images/img_ucansign_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .ucansign .detail-intro .intro-thumb {
-    background-image: url("../../images/img_ucansign_intro_m.jpg");
+    background-image: url("../../images/img_ucansign_intro_m.webp");
   }
 }
 .hicomAS .detail-intro .intro-thumb {
-  background-image: url("../../images/img_hicomAS_intro_w.jpg");
+  background-image: url("../../images/img_hicomAS_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .hicomAS .detail-intro .intro-thumb {
-    background-image: url("../../images/img_hicomAS_intro_m.jpg");
+    background-image: url("../../images/img_hicomAS_intro_m.webp");
   }
 }
 .shopskin .detail-intro .intro-thumb {
-  background-image: url("../../images/img_shopskin_intro_w.jpg");
+  background-image: url("../../images/img_shopskin_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .shopskin .detail-intro .intro-thumb {
-    background-image: url("../../images/img_shopskin_intro_m.jpg");
+    background-image: url("../../images/img_shopskin_intro_m.webp");
   }
 }
 .udid .detail-intro .intro-thumb {
-  background-image: url("../../images/img_udid_intro_w.jpg");
+  background-image: url("../../images/img_udid_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .udid .detail-intro .intro-thumb {
-    background-image: url("../../images/img_udid_intro_m.jpg");
+    background-image: url("../../images/img_udid_intro_m.webp");
   }
 }
 .singsing .detail-intro .intro-thumb {
-  background-image: url("../../images/img_singsing_intro_w.jpg");
+  background-image: url("../../images/img_singsing_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .singsing .detail-intro .intro-thumb {
-    background-image: url("../../images/img_singsing_intro_m.jpg");
+    background-image: url("../../images/img_singsing_intro_m.webp");
   }
 }
 .hundredbang .detail-intro .intro-thumb {
-  background-image: url("../../images/img_hundredbang_intro_w.jpg");
+  background-image: url("../../images/img_hundredbang_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
   .hundredbang .detail-intro .intro-thumb {
-    background-image: url("../../images/img_hundredbang_intro_m.jpg");
+    background-image: url("../../images/img_hundredbang_intro_m.webp");
   }
 }
 .detail-intro .txt {

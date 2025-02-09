@@ -494,10 +494,18 @@
       max-width: 100%;
     }
 
+    picture {
+      height: 100%;
+    }
+
     img {
       @include tablet {
         max-width: none;
         height: 150%;
+        // height: vh(50);
+        // position: relative;
+        // left: 50%;
+        // transform: translateX(-50%);
       }
     }
   }
@@ -780,7 +788,6 @@
   .intro-thumb {
     @include size(100%);
     // aspect-ratio: 1920 / 1024;
-    @include bg-image($img: 'img_detail_sample_intro_w', $format: 'png');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -789,7 +796,6 @@
     }
 
     @include mobile {
-      @include bg-image($img: 'img_detail_sample_intro_m', $format: 'png');
       background-position: right bottom;
     }
 
@@ -797,10 +803,10 @@
     $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopskin, udid, singsing, hundredbang;
     @each $class in $detailgroup {
       .#{$class} & {
-        @include bg-image($img: 'img_#{$class}_intro_w', $format: 'jpg');
+        @include bg-image($img: 'img_#{$class}_intro_w', $format: 'webp');
 
         @include mobile {
-          @include bg-image($img: 'img_#{$class}_intro_m', $format: 'jpg');
+          @include bg-image($img: 'img_#{$class}_intro_m', $format: 'webp');
         }
       }
     }
