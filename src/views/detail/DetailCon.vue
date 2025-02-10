@@ -93,7 +93,7 @@ export default {
       });
       // thumbnail GSAP
       this.$gsap.to(this.$refs.thumbnail, {
-        scale: 1.4,
+        scale: 1.25,
         scrollTrigger: {
           scrub: 0.2,
           trigger: this.$refs.thumbnail,

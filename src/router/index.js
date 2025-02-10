@@ -126,18 +126,14 @@ const mixins = {
         this.setScreenHeight();
         this.checkIfMobile();
 
-        // const debouncedCheck = debounce(function() {
-        //   this.checkIfMobile();
-        // }, 250);
-
         this.debouncedCheck = debounce(this.checkIfMobile, 250);
-
         window.addEventListener('resize', this.debouncedCheck);
 
-        this.debouncedSetHeight = debounce(this.setScreenHeight, 250);
+        // this.debouncedSetHeight = debounce(this.setScreenHeight, 250);
         // window.addEventListener('resize', this.debouncedSetHeight);
       },
       beforeDestroy() {
+        window.addEventListener('resize', this.debouncedCheck);
         // window.removeEventListener('resize', this.debouncedSetHeight);
       },
       methods: {

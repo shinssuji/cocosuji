@@ -627,7 +627,7 @@ footer p.copyright {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 99999;
   display: block;
 }
 .visual-circle::before {
@@ -862,7 +862,7 @@ footer p.copyright {
   }
 }
 .works .text h3 {
-  font-size: clamp(28px, 4.954vw, 5.4rem);
+  font-size: clamp(28px, 4.2vw, 5.4rem);
   font-weight: 800;
   line-height: 1.4814;
 }
