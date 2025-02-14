@@ -170,25 +170,46 @@ export const workContent = {
     detailimages: ['img_udid_detail01', 'img_udid_detail02', 'img_udid_detail03'],
     dark: true
   },
-  // shopskin
-  shopskin: {
-    type: 'website',
+  // shopall
+  shopall: {
+    type: 'shpppingmall',
     sub: {
-      en: 'shoppingmall skin type',
-      kr: '블로그페이 무료 스킨 메인 구축',
-      path: 'shopskin'
+      en: 'shoppingmall skin',
+      kr: '이커머스 플랫폼 쇼핑몰 구축',
+      path: 'shopall'
     },
-    title: '블로그페이 무료 스킨 \n메인 구축',
-    do: 'UI / 퍼블리싱 / 반응형',
-    url: '../project/shopskins/type1/',
-    subtit: '블로그페이 무료 스킨',
-    perform: '이 사이트는 블로그페이 서비스에서 무료로 제공하는 쇼핑몰 스킨 메인 페이지입니다. 사용자가 직접 편집할 수 있도록 제공하고자 했기 때문에 편집이 가능한 영역마다 모듈화되어 있으며, 분기된 파일로 구성되어 있습니다.',
+    title: '이커머스 플랫폼 \n쇼핑몰 구축',
+    do: 'UI / 퍼블리싱 / 웹 / 모바일',
+    url: '../project/shoppingmall/m/skin2/',
+    subtit: '이커머스 쇼핑몰',
+    perform: '이 사이트는 쇼비즈(서비스형 소프트웨어 기반의 이커머스 플랫폼)에서 무료로 제공하기 위해 제작한 쇼핑몰 스킨입니다. 쇼핑몰 솔루션 관리자의 디자인 에디터 기능을 통해 사용자가 각 영역을 직접 편집할 수 있도록 설계하였으며, 이를 위해 편집 가능한 영역을 모듈화하고 분기된 파일 구조로 구성했습니다. 이러한 구조를 적용함으로써 사용자 편의성을 높였고, 동시에 이커머스 서비스의 전반적인 구조를 더욱 깊이 있게 경험할 수 있었습니다. 하단에 View Project 버튼 클릭 시 모바일 사이트로 이동합니다.',
     info: [
       {tit: '기술 스택', text: 'HTML, CSS, Jquery, Design'},
-      {tit: '프로젝트 기간', text: '2019'},
-      {tit: '프로젝트 기여도', text: '퍼블리싱 80% · 디자인 100%'}
+      {tit: '프로젝트 기간', text: '2018.07 - 2018.11'},
+      {tit: '프로젝트 기여도', text: '퍼블리싱 50% · 디자인 50%'}
     ],
-    detailimages: ['img_shopskin_detail01', 'img_shopskin_detail02', 'img_shopskin_detail03', 'img_shopskin_detail04', 'img_shopskin_detail05'],
+    detailimages: ['img_shopall_detail01', 'img_shopall_detail02', 'img_shopall_detail03', 'img_shopall_detail04', 'img_shopall_detail05', 'img_shopall_detail06', 'img_shopall_detail07'],
+    dark: false
+  },
+  // shopmain
+  shopmain: {
+    type: 'shpppingmall',
+    sub: {
+      en: 'shop skin main',
+      kr: '소셜커머스 플랫폼 쇼핑몰 메인',
+      path: 'shopmain'
+    },
+    title: '소셜커머스 쇼핑몰 \n메인 제작',
+    do: 'UI / 퍼블리싱 / 반응형',
+    url: '../project/shopmain/type1/',
+    subtit: '소셜커머스 쇼핑몰 메인',
+    perform: '이 사이트는 블로그페이(소셜커머스 플랫폼) 서비스에서 무료로 제공하는 쇼핑몰의 메인 페이지로 제작되었습니다. 커머스 서비스의 전반적인 구조에 대한 이해를 바탕으로, 업종별 특성을 반영한 UI/UX 구현에 집중하여 작업했습니다. ',
+    info: [
+      {tit: '기술 스택', text: 'HTML, CSS, Jquery, Design'},
+      {tit: '프로젝트 기간', text: '2020.01'},
+      {tit: '프로젝트 기여도', text: '퍼블리싱 95% · 디자인 95%'}
+    ],
+    detailimages: ['img_shopmain_detail01', 'img_shopmain_detail02', 'img_shopmain_detail03', 'img_shopmain_detail04', 'img_shopmain_detail05'],
     dark: false
   },
 

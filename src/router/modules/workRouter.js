@@ -85,12 +85,20 @@ const workRouter = {
         title: 'Project of Suji Portfolio - 블로그페이'
       }
     },
-    { // 쇼비즈 무료 스킨 메인 타입
-      path: "/detail/shopskin",
-      name: "shopskin",
+    { // 블로그페이 무료 쇼핑몰 메인
+      path: "/detail/shopmain",
+      name: "shopmain",
       component: () => import("@/views/detail/DetailCon.vue"),
       meta: {
-        title: 'Project of Suji Portfolio - 쇼핑몰 스킨'
+        title: 'Project of Suji Portfolio - 쇼핑몰 메인'
+      }
+    },
+    { // 쇼비즈 무료 쇼핑몰
+      path: "/detail/shopall",
+      name: "shopall",
+      component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - 쇼핑몰 전체'
       }
     },
     

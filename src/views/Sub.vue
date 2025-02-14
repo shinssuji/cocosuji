@@ -27,9 +27,10 @@ export default {
       subTypes: [
         'all',
         'website',
-        'landing',
+        'shpppingmall',
         'admin',
-        'mobile'
+        'mobile',
+        'landing'
       ],
       subTypeName: 'all',
     }

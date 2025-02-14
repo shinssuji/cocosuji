@@ -797,7 +797,7 @@
     }
 
     // add works class name = router path
-    $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopskin, udid, singsing, hundredbang;
+    $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopmain, shopall, udid, singsing, hundredbang;
     @each $class in $detailgroup {
       .#{$class} & {
         @include bg-image($img: 'img_#{$class}_intro_w', $format: 'webp');

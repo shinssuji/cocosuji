@@ -1216,12 +1216,20 @@ footer p.copyright {
     background-image: url("../../images/img_hicomAS_intro_m.webp");
   }
 }
-.shopskin .detail-intro .intro-thumb {
-  background-image: url("../../images/img_shopskin_intro_w.webp");
+.shopmain .detail-intro .intro-thumb {
+  background-image: url("../../images/img_shopmain_intro_w.webp");
 }
 @media screen and (max-width: 767px) {
-  .shopskin .detail-intro .intro-thumb {
-    background-image: url("../../images/img_shopskin_intro_m.webp");
+  .shopmain .detail-intro .intro-thumb {
+    background-image: url("../../images/img_shopmain_intro_m.webp");
+  }
+}
+.shopall .detail-intro .intro-thumb {
+  background-image: url("../../images/img_shopall_intro_w.webp");
+}
+@media screen and (max-width: 767px) {
+  .shopall .detail-intro .intro-thumb {
+    background-image: url("../../images/img_shopall_intro_m.webp");
   }
 }
 .udid .detail-intro .intro-thumb {
