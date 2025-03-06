@@ -42,25 +42,37 @@
 
 // title
 @mixin heading-main($align: center) {
-  margin-bottom: clamp(40px, 8.571vw, rem(120));
-  //font-size: clamp(26px, 4vw, rem(56));
-  font-size: clamp(26px, 5.476vw, rem(56));
+  @include clamp(margin-bottom, 40px, 8.571vw, rem(120));
+  @include clamp(font-size, 26px, 5.476vw, rem(56));
+  // margin-bottom: clamp(40px, 8.571vw, rem(120));
+  // font-size: clamp(26px, 5.476vw, rem(56));
+  font-weight: $font-semibold;
+  text-align: $align;
+}
+
+@mixin heading-detail($align: left) {
+  @include clamp(font-size, 20px, 2.857vw, rem(40));
+
+  margin-bottom: rem(20);
+  // font-size: clamp(20px, 2.857vw, rem(40));
   font-weight: $font-semibold;
   text-align: $align;
 }
 
 @mixin heading-work {
-  // font-size: clamp(28px, 3.857vw, rem(54));
-  font-size: clamp(28px, 4.2vw, rem(54));
+  @include clamp(font-size, 28px, 4.2vw, rem(54));
+
+  // font-size: clamp(28px, 4.2vw, rem(54));
   font-weight: $font-extrabold;
   line-height: 1.4814;
 }
 
 @mixin heading-worksub {
-  // font-size: clamp(15px, 1.571vw, rem(22));
-  font-size: clamp(15px, 2.086vw, rem(22));
+  @include clamp(font-size, 15px, 2.086vw, rem(22));
+  // font-size: clamp(15px, 2.086vw, rem(22));
   color: $gray-sub01;
 }
+
 
 // inner
 @mixin inner {
@@ -211,4 +223,19 @@
 @mixin scroll-x {
   white-space: nowrap;
   overflow-x: auto;
+}
+
+
+// clamp 함수
+@mixin clamp($property, $min, $value, $max) {
+  // 기본값 (모든 브라우저 지원)
+  // #{$property}: $min;
+  
+  // 중간 호환성 (IE 11 제외 대부분 지원)
+  #{$property}: max($min, min($value, $max));
+  
+  // 최신 브라우저
+  @supports (#{$property}: clamp(1px, 1px, 1px)) {
+    #{$property}: clamp($min, $value, $max);
+  }
 }

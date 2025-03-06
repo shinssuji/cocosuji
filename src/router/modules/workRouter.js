@@ -126,6 +126,7 @@ const workRouter = {
     //   name: "samrtumes",
     //   component: () => import("@/views/detail/DetailCon.vue"),
     // },
+
   ],
 };
 

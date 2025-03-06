@@ -2,9 +2,13 @@
   <section id="wrap">
     <!-- #SKIP NAVIGATION -->
     <div id="skipNav">
-      <a href="#workList">작업물 리스트 바로가기</a>
+      <!-- <a href="#workList">헤더 바로가기</a>
       <a href="#container">메인 컨텐츠 바로가기</a>
-      <a href="#footer">푸터 바로가기</a>
+      <a href="#footer">푸터 바로가기</a> -->
+
+      <button type="button" @click.prevent="scrollToElement('workList')">헤더 바로가기</button>
+      <button type="button" @click.prevent="scrollToElement('container')">메인 컨텐츠 바로가기</button>
+      <button type="button" @click.prevent="scrollToElement('footer')">푸터 바로가기</button>
     </div>
 
     <!-- #HEADER -->
@@ -63,6 +67,13 @@ export default {
 
       this.lastScrollH = this.scrollH;
     },
+    scrollToElement(elementId) {
+      const ele = document.getElementById(elementId);
+      if (ele) {
+        ele.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        ele.focus();
+      }
+    }
   }
 };
 </script>

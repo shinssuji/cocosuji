@@ -1,6 +1,7 @@
 <template>
   <section class="main" :class="{'visible-intro':introVisible}"> 
     <!-- #INTRO -->
+    <h2 class="blind">포트폴리오 로딩중</h2>
     <section class="intro" ref="intro" v-show="introVisible">
       <span class="intro-text intro-number"><em></em></span>
       <h2 class="intro-text intro-title text-split">SuJi</h2>
@@ -10,7 +11,8 @@
     </section>
     
     <!-- #VISUAL -->
-    <section class="visual" ref="visual">
+    <h2 class="blind">메인 비주얼</h2>
+    <section class="visual" aria-label="메인 비주얼" ref="visual">
       <span aria-hidden="true" class="visual-circle" ref="circle"><em></em></span>
       <div class="visual-text-group">
         <p class="text-top animate-text animate-bounceBottom" ref="publisher">Publisher</p>
@@ -23,11 +25,12 @@
     </section>
 
     <!-- #SKILLS -->
-    <section class="skills" ref="skills">
+    <h2 class="blind">메인 스킬</h2>
+    <section class="skills" aria-label="메인 스킬" ref="skills">
       <h2 class="heading-main animate-scaleup animate-fadeUp" ref="secTitle">Main skills</h2>
       <ul class="skill-wrap" ref="skillwrap">
         <li v-for="(skill, index) in skillLists" :key="index" :ref="`skill${index+1}`" class="animate-fadeUp">
-          <i :class="`ico-${skill.classname}`"></i>
+          <i :class="`ico-${skill.classname}`" aria-hidden="true"></i>
           <strong class="tit">{{skill.title}}</strong>
           <p class="para">{{skill.text}}</p>
         </li>
@@ -35,15 +38,14 @@
     </section>
 
     <!-- #WORKS -->
-    <section class="works">
+    <h2 class="blind">메인 프로젝트</h2>
+    <section class="works" aria-label="메인 프로젝트">
       <section class="box" v-for="(box, index) in workLists" :key="index">
         <div class="item img">
-          <!-- <img
-           :src="`../images/${box.img}@2x.webp`" :alt="box.sub" /> -->
            <picture>
-            <source media="(min-width: 1025px)" :srcset="`../images/${box.img}@2x.webp`" />
-            <source media="(max-width: 1024px)" :srcset="`../images/${box.img}.webp`" />
-            <img :src="`../images/${box.img}.webp`" alt="box.sub" />
+            <source media="(min-width: 1025px)" :srcset="`../images/${box.img}@2x.webp`" :alt="box.sub" />
+            <source media="(max-width: 1024px)" :srcset="`../images/${box.img}.webp`" :alt="box.sub" />
+            <img :src="`../images/${box.img}.webp`" :alt="box.sub" />
            </picture>
         </div>
         <div class="item text">
@@ -93,7 +95,7 @@ export default {
         },
         {
           title: 'Markup / Style',
-          text: '웹 표준, 접근성 준수 및 SEO 최적화를 고려한 \n마크업을 합니다. 유지 보수에 용이하도록 \n끊임 없이 고민하며 \n프로젝트에 적합한 방식으로 스타일링 합니다.',
+          text: '웹 표준, 접근성 준수 및 SEO를 고려한 \n마크업을 합니다. 유지 보수에 용이하도록 \n끊임 없이 고민하며 \n프로젝트에 적합한 방식으로 스타일링 합니다.',
           classname: 'markup'
         },
       ],
@@ -121,11 +123,25 @@ export default {
           link: '/detail/payapp'
         },
         {
+          sub: '이커머스 플랫폼 구축',
+          main: '이커머스 플랫폼 제공 \n쇼핑몰 사이트',
+          tag: ['design', 'html', 'css', 'jquery'],
+          img: 'img_shopall_thumb',
+          link: '/detail/shopall'
+        },
+        {
           sub: '유캔싸인 솔루션 구축',
           main: '효율적인 계약업무를 위한 \n전자서명 솔루션',
           tag: ['vue', 'html', 'css', 'jquery'],
           img: 'img_ucansign_thumb',
           link: '/detail/ucansign'
+        },
+        {
+          sub: '백방 하이브리드앱 구축',
+          main: '백 명의 견적을 제공하는 \n장기 렌트 견적 플랫폼',
+          tag: ['html', 'css', 'jquery'],
+          img: 'img_hundredbang_thumb',
+          link: '/detail/hundredbang'
         },
         {
           sub: '디지털 마케팅 대행사 랜딩',
@@ -134,13 +150,6 @@ export default {
           img: 'img_brandyaction_thumb',
           link: '/detail/brandyaction'
         },
-        {
-          sub: '백방 하이브리드앱 구축',
-          main: '백 명의 견적을 제공하는 \n장기 렌트 견적 플랫폼',
-          tag: ['html', 'css', 'jquery'],
-          img: 'img_hundredbang_thumb',
-          link: '/detail/hundredbang'
-        }
       ],
     }
   },

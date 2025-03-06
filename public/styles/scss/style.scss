@@ -168,9 +168,10 @@
   }
 
   &-text {
+    @include clamp(font-size, 20px, 2.930vw, rem(40));
+    
     position: absolute;
     z-index: 2;
-    font-size: clamp(20px, 2.930vw, rem(40));
     color: $white-main;
     font-weight: $font-medium;
   }
@@ -201,6 +202,10 @@
 
 .heading-main {
   @include heading-main;
+}
+
+.heading-detail {
+  @include heading-detail;
 }
 
 .animate-text {
@@ -245,10 +250,10 @@
   &-text {
     @include pos-center;
     @include flex;
+    @include clamp(font-size, 30px, 5.469vw, rem(80));
 
     overflow: hidden;
     z-index: 2;
-    font-size: clamp(30px, 5.469vw, rem(80));
     color: $white-main;
     line-height: 1;
     mix-blend-mode: difference;
@@ -366,11 +371,13 @@
   }
 
   .text-top {
-    font-size: clamp(32px, 5.867vw, rem(60));
+    @include clamp(font-size, 32px, 5.867vw, rem(60));
+    // font-size: clamp(32px, 5.867vw, rem(60));
   }
 
   .text-bottom {
-    font-size: clamp(46px, 8.605vw, rem(90));
+    @include clamp(font-size, 46px, 8.605vw, rem(90));
+    // font-size: clamp(46px, 8.605vw, rem(90));
 
     .text-split > span:last-child {
       color: $red-main;
@@ -389,11 +396,13 @@
   }
 
   .copyright {
+    @include clamp(font-size, 11px, 1.695vw, rem(15));
+
     position: absolute;
     left: 50%;
     bottom: rem(25); 
     transform: translateX(-50%);
-    font-size: clamp(11px, 1.695vw, rem(15));
+    // font-size: clamp(11px, 1.695vw, rem(15));
     color: $gray-sub04;
   }
 }
@@ -435,8 +444,10 @@
     }
     
     .tit {
+      @include clamp(font-size, 23px, 3.911vw, rem(30));
+      
       margin: rem(44) 0 rem(38);
-      font-size: clamp(23px, 3.911vw, rem(30));
+      // font-size: clamp(23px, 3.911vw, rem(30));
       font-weight: $font-semibold;
       line-height: rem(30);
 
@@ -446,7 +457,9 @@
     }
 
     .para {
-      font-size: clamp(14px, 3.889vw, var(--font-size-22));
+      @include clamp(font-size, 14px, 3.889vw, var(--font-size-22));
+
+      // font-size: clamp(14px, 3.889vw, var(--font-size-22));
       line-height: 2;
       letter-spacing: rem(-0.4);
       color: $gary-sub02;
@@ -550,7 +563,9 @@
       }
       
       .tag {
-        font-size: clamp(13px, 1.825vw, rem(20));
+        @include clamp(font-size, 13px, 1.825vw, rem(20));
+
+        // font-size: clamp(13px, 1.825vw, rem(20));
         color: $gray-sub01;
 
         &:not(:last-child) {
@@ -623,8 +638,10 @@
     }
     
     button {
+      @include clamp(font-size, 14px, 2.086vw, rem(20));
+
       margin: rem(12) 0;
-      font-size: clamp(14px, 2.086vw, rem(20));
+      // font-size: clamp(14px, 2.086vw, rem(20));
       color: $gray-sub04;
 
       @include tablet {
@@ -669,8 +686,10 @@
     }
 
     .en {
-      font-size: rem(104);
-      font-size: clamp(32px, 5.997vw, rem(104));
+      @include clamp(font-size, 32px, 5.997vw, rem(104));
+
+      // font-size: rem(104);
+      // font-size: clamp(32px, 5.997vw, rem(104));
       color: $gray-sub04;
       line-height: 1.1538;
       text-transform: uppercase;
@@ -701,9 +720,11 @@
         }
   
         .kr {
+          @include clamp(font-size, 12px, 2.347vw, rem(40));
+
           opacity: 1;
           left: rem(40);
-          font-size: clamp(12px, 2.347vw, rem(40));
+          // font-size: clamp(12px, 2.347vw, rem(40));
           font-weight: $font-semibold;
           color: $white-main;
           letter-spacing: rem(5);
@@ -797,7 +818,7 @@
     }
 
     // add works class name = router path
-    $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopmain, shopall, udid, singsing, hundredbang;
+    $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopmain, shopall, udid, singsing, hundredbang, iMbank;
     @each $class in $detailgroup {
       .#{$class} & {
         @include bg-image($img: 'img_#{$class}_intro_w', $format: 'webp');
@@ -823,15 +844,19 @@
   }
 
   h1 {
-    font-size: clamp(32px, 6.519vw, rem(76));
+    @include clamp(font-size, 32px, 6.519vw, rem(76));
+
+    // font-size: clamp(32px, 6.519vw, rem(76));
     font-weight: $font-bold;
     line-height: 1.2;
     white-space: pre-line;
   }
 
   p {
+    @include clamp(font-size, 16px, 2.999vw, rem(34));
+
     margin-top: rem(40);
-    font-size: clamp(16px, 2.999vw, rem(34));
+    // font-size: clamp(16px, 2.999vw, rem(34));
     font-weight: $font-bold;
   }
 }
@@ -867,6 +892,10 @@
   }
 }
 
+.detail-inner {
+  padding: 0 var(--detail-inner-padding);
+}
+
 .detail-visual {
   padding-bottom: rem(30);
 
@@ -886,15 +915,18 @@
 
 .info {
   &-tit {
+    @include clamp(font-size, 20px, 3.39vw, rem(40));
+
     display: block;
     margin-bottom: min(6vw, 4rem);
-    font-size: clamp(20px, 3.39vw, rem(40));
+    // font-size: clamp(20px, 3.39vw, rem(40));
     font-weight: $font-bold;
     line-height: 1.1875;
   }
 
   &-txt {
-    font-size: clamp(14px, 1.695vw, rem(20));
+    @include clamp(font-size, 14px, 1.695vw, rem(20));
+    // font-size: clamp(14px, 1.695vw, rem(20));
     line-height: 2;
   }
 
@@ -936,9 +968,11 @@
     }
 
     b {
+      @include clamp(font-size, 12px, 1.565vw, rem(24));
+
       margin-right: rem(12);
       margin-bottom: rem(12);
-      font-size: clamp(12px, 1.565vw, rem(24));
+      // font-size: clamp(12px, 1.565vw, rem(24));
       font-weight: $font-semibold;
       white-space: nowrap;
 
@@ -948,8 +982,10 @@
     }
 
     span {
-      font-size: 1.434vw;
-      font-size: clamp(12px, 1.434vw, rem(15));
+      @include clamp(font-size, 12px, 1.434vw, rem(15));
+
+      // font-size: 1.434vw;
+      // font-size: clamp(12px, 1.434vw, rem(15));
       font-weight: $font-medium;
       color: $gray-sub03;
       white-space: pre-line;
@@ -958,4 +994,105 @@
 }
 
 
+.prototype-wrap {
+  .prototype-img-box {
+    @include radius(rem(20));
 
+    margin: rem(40) 0;
+    background-color: $light-gray-sub02;
+
+    @include tablet {
+      @include radius(0);
+      
+      margin: rem(20) calc(var(--detail-inner-padding) * -1);
+    }
+
+    .img-box {
+      @include flex;
+
+      > li {
+        @include flexitem(1);
+
+        position: relative;
+        padding: rem(50) 0 rem(30);
+        text-align: center;
+
+        @include mobile-xs {
+          @include flex;
+          @include flex-dir(column);
+        
+          padding: rem(15) 0 rem(5);
+        }
+      }
+
+      strong {
+        margin-bottom: auto;
+        font-weight: $font-medium;
+        color: $gray-sub03;
+
+        @include mobile {
+          font-size: max(11px, 1.6vw);
+        }
+      }
+
+      li:not(:last-child)::after {
+        @include size(max(rem(15), 2.8125vw));
+
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -1.406vw;
+        display: block;
+        background: no-repeat 50% 50% / 100%;
+        transform: translateY(-50%);
+
+        $protogroup: (
+          'iMbank': '32d098'
+        );
+        @each $class, $color in $protogroup {
+          .#{$class} & {
+            background-image: icon(step_next, $color);
+          }
+        }
+      }
+    }
+  }
+
+  .bg-iphone {
+    @include radius(rem(30));
+
+    width: max(rem(124), 19.5313vw);
+    margin: rem(15) auto;
+    background-color: $white-main;
+
+    // @include tablet {
+    //   width: 28.6458vw;
+    // }
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  h3:not(.heading-detail) {
+    @include clamp(font-size, 16px, 2.142vw, rem(30));
+    // font-size: clamp(16px, 2.142vw, rem(30));
+    font-weight: $font-semibold;
+  }
+
+  p {
+    @include clamp(font-size, 12px, 1.285vw, rem(18));
+
+    font-family: $kr-font;
+    // font-size: clamp(12px, 1.285vw, rem(18));
+    line-height: 1.7;
+  }
+
+  + .prototype-wrap {
+    margin-top: rem(80);
+
+    @include tablet {
+      margin-top: rem(60);
+    }
+  }
+}

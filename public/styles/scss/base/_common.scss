@@ -70,14 +70,14 @@ body {
   position: absolute;
   width: 100%;
 
-  a {
+  button {
     @include flex-layout($justify: center);
     @include size(100%, 50px);
     
     position: absolute;
     top: 0;
-    background: $black-sub01;
-    color: $white-main;
+    background: transparent;
+    color: $black-sub01;
     transform: translateY(-100%);
 
     &:focus,

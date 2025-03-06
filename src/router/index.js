@@ -129,12 +129,12 @@ const mixins = {
         this.debouncedCheck = debounce(this.checkIfMobile, 250);
         window.addEventListener('resize', this.debouncedCheck);
 
-        // this.debouncedSetHeight = debounce(this.setScreenHeight, 250);
-        // window.addEventListener('resize', this.debouncedSetHeight);
+        this.debouncedSetHeight = debounce(this.setScreenHeight, 250);
+        window.addEventListener('resize', this.debouncedSetHeight);
       },
       beforeDestroy() {
         window.addEventListener('resize', this.debouncedCheck);
-        // window.removeEventListener('resize', this.debouncedSetHeight);
+        window.removeEventListener('resize', this.debouncedSetHeight);
       },
       methods: {
         /**
@@ -189,9 +189,21 @@ const mixins = {
          * 공용: vh 세팅
          * 모바일 브라우저 높이 인식 이슈
          */
+        // setScreenHeight() {
+        //   const vh = window.innerHeight * 0.01;
+        //   document.documentElement.style.setProperty('--vh', `${vh}px`);
+        // },
         setScreenHeight() {
-          const vh = window.innerHeight * 0.01;
-          document.documentElement.style.setProperty('--vh', `${vh}px`);
+          // 이전 높이 저장 (처음에는 undefined)
+          const prevHeight = this.prevHeight || 0;
+          const currentHeight = window.innerHeight;
+          
+          // 높이 변화가 일정 이상일 때만 업데이트 (예: 100px)
+          if (Math.abs(currentHeight - prevHeight) > 60) {
+            const vh = currentHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            this.prevHeight = currentHeight;
+          }
         },
         /**
          * 바디 스크롤 제어 

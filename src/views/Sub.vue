@@ -1,6 +1,8 @@
 <template>
   <section class="sub">
-    <nav>      
+    <!-- #PROJECT TYPES -->
+    <h2 class="blind">프로젝트 타입</h2>
+    <nav aria-label="프로젝트 타입">
       <button 
         type="button"
         v-for="(type, index) in subTypes" :key="index"
@@ -10,12 +12,24 @@
         {{type}}
       </button>
     </nav>
-    <div role="list" class="list-wrap list-motion-wrap" ref="subGropus">
-      <div role="listitem" class="item" v-for="(work, i) in subVisibleLists" :key="i">
-        <p class="work-list en" @click="goToPage('detail/'+work.sub.path)">{{work.sub.en}}</p>
-        <p class="work-list kr" @click="goToPage('detail/'+work.sub.path)">{{work.sub.kr}}</p>
-      </div>
-    </div>
+
+    <!-- #PROJECT LISTS -->
+    <h2 class="blind">프로젝트 리스트</h2>
+    <ul class="list-wrap list-motion-wrap" aria-label="프로젝트 리스트" ref="subGropus">
+      <li role="button" class="item" v-for="(work, i) in subVisibleLists" :key="i">
+        <p
+          v-for="(lang, index) in ['en', 'kr']"
+          :key="index"
+          class="work-list"
+          :class="lang"
+          tabindex="0"
+          @click="goToPage('detail/'+work.sub.path)"
+          @keydown.enter="goToPage('detail/'+work.sub.path)"
+        >
+          {{ work.sub[lang]}}
+        </p>
+      </li>
+    </ul>
   </section>
 </template>
 <script>
@@ -32,16 +46,25 @@ export default {
         'mobile',
         'landing'
       ],
+      showPrototype: true,
       subTypeName: 'all',
     }
   },
   computed: {
     subVisibleLists() {
       const subLists = Object.values(this.workContent);
-      if(this.subTypeName === "all") {
-        return subLists;
+
+      // prototype 표시 여부에 따라 필터링
+      let filteredLists = subLists;
+      if (!this.showPrototype) {
+        filteredLists = subLists.filter(item => item.type !== "prototype");
       }
-      return subLists.filter(item => item.type == this.subTypeName);      
+
+      // 선택된 타입에 따라 필터링
+      if(this.subTypeName === "all") {
+        return filteredLists;
+      }
+      return filteredLists.filter(item => item.type == this.subTypeName);      
     },
   }, 
   destroyed() {

@@ -16,9 +16,9 @@ export const workContent = {
     info: [
       {tit: '기술 스택', text: 'Vue, HTML, CSS, Javascript'},
       {tit: '프로젝트 기간', text: '2021.10 - 2024.12'},
-      {tit: '프로젝트 기여도', text: '퍼블리싱 - 구축 40% · 대응,운영 100%'}
+      {tit: '프로젝트 기여도', text: '퍼블리싱 - 구축 55% · 대응,운영 100%'}
     ],
-    detailimages: ['img_datahub_detail01', 'img_datahub_detail02', 'img_datahub_detail03', 'img_datahub_detail04'],
+    detailimages: ['img_datahub_detail01', 'img_datahub_detail02', 'img_datahub_detail03', 'img_datahub_detail04', 'img_datahub_detail05'],
     dark: true // 디테일 인트로 영역 폰트 컬러 설정
   },
   // 시월뮤직
@@ -43,6 +43,92 @@ export const workContent = {
     detailimages: ['img_siwolmusic_detail01', 'img_siwolmusic_detail02'],
     dark: false
   },
+  // 페이앱 
+  payapp: {
+    type: 'website',
+    sub: {
+      en: 'payapp',
+      kr: '페이앱 홈페이지 리뉴얼',
+      path: 'payapp'
+    },
+    title: '페이앱 홈페이지 \n리뉴얼',
+    do: 'UI / 퍼블리싱 / 웹 / 모바일',
+    url: '../project/payapp/',
+    code: 'https://github.com/shinssuji/cocosuji/tree/master/public/works/payapp',
+    subtit: '온/오프라인 결제가 가능한 무료 통합 결제 솔루션',
+    perform: '페이앱은 온/오프라인 어디서나 신용카드, 휴대폰 등으로 결제 받을 수 있는 무료 통합 결제 솔루션입니다. 기존에 오래 유지된 기업 홈페이지를 전면 개편한 프로젝트로 디자인 시스템 정의 후에 퍼블리싱 작업에 착수했습니다. 전체 레이아웃은 부트스트랩을 기반으로 한 클래스를 사용하여 마크업 하였고, scss로 유지보수 및 소스 관리에 용이하도록 작업했습니다. 다양한 동적 효과로 사용자의 이목을 끌고 요소에 집중할 수 있도록 구성하였습니다.',
+    info: [
+      {tit: '기술 스택', text: 'HTML, SCSS, Jquery, Design'},
+      {tit: '프로젝트 기간', text: '2020.10.26 - 2020.12.31'},
+      {tit: '프로젝트 기여도', text: '퍼블리싱 80% · 디자인 20%'}
+    ],
+    detailimages: ['img_payapp_detail01', 'img_payapp_detail02', 'img_payapp_detail03', 'img_payapp_detail04'],
+    dark: true
+  },
+  // 유캔싸인
+  ucansign: {
+    type: 'admin',
+    sub: {
+      en: 'ucansign',
+      kr: '유캔싸인 솔루션 구축',
+      path: 'ucansign'
+    },
+    title: '유캔싸인 솔루션 \n구축',
+    do: '퍼블리싱 / 반응형',
+    url: '../project/ucansign/guide/directory.html',
+    code: 'https://github.com/shinssuji/cocosuji/tree/master/public/works/ucansign',
+    subtit: '효율적인 계약업무를 위한 전자서명 솔루션',
+    perform: '유캔싸인은 직관적인 이용방법으로 간편함과 보안성을 동시에 제공하는 전자계약 서비스입니다. 일정이 촉박하여 데드라인에 맞추기 위해 최선을 다했던 프로젝트입니다. vue.js 환경에서 개발로 일부 화면이 구현된 상태에서 UI 및 퍼블리싱 작업을 진행하였습니다. 프레임워크 내에서 기존에 사용하는 템플릿의 스타일은 유지하며 추가되는 화면에 맞게 UI 구현을 위해 노력했습니다. 이 서비스는 반응형 관리자로 제작하였지만 일부 사인 편집 기능 및 에디터 기능은 웹 환경 기준입니다.',
+    info: [
+      {tit: '기술 스택', text: 'HTML, CSS, Vue(HTML 전달)'},
+      {tit: '프로젝트 기간', text: '2021.03 - 2021.07'},
+      {tit: '프로젝트 기여도', text: '퍼블리싱 80%'}
+    ],
+    detailimages: ['img_ucansign_detail01', 'img_ucansign_detail02', 'img_ucansign_detail03'],
+    dark: false
+  },
+  // shopall
+  shopall: {
+    type: 'shpppingmall',
+    sub: {
+      en: 'shoppingmall skin',
+      kr: '이커머스 플랫폼 쇼핑몰 구축',
+      path: 'shopall'
+    },
+    title: '이커머스 플랫폼 \n쇼핑몰 구축',
+    do: 'UI / 퍼블리싱 / 웹 / 모바일',
+    url: '../project/shoppingmall/m/skin2/',
+    subtit: '이커머스 쇼핑몰',
+    perform: '이 사이트는 쇼비즈(서비스형 소프트웨어 기반의 이커머스 플랫폼)에서 무료로 제공하기 위해 제작한 쇼핑몰 스킨입니다. 쇼핑몰 솔루션 관리자의 디자인 에디터 기능을 통해 사용자가 각 영역을 직접 편집할 수 있도록 설계하였으며, 이를 위해 편집 가능한 영역을 모듈화하고 분기된 파일 구조로 구성했습니다. 이러한 구조를 적용함으로써 사용자 편의성을 높였고, 동시에 이커머스 서비스의 전반적인 구조를 더욱 깊이 있게 경험할 수 있었습니다. 하단에 View Project 버튼 클릭 시 모바일 사이트로 이동합니다.',
+    info: [
+      {tit: '기술 스택', text: 'HTML, CSS, Jquery, Design'},
+      {tit: '프로젝트 기간', text: '2018.07 - 2018.11'},
+      {tit: '프로젝트 기여도', text: '퍼블리싱 70% · 디자인 50%'}
+    ],
+    detailimages: ['img_shopall_detail01', 'img_shopall_detail02', 'img_shopall_detail03', 'img_shopall_detail04', 'img_shopall_detail05', 'img_shopall_detail06', 'img_shopall_detail07'],
+    dark: false
+  },
+  // 하이컴AS
+  hicomAS: {
+    type: 'website',
+    sub: {
+      en: 'hicomAS',
+      kr: '하이컴 홈페이지 리뉴얼',
+      path: 'hicomAS'
+    },
+    title: '하이컴AS 홈페이지 \n리뉴얼',
+    do: '퍼블리싱 / 반응형',
+    url: 'https://www.hicomas.com/',
+    subtit: '컴퓨터 A/S부터 설치까지 한번에',
+    perform: '하이컴AS는 컴퓨터 A/S 솔루션으로, 프로그램 설치부터 가맹점 관리까지 운영하는 전문 업체입니다. 기존에 오래 유지된 사이트를 전면 개편한 프로젝트입니다. 작업 시 중점적으로 생각했던 부분은 실시간 접수 현황 테이블과 A/S 신청 페이지입니다. 이 페이지들은 직관적으로 보여주는 것이 중요하기 때문에 어떠한 환경에서도 내용 전달이 잘 이루어질 수 있도록 반응형으로 설계하였으며 접근성과 크로스브라우징에 대응하여 작업했습니다.',
+    info: [
+      {tit: '기술 스택', text: 'HTML, SCSS, Jquery'},
+      {tit: '프로젝트 기간', text: '2021.02.19 - 2021.05.14'},
+      {tit: '프로젝트 기여도', text: '퍼블리싱 100%'}
+    ],
+    detailimages: ['img_hicomAS_detail01'],
+    dark: true
+  },
   // 브랜디액션
   brandyaction: {
     type: 'landing',
@@ -65,69 +151,6 @@ export const workContent = {
     detailimages: ['img_brandyaction_detail01', 'img_brandyaction_detail02', 'img_brandyaction_detail03', 'img_brandyaction_detail04'],
     dark: true
   },
-  // 페이앱 
-  payapp: {
-    type: 'website',
-    sub: {
-      en: 'payapp',
-      kr: '페이앱 홈페이지 리뉴얼',
-      path: 'payapp'
-    },
-    title: '페이앱 홈페이지 \n리뉴얼',
-    do: 'UI / 퍼블리싱 / 웹 / 모바일',
-    url: '../project/payapp/',
-    code: 'https://github.com/shinssuji/cocosuji/tree/master/public/works/payapp',
-    subtit: '온/오프라인 결제가 가능한 무료 통합 결제 솔루션',
-    perform: '페이앱은 온/오프라인 어디서나 신용카드, 휴대폰 등으로 결제 받을 수 있는 무료 통합 결제 솔루션입니다. 기존에 오래 유지된 기업 홈페이지를 전면 개편한 프로젝트로 디자인 시스템 정의 후에 퍼블리싱 작업에 착수했습니다. 전체 레이아웃은 부트스트랩을 기반으로 한 클래스를 사용하여 마크업 하였고, scss로 유지보수 및 소스 관리에 용이하도록 작업했습니다. 다양한 동적 효과로 사용자의 이목을 끌고 요소에 집중할 수 있도록 구성하였습니다.',
-    info: [
-      {tit: '기술 스택', text: 'HTML, SCSS, Jquery, Design'},
-      {tit: '프로젝트 기간', text: '2020.10.26 - 2020.12.31'},
-      {tit: '프로젝트 기여도', text: '퍼블리싱 80% · 디자인 20%'}
-    ],
-    detailimages: ['img_payapp_detail01', 'img_payapp_detail02', 'img_payapp_detail03'],
-    dark: true
-  },
-  // 유캔싸인
-  ucansign: {
-    type: 'admin',
-    sub: {
-      en: 'ucansign',
-      kr: '유캔싸인 솔루션 구축',
-      path: 'ucansign'
-    },
-    title: '유캔싸인 솔루션 \n구축',
-    do: '퍼블리싱 / 반응형',
-    url: '../project/ucansign/guide/directory.html',
-    code: 'https://github.com/shinssuji/cocosuji/tree/master/public/works/ucansign',
-    subtit: '효율적인 계약업무를 위한 전자서명 솔루션',
-    perform: '유캔싸인은 직관적인 이용방법으로 간편함과 보안성을 동시에 제공하는 전자계약 서비스입니다. 일정이 촉박하여 데드라인에 맞추기 위해 최선을 다했던 프로젝트입니다. vue.js 환경에서 개발로 일부 화면이 구현된 상태에서 UI 및 퍼블리싱 작업을 진행하였습니다. 프레임워크 내에서 기존에 사용하는 템플릿의 스타일은 유지하며 추가되는 화면에 맞게 UI 구현을 위해 노력했습니다. 이 서비스는 반응형 관리자로 제작하였지만 일부 사인 편집 기능 및 에디터 기능은 웹 환경 기준입니다.',
-    info: [
-      {tit: '기술 스택', text: 'HTML, CSS, Vue(HTML 전달)'},
-      {tit: '프로젝트 기간', text: '2021.03 - 2021.07'},
-      {tit: '프로젝트 기여도', text: '퍼블리싱 80%'}
-    ],
-    dark: false
-  },
-  // 하이컴AS
-  hicomAS: {
-    type: 'website',
-    sub: {
-      en: 'hicomAS',
-      kr: '하이컴 홈페이지 리뉴얼',
-      path: 'hicomAS'
-    },
-    title: '하이컴AS 홈페이지 \n리뉴얼',
-    do: '퍼블리싱 / 반응형',
-    url: 'https://www.hicomas.com/',
-    subtit: '컴퓨터 A/S부터 설치까지 한번에',
-    perform: '하이컴AS는 컴퓨터 A/S 솔루션으로, 프로그램 설치부터 가맹점 관리까지 운영하는 전문 업체입니다. 기존에 오래 유지된 사이트를 전면 개편한 프로젝트입니다. 작업 시 중점적으로 생각했던 부분은 실시간 접수 현황 테이블과 A/S 신청 페이지입니다. 이 페이지들은 직관적으로 보여주는 것이 중요하기 때문에 어떠한 환경에서도 내용 전달이 잘 이루어질 수 있도록 반응형으로 설계하였으며 접근성과 크로스브라우징에 대응하여 작업했습니다.',
-    info: [
-      {tit: '기술 스택', text: 'HTML, SCSS, Jquery'},
-      {tit: '프로젝트 기간', text: '2021.02.19 - 2021.05.14'},
-      {tit: '프로젝트 기여도', text: '퍼블리싱 100%'}
-    ],
-    dark: true
-  },
   // 100bang
   'hundredbang': {
     type: 'mobile',
@@ -141,12 +164,13 @@ export const workContent = {
     url: '../project/100bang',
     code: 'https://github.com/shinssuji/cocosuji/tree/master/public/works/100bang',
     subtit: '백명의 견적을 제공하는 장기렌트 견적 플랫폼',
-    perform: '장기렌트 견적을 제공하는 플랫폼입니다. 모바일 화면 기준으로 작업되었습니다.',
+    perform: '백방은 장기렌트 견적을 제공하는 플랫폼으로, 고객이 원하는 희망 렌트료에 백명의 렌트 견적을 한 번에 받아볼 수 있습니다. 이 프로젝트는 모바일 중심의 화면으로 작업되었습니다. `일당백 AI 채팅` 화면에서는 고객과의 실시간 상호작용에 초점을 맞춰 직관적이고 원활한 UI/UX를 구현했습니다. 고객이 원하는 차량, 옵션 등을 손쉽게 입력할 수 있도록 입력 필드를 구성하고, AI가 분석한 맞춤형 견적 결과를 보기 쉽게 시각화했습니다.',
     info: [
       {tit: '기술 스택', text: 'HTML, CSS, Jqeury'},
       {tit: '프로젝트 기간', text: '2021.10.18 - 2021.10.30'},
       {tit: '프로젝트 기여도', text: '퍼블리싱 100%'}
     ],
+    detailimages: ['img_hundredbang_detail01', 'img_hundredbang_detail02'],
     dark: true
   },
   // UDID
@@ -170,27 +194,6 @@ export const workContent = {
     detailimages: ['img_udid_detail01', 'img_udid_detail02', 'img_udid_detail03'],
     dark: true
   },
-  // shopall
-  shopall: {
-    type: 'shpppingmall',
-    sub: {
-      en: 'shoppingmall skin',
-      kr: '이커머스 플랫폼 쇼핑몰 구축',
-      path: 'shopall'
-    },
-    title: '이커머스 플랫폼 \n쇼핑몰 구축',
-    do: 'UI / 퍼블리싱 / 웹 / 모바일',
-    url: '../project/shoppingmall/m/skin2/',
-    subtit: '이커머스 쇼핑몰',
-    perform: '이 사이트는 쇼비즈(서비스형 소프트웨어 기반의 이커머스 플랫폼)에서 무료로 제공하기 위해 제작한 쇼핑몰 스킨입니다. 쇼핑몰 솔루션 관리자의 디자인 에디터 기능을 통해 사용자가 각 영역을 직접 편집할 수 있도록 설계하였으며, 이를 위해 편집 가능한 영역을 모듈화하고 분기된 파일 구조로 구성했습니다. 이러한 구조를 적용함으로써 사용자 편의성을 높였고, 동시에 이커머스 서비스의 전반적인 구조를 더욱 깊이 있게 경험할 수 있었습니다. 하단에 View Project 버튼 클릭 시 모바일 사이트로 이동합니다.',
-    info: [
-      {tit: '기술 스택', text: 'HTML, CSS, Jquery, Design'},
-      {tit: '프로젝트 기간', text: '2018.07 - 2018.11'},
-      {tit: '프로젝트 기여도', text: '퍼블리싱 50% · 디자인 50%'}
-    ],
-    detailimages: ['img_shopall_detail01', 'img_shopall_detail02', 'img_shopall_detail03', 'img_shopall_detail04', 'img_shopall_detail05', 'img_shopall_detail06', 'img_shopall_detail07'],
-    dark: false
-  },
   // shopmain
   shopmain: {
     type: 'shpppingmall',
@@ -203,7 +206,7 @@ export const workContent = {
     do: 'UI / 퍼블리싱 / 반응형',
     url: '../project/shopmain/type1/',
     subtit: '소셜커머스 쇼핑몰 메인',
-    perform: '이 사이트는 블로그페이(소셜커머스 플랫폼) 서비스에서 무료로 제공하는 쇼핑몰의 메인 페이지로 제작되었습니다. 커머스 서비스의 전반적인 구조에 대한 이해를 바탕으로, 업종별 특성을 반영한 UI/UX 구현에 집중하여 작업했습니다. ',
+    perform: '이 사이트는 블로그페이(소셜커머스 플랫폼) 서비스에서 무료로 제공하는 쇼핑몰의 메인 페이지로 제작되었습니다. 커머스 서비스의 전반적인 구조에 대한 이해를 바탕으로, 업종별 특성을 반영한 UI/UX 구현에 집중하여 작업했습니다. 이 사이트는 인테리어/가구 업종을 주제로 하고 있으며 이 외에 의류·화장품 등의 사이트 제작에도 참여했습니다.',
     info: [
       {tit: '기술 스택', text: 'HTML, CSS, Jquery, Design'},
       {tit: '프로젝트 기간', text: '2020.01'},
@@ -233,6 +236,7 @@ export const workContent = {
     ],
     dark: false
   },
+
 
   // smart u mes
   // samrtumes: {
