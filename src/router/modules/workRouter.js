@@ -4,6 +4,14 @@ const workRouter = {
   // redirect: "/main",
   component: () => import("@/layout/Detail.vue"),
   children: [
+    { // NH저축은행
+      path: "/detail/NHsavings",
+      name: "NHsavings",
+      component: () => import("@/views/detail/DetailCon.vue"),
+      meta: {
+        title: 'Project of Suji Portfolio - NH저축은행'
+      }
+    },
     { // KB 데이터허브
       path: "/detail/KBdatahub",
       name: "KBdatahub",

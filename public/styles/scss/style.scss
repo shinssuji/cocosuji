@@ -514,8 +514,8 @@
     img {
       @include tablet {
         max-width: none;
-        height: 150%;
-        // height: vh(50);
+        // height: 150%;
+        height: vh(60);
       }
     }
   }
@@ -818,7 +818,7 @@
     }
 
     // add works class name = router path
-    $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopmain, shopall, udid, singsing, hundredbang, iMbank;
+    $detailgroup: KBdatahub, siwolmusic, payapp, brandyaction, ucansign, hicomAS, shopmain, shopall, udid, singsing, hundredbang, iMbank, NHsavings;
     @each $class in $detailgroup {
       .#{$class} & {
         @include bg-image($img: 'img_#{$class}_intro_w', $format: 'webp');
@@ -888,6 +888,11 @@
     @include mobile-xs {
       width: 100%;
       margin: 8vw 0;
+    }
+
+    &.is-disabled {
+      opacity: 0.2;
+      pointer-events: none;
     }
   }
 }
@@ -1086,6 +1091,14 @@
     font-family: $kr-font;
     // font-size: clamp(12px, 1.285vw, rem(18));
     line-height: 1.7;
+  }
+
+  .alert {
+    display: block;
+    padding: rem(30) rem(20) rem(20);
+    font-size: var(--font-size-14);
+    color: $gray-sub03;
+    text-align: center;
   }
 
   + .prototype-wrap {

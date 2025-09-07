@@ -7,7 +7,7 @@ const basicRouter = {
     {
       path: "/main",
       name: "main", // 메인
-      component: () => import("@/views/Main.vue"),
+      component: () => import("@/views/main.vue"),
       meta: {
         title: 'Portfolio of suji'
       }

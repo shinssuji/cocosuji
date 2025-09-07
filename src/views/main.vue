@@ -85,7 +85,7 @@ export default {
       skillLists: [
         {
           title: 'UI Dev.',
-          text: 'vue 프레임워크 환경에서 \n컴포넌트 단위의 마크업 개발 경험이 있으며, \n다양한 UI 구현을 위한 \nJavascript, jQuery 사용 가능합니다.',
+          text: 'vue, react 프레임워크 환경에서 \n컴포넌트 단위의 마크업 개발 경험이 있으며, \n다양한 UI 구현을 위한 \nJavascript, jQuery 사용 가능합니다.',
           classname: 'uidev'
         },
         {
@@ -101,6 +101,13 @@ export default {
       ],
       // works
       workLists: [
+        {
+          sub: 'NH저축은행 모바일 웹 구축',
+          main: '금융 서비스 이용을 위한 \nNH저축은행 모바일 웹 서비스',
+          tag: ['react', 'mui', 'typescript', 'storybook'],
+          img: 'img_NHsavingsthumb',
+          link: '/detail/NHsavings'
+        },
         {
           sub: 'KB부동산 데이터허브 구축',
           main: 'KB부동산 \n빅데이터 통계 분석 플랫폼',

@@ -18,7 +18,7 @@
       <div class="info-main">
         <strong class="info-tit">{{work.subtit}}</strong>
         <p class="info-txt">{{work.perform}}</p>
-        <button type="button" class="btn btn-blackline btn-view" @click="newWindow(work.url)">View Project</button>
+        <button type="button" :class="['btn btn-blackline btn-view', {'is-disabled':!work.url}]" @click="newWindow(work.url)">View Project</button>
       </div>
       <ul class="info-skill">
         <li v-for="(data, i) in work.info" :key="i">

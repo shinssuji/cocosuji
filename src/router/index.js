@@ -64,19 +64,10 @@ router.beforeEach((to, from, next) => {
       onComplete: () => next()
     })
   } else {
+    window.scrollTo(0, 0);
     next()
   }
 
-
-  // // 라우트 변경 시 스크롤 초기화 
-  // if (Vue.prototype.$lenis && Vue.prototype.$lenis.isActive()) {
-  //   Vue.prototype.$lenis.scrollTo(0, {
-  //     duration: 0,
-  //     immediate: true
-  //   });
-  // }
-  
-  // next();
 });
 
 router.afterEach((to) => {
@@ -198,8 +189,8 @@ const mixins = {
           const prevHeight = this.prevHeight || 0;
           const currentHeight = window.innerHeight;
           
-          // 높이 변화가 일정 이상일 때만 업데이트 (예: 100px)
-          if (Math.abs(currentHeight - prevHeight) > 60) {
+          // 높이 변화가 일정 이상일 때만 업데이트
+          if (Math.abs(currentHeight - prevHeight) > 100) {
             const vh = currentHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
             this.prevHeight = currentHeight;

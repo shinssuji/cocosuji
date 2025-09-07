@@ -905,7 +905,7 @@ footer p.copyright {
 @media screen and (max-width: 1024px) {
   .works .img img {
     max-width: none;
-    height: 150%;
+    height: calc(var(--vh, 1vh) * 60);
   }
 }
 .works .item {
@@ -1360,6 +1360,14 @@ footer p.copyright {
     background-image: url("../../images/img_iMbank_intro_m.webp");
   }
 }
+.NHsavings .detail-intro .intro-thumb {
+  background-image: url("../../images/img_NHsavings_intro_w.webp");
+}
+@media screen and (max-width: 767px) {
+  .NHsavings .detail-intro .intro-thumb {
+    background-image: url("../../images/img_NHsavings_intro_m.webp");
+  }
+}
 .detail-intro .txt {
   position: absolute;
   left: min(10vw, var(--detail-inner-padding));
@@ -1424,6 +1432,10 @@ footer p.copyright {
     width: 100%;
     margin: 8vw 0;
   }
+}
+.detail-info .btn-view.is-disabled {
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 .detail-inner {
@@ -1611,6 +1623,13 @@ footer p.copyright {
   .prototype-wrap p {
     font-size: clamp(12px, 1.285vw, 1.8rem);
   }
+}
+.prototype-wrap .alert {
+  display: block;
+  padding: 3rem 2rem 2rem;
+  font-size: var(--font-size-14);
+  color: #666;
+  text-align: center;
 }
 .prototype-wrap + .prototype-wrap {
   margin-top: 8rem;

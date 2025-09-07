@@ -57,14 +57,14 @@ export default {
       // prototype 표시 여부에 따라 필터링
       let filteredLists = subLists;
       if (!this.showPrototype) {
-        filteredLists = subLists.filter(item => item.type !== "prototype");
+        return filteredLists = subLists.filter(item => item.type !== "prototype");
       }
 
       // 선택된 타입에 따라 필터링
       if(this.subTypeName === "all") {
         return filteredLists;
       }
-      return filteredLists.filter(item => item.type == this.subTypeName);      
+      return filteredLists.filter(item => item.type === this.subTypeName);      
     },
   }, 
   destroyed() {
